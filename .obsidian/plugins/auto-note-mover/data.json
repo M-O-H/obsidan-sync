@@ -19,7 +19,12 @@
       "pattern": ""
     },
     {
-      "folder": "heal",
+      "folder": "PKM/Peronal/Health",
+      "tag": "#p/Health",
+      "pattern": ""
+    },
+    {
+      "folder": "",
       "tag": "",
       "pattern": ""
     }
