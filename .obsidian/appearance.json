@@ -3,5 +3,6 @@
   "baseFontSize": 14,
   "accentColor": "#ffffff",
   "autoFullScreen": true,
-  "slidingSidebar": true
+  "slidingSidebar": true,
+  "theme": "obsidian"
 }
