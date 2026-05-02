@@ -23,6 +23,6 @@ status: Reading
 ## Reading Journey
 
 - 2026-05-02: Started
-- 2026-05-02: 55
+- 2026-05-02: 464
 
 ## Notes
