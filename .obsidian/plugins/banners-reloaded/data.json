@@ -1,0 +1,29 @@
+{
+  "enableBanners": false,
+  "defaultBannerPath": "PKM/assets/banners/Library-gif.gif",
+  "frontmatterProperty": "banner",
+  "defaultBannerHeight": "400px",
+  "defaultBannerMobileHeight": "200px",
+  "embedBannerHeight": "120px",
+  "bannerStyle": "gradient",
+  "contentMargin": 0,
+  "showDefaultHeaderText": true,
+  "showDefaultHeaderIcon": true,
+  "defaultHeaderIcon": "",
+  "defaultHeaderText": "{{filename}}",
+  "headerHorizontalAlign": "center",
+  "headerVerticalAlign": "bottom",
+  "headerTitleSize": "2em",
+  "headerIconSize": "1.5em",
+  "headerDecor": "shadow",
+  "showInEmbeds": true,
+  "showInPopovers": true,
+  "tagBanners": [
+    {
+      "tag": "",
+      "path": ""
+    }
+  ],
+  "bannerFolder": "PKM/assets/banners",
+  "headerTitleFallback": "title"
+}

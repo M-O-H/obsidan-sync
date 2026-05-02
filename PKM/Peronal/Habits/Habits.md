@@ -1,0 +1,3 @@
+- Brush teeth morning/night
+- [[Exercise]]
+- [[Self-Care]]

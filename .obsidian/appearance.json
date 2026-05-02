@@ -1,3 +1,7 @@
 {
-  "theme": "obsidian"
+  "cssTheme": "Obsidian gruvbox",
+  "baseFontSize": 14,
+  "accentColor": "#ffffff",
+  "autoFullScreen": true,
+  "slidingSidebar": true
 }

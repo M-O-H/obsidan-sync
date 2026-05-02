@@ -1,0 +1,20 @@
+formulas:
+  Untitled: ""
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - file.folder == "PKM/Knowledge/Books"
+    order:
+      - title
+      - author
+      - totalPage
+      - status
+    sort:
+      - property: file.name
+        direction: ASC
+    imageAspectRatio: 1.45
+    cardSize: 160
+    image: note.localCoverImage
+    imageFit: contain

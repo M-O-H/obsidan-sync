@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production-Grade Engineering Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --surface: #111318;
+    --surface2: #1a1d24;
+    --border: #252830;
+    --accent: #e8ff47;
+    --accent2: #47c8ff;
+    --accent3: #ff6b47;
+    --accent4: #b47fff;
+    --text: #e8eaf0;
+    --text-muted: #7a7f8e;
+    --text-dim: #4a4f5e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(232,255,71,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    max-width: 800px;
+    margin-bottom: 24px;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .hero-sub {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .hero-pills {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+
+  .pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* NAV */
+  .toc {
+    padding: 40px 60px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .toc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+
+  .toc-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-left: 2px solid var(--border);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .toc-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .toc-num {
+    color: var(--text-dim);
+    font-size: 10px;
+  }
+
+  /* MAIN */
+  .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px 100px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 70px 0 50px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .section-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    min-width: 60px;
+    letter-spacing: -0.04em;
+  }
+
+  .section-title-block h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-title-block .section-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ACCENT BARS */
+  .accent-bar {
+    width: 40px; height: 3px;
+    margin-bottom: 16px;
+    border-radius: 1px;
+  }
+  .bar-yellow { background: var(--accent); }
+  .bar-blue { background: var(--accent2); }
+  .bar-orange { background: var(--accent3); }
+  .bar-purple { background: var(--accent4); }
+
+  /* BODY TEXT */
+  .prose {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #c5c8d0;
+    max-width: 780px;
+    margin-bottom: 24px;
+  }
+
+  .prose strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+  }
+
+  .card.yellow::before { background: var(--accent); }
+  .card.blue::before { background: var(--accent2); }
+  .card.orange::before { background: var(--accent3); }
+  .card.purple::before { background: var(--accent4); }
+  .card.green::before { background: #47ffb4; }
+  .card.red::before { background: #ff4747; }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .card-body {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* TOPICS LIST */
+  .topic-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 6px;
+    margin: 20px 0;
+  }
+
+  .topic-list li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #9fa4b4;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .topic-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 10px;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 13px;
+  }
+
+  .compare-table th {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-table th:nth-child(1) { color: var(--text-dim); background: var(--surface); }
+  .compare-table th:nth-child(2) { color: var(--accent2); background: rgba(71,200,255,0.05); }
+  .compare-table th:nth-child(3) { color: var(--accent); background: rgba(232,255,71,0.05); }
+
+  .compare-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .compare-table td:nth-child(1) {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    background: var(--surface);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    width: 160px;
+  }
+
+  .compare-table td:nth-child(2) { background: rgba(71,200,255,0.02); }
+  .compare-table td:nth-child(3) { background: rgba(232,255,71,0.02); }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  /* CHECKLIST */
+  .checklist-section {
+    margin: 24px 0;
+  }
+
+  .checklist-group {
+    margin-bottom: 28px;
+  }
+
+  .checklist-group-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cg-security { color: var(--accent3); background: rgba(255,107,71,0.08); border-left: 3px solid var(--accent3); }
+  .cg-observability { color: var(--accent2); background: rgba(71,200,255,0.08); border-left: 3px solid var(--accent2); }
+  .cg-scalability { color: var(--accent); background: rgba(232,255,71,0.08); border-left: 3px solid var(--accent); }
+  .cg-reliability { color: #47ffb4; background: rgba(71,255,180,0.08); border-left: 3px solid #47ffb4; }
+  .cg-cicd { color: var(--accent4); background: rgba(180,127,255,0.08); border-left: 3px solid var(--accent4); }
+  .cg-infra { color: #ff9f47; background: rgba(255,159,71,0.08); border-left: 3px solid #ff9f47; }
+  .cg-dr { color: #ff4747; background: rgba(255,71,71,0.08); border-left: 3px solid #ff4747; }
+
+  .checklist-items {
+    list-style: none;
+    border: 1px solid var(--border);
+  }
+
+  .checklist-items li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+  }
+
+  .checklist-items li:last-child { border-bottom: none; }
+
+  .checklist-items li::before {
+    content: '☐';
+    font-size: 14px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .checklist-items li .item-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* FRAMEWORK BLOCK */
+  .framework-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .framework-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .framework-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .framework-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 1px;
+    letter-spacing: 0.1em;
+  }
+
+  .tag-iso { background: rgba(71,200,255,0.15); color: var(--accent2); }
+  .tag-sec { background: rgba(255,107,71,0.15); color: var(--accent3); }
+  .tag-cloud { background: rgba(232,255,71,0.15); color: var(--accent); }
+  .tag-sre { background: rgba(71,255,180,0.15); color: #47ffb4; }
+  .tag-devops { background: rgba(180,127,255,0.15); color: var(--accent4); }
+
+  .framework-body {
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .framework-body strong { color: var(--text); }
+
+  /* PROJECT CARDS */
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .project-level {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .level-inter { color: var(--accent2); }
+  .level-adv { color: var(--accent); }
+  .level-senior { color: var(--accent3); }
+
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .project-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* TOOLS */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .tool-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .tool-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .tool-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .tool-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* RESOURCES */
+  .resource-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .resource-list li {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--surface);
+  }
+
+  .resource-list li:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .res-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    border-radius: 1px;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .rt-spec { background: rgba(71,200,255,0.15); color: var(--accent2); }
+  .rt-guide { background: rgba(232,255,71,0.15); color: var(--accent); }
+  .rt-doc { background: rgba(180,127,255,0.15); color: var(--accent4); }
+  .rt-book { background: rgba(71,255,180,0.15); color: #47ffb4; }
+  .rt-paper { background: rgba(255,107,71,0.15); color: var(--accent3); }
+
+  .res-content {
+    flex: 1;
+  }
+
+  .res-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .res-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .res-url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* CALLOUT */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: rgba(232,255,71,0.04);
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .callout strong { color: var(--accent); }
+
+  .callout-blue {
+    border-color: var(--accent2);
+    background: rgba(71,200,255,0.04);
+  }
+  .callout-blue strong { color: var(--accent2); }
+
+  .callout-orange {
+    border-color: var(--accent3);
+    background: rgba(255,107,71,0.04);
+  }
+  .callout-orange strong { color: var(--accent3); }
+
+  /* INLINE CODE */
+  code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    color: var(--accent2);
+    border-radius: 2px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .divider-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* PHASE TRACK */
+  .phase-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+  }
+
+  .phase {
+    padding: 20px;
+    border-right: 1px solid var(--border);
+  }
+  .phase:last-child { border-right: none; }
+
+  .phase-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  .phase-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .phase-items {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* COMPANY BADGES */
+  .company-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    margin: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .footer-accent {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .hero, .toc, .footer { padding: 40px 24px; }
+    .content { padding: 0 24px 80px; }
+    .phase-track { grid-template-columns: 1fr; }
+    .phase { border-right: none; border-bottom: 1px solid var(--border); }
+    .compare-table { font-size: 12px; }
+    .compare-table td:nth-child(1) { width: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Senior Engineering Roadmap · 2025 Edition</div>
+  <h1>Mastering <span>Production-Grade</span> Engineering</h1>
+  <p class="hero-sub">A practitioner's guide to software industry standards and production readiness — from intermediate to senior engineering level.</p>
+  <div class="hero-pills">
+    <span class="pill">ISO/IEC 12207 · 25010</span>
+    <span class="pill">OWASP Top 10</span>
+    <span class="pill">NIST SSDF</span>
+    <span class="pill">SRE / DevOps</span>
+    <span class="pill">CNCF Ecosystem</span>
+    <span class="pill">Cloud-Native</span>
+    <span class="pill">Zero Trust</span>
+    <span class="pill">Observability</span>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-label">Contents</div>
+  <div class="toc-grid">
+    <a class="toc-item" href="#s1"><span class="toc-num">01</span> Scope of Learning</a>
+    <a class="toc-item" href="#s2"><span class="toc-num">02</span> Standards vs Prod Readiness</a>
+    <a class="toc-item" href="#s3"><span class="toc-num">03</span> Key Standards & Frameworks</a>
+    <a class="toc-item" href="#s4"><span class="toc-num">04</span> Production Readiness Checklist</a>
+    <a class="toc-item" href="#s5"><span class="toc-num">05</span> Real-World Application</a>
+    <a class="toc-item" href="#s6"><span class="toc-num">06</span> Hands-On Projects</a>
+    <a class="toc-item" href="#s7"><span class="toc-num">07</span> Tools & Technologies</a>
+    <a class="toc-item" href="#s8"><span class="toc-num">08</span> Resources</a>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ===================== SECTION 1 ===================== -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-yellow"></div>
+      <h2>Scope of Learning</h2>
+      <div class="section-sub">What you need to master — and why each area exists</div>
+    </div>
+  </div>
+
+  <p class="prose">Production-grade engineering is not a single skill — it is a discipline composed of interlocking domains. The following map represents the full learning surface. Think of these as the minimum viable knowledge areas for any engineer operating at senior level in a company like Google, Stripe, or Netflix.</p>
+
+  <div class="phase-track">
+    <div class="phase">
+      <div class="phase-label">Phase 1 · Foundations</div>
+      <div class="phase-title">Standards & Quality</div>
+      <div class="phase-items">Software lifecycle standards · Quality models · Compliance basics · Secure coding principles · API design contracts</div>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 2 · Systems</div>
+      <div class="phase-title">Production Architecture</div>
+      <div class="phase-items">Reliability engineering · Observability stack · CI/CD pipelines · Infrastructure as Code · Container orchestration</div>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 3 · Operations</div>
+      <div class="phase-title">Live System Mastery</div>
+      <div class="phase-items">Incident management · Chaos engineering · SLO/SLA design · Disaster recovery · Capacity planning · Cost optimization</div>
+    </div>
+  </div>
+
+  <ul class="topic-list">
+    <li>Software Development Lifecycle (SDLC) standards</li>
+    <li>Quality attributes: performance, security, maintainability</li>
+    <li>API design: REST, gRPC, OpenAPI specifications</li>
+    <li>Twelve-Factor App methodology</li>
+    <li>Service Level Objectives (SLO) & Error Budgets</li>
+    <li>Zero Trust security architecture</li>
+    <li>Observability: logs, metrics, distributed traces</li>
+    <li>Container orchestration with Kubernetes</li>
+    <li>CI/CD pipeline design & deployment strategies</li>
+    <li>Infrastructure as Code (Terraform, Pulumi)</li>
+    <li>Disaster recovery & business continuity</li>
+    <li>OWASP Top 10 & secure software supply chain</li>
+    <li>Cost engineering & FinOps fundamentals</li>
+    <li>Incident response & post-mortem culture</li>
+    <li>Data residency & compliance (GDPR, SOC 2, ISO 27001)</li>
+    <li>Chaos engineering & fault injection</li>
+  </ul>
+</div>
+
+<!-- ===================== SECTION 2 ===================== -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-blue"></div>
+      <h2>Standards vs. Production Readiness</h2>
+      <div class="section-sub">Two sides of the same coin — understanding the distinction</div>
+    </div>
+  </div>
+
+  <p class="prose">Engineers frequently conflate software industry standards with production readiness. They are related but distinct concepts. <strong>Standards are prescriptive frameworks</strong> — externally defined, often auditable — that govern how software should be designed, built, and evaluated. <strong>Production readiness is an operational posture</strong> — internally defined, continuously validated — that determines whether a system can be safely deployed and reliably operated at scale.</p>
+
+  <div class="callout">
+    <strong>Key insight:</strong> Standards define the <em>what</em> and <em>why</em>. Production readiness defines the <em>how</em> and <em>when</em>. A system can be standards-compliant yet not production-ready — and a production-ready system may still lack formal standards certification.
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>Software Industry Standards</th>
+        <th>Production Readiness</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PURPOSE</td>
+        <td>Define quality, security, and process baselines that are consistent across the industry, enabling interoperability, auditability, and legal compliance.</td>
+        <td>Ensure a specific system is safe to deploy, can handle real traffic, fails gracefully, and can be operated and recovered by a human team.</td>
+      </tr>
+      <tr>
+        <td>SCOPE</td>
+        <td>Broad — applies to entire organizations, industries, or regulatory jurisdictions. Often technology-agnostic.</td>
+        <td>Narrow — applies to a specific service, deployment, or release. Highly technology-specific.</td>
+      </tr>
+      <tr>
+        <td>TIMING</td>
+        <td>Defined before or during development. Shapes architecture and process choices from the start.</td>
+        <td>Validated before and continuously after deployment. Evolves with the system's growth and load profile.</td>
+      </tr>
+      <tr>
+        <td>AUTHORITY</td>
+        <td>External bodies: ISO, NIST, OWASP, CNCF, cloud providers, regulatory agencies.</td>
+        <td>Internal teams: Platform engineering, SRE, architecture review boards.</td>
+      </tr>
+      <tr>
+        <td>REAL-WORLD USAGE</td>
+        <td>Required for enterprise sales, government contracts, SOC 2 audits, GDPR compliance, and security certifications.</td>
+        <td>Required at companies like Google (PRR process), Netflix (deployment gates), Amazon (operational readiness reviews).</td>
+      </tr>
+      <tr>
+        <td>DEPENDENCY</td>
+        <td>Standards provide the principles that inform what "ready" means in a given context.</td>
+        <td>Production readiness operationalizes standards into concrete, measurable, checkable criteria.</td>
+      </tr>
+      <tr>
+        <td>MEASUREMENT</td>
+        <td>Audit reports, certifications, compliance dashboards, penetration test results.</td>
+        <td>SLO dashboards, error budgets, MTTR, deployment frequency, alert coverage.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-blue">
+    <strong>In practice:</strong> At Amazon, every service going to production must pass an <em>Operational Readiness Review (ORR)</em> — a structured checklist that maps directly to internal standards derived from NIST and ISO frameworks. The standard defines the bar; the ORR proves the service clears it.
+  </div>
+</div>
+
+<!-- ===================== SECTION 3 ===================== -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-orange"></div>
+      <h2>Key Standards & Frameworks</h2>
+      <div class="section-sub">Primary sources — what they govern and how they apply in practice</div>
+    </div>
+  </div>
+
+  <p class="prose">The following frameworks are not theoretical — they are referenced in enterprise contracts, security audits, architectural review boards, and compliance programs at scale. Understanding them conceptually and knowing where to find their specifications is a baseline expectation at senior level.</p>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">ISO/IEC 12207 — Software Lifecycle Processes</div>
+      <span class="framework-tag tag-iso">ISO STANDARD</span>
+    </div>
+    <div class="framework-body">
+      Defines the full set of processes required throughout the software development lifecycle, from concept through retirement. Covers acquisition, supply, development, operation, and maintenance. <strong>Why it matters in practice:</strong> Large enterprise and government contracts mandate ISO 12207 conformance. It forces teams to define explicit process owners for requirements, design, verification, and release — preventing the "it works on my machine" anti-pattern at organizational scale. Study it as a framework for thinking about process accountability, not as a checklist to follow line-by-line.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">ISO/IEC 25010 — Software Quality Model (SQuaRE)</div>
+      <span class="framework-tag tag-iso">ISO STANDARD</span>
+    </div>
+    <div class="framework-body">
+      Defines eight quality characteristics — functional suitability, performance efficiency, compatibility, usability, reliability, security, maintainability, and portability — each with sub-characteristics. <strong>Why it matters in practice:</strong> This is the vocabulary engineers use in architecture decision records (ADRs) and non-functional requirement (NFR) specifications. When a team debates whether to use a relational or document database, they are implicitly trading off ISO 25010 attributes. Making that trade-off explicit and documented is what separates senior from mid-level engineers.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">OWASP Top 10 — Web Application Security Risks</div>
+      <span class="framework-tag tag-sec">SECURITY</span>
+    </div>
+    <div class="framework-body">
+      The authoritative ranked list of the most critical security risks in web applications, updated periodically by the Open Web Application Security Project. The 2021 edition prioritizes: Broken Access Control, Cryptographic Failures, Injection, Insecure Design, Security Misconfiguration, Vulnerable Components, Authentication Failures, Software & Data Integrity Failures, Logging & Monitoring Failures, and SSRF. <strong>Why it matters in practice:</strong> Every security code review, penetration test, and shift-left security tool (Snyk, Semgrep, SonarQube) maps findings to OWASP categories. Engineers who can explain <em>why</em> parameterized queries prevent injection attacks — not just that they do — write fundamentally more secure code.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">NIST SSDF — Secure Software Development Framework (SP 800-218)</div>
+      <span class="framework-tag tag-sec">SECURITY</span>
+    </div>
+    <div class="framework-body">
+      Published by the US National Institute of Standards and Technology. Organizes secure development practices into four groups: Prepare the Organization (PO), Protect the Software (PS), Produce Well-Secured Software (PW), and Respond to Vulnerabilities (RV). <strong>Why it matters in practice:</strong> Following the US Executive Order on Improving the Nation's Cybersecurity (2021), software suppliers to the US government must demonstrate SSDF alignment. This is increasingly referenced in enterprise procurement questionnaires and SOC 2 Type II audits — even for non-government software companies.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">The Twelve-Factor App Methodology</div>
+      <span class="framework-tag tag-cloud">CLOUD-NATIVE</span>
+    </div>
+    <div class="framework-body">
+      Originally articulated by engineers at Heroku, these twelve principles define how to build software-as-a-service applications that are portable, scalable, and operable. Key factors include: single codebase per deployable, explicit dependency declaration, config in environment variables, stateless processes, port binding, disposability, and log-as-event-stream. <strong>Why it matters in practice:</strong> Virtually every cloud-native service running in Kubernetes implicitly follows these principles. Engineers who understand <em>why</em> processes should be stateless — not just that they should be — make better decisions about session management, caching, and horizontal scaling.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">Google SRE Model — Site Reliability Engineering</div>
+      <span class="framework-tag tag-sre">SRE</span>
+    </div>
+    <div class="framework-body">
+      Google's published framework for applying software engineering to operations problems. Core concepts: Service Level Indicators (SLIs), Service Level Objectives (SLOs), Error Budgets, Toil elimination, and Production Readiness Reviews (PRRs). <strong>Why it matters in practice:</strong> SRE practices have become the dominant operations model in the industry. Understanding error budgets — specifically, that 100% reliability is wrong because it eliminates the budget needed to ship features — is a fundamental shift in engineering thinking that separates reactive operators from proactive platform engineers.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">DORA Metrics — DevOps Research & Assessment</div>
+      <span class="framework-tag tag-devops">DEVOPS</span>
+    </div>
+    <div class="framework-body">
+      Four metrics that predict both software delivery performance and organizational performance: Deployment Frequency, Lead Time for Changes, Mean Time to Restore (MTTR), and Change Failure Rate. Elite performers deploy multiple times per day with lead times under one hour. <strong>Why it matters in practice:</strong> These metrics have become the standard language for engineering leadership conversations about delivery velocity. If you cannot measure these four numbers for your system today, your team lacks the observability required for operational excellence.
+    </div>
+  </div>
+
+  <div class="framework-block">
+    <div class="framework-header">
+      <div class="framework-name">CNCF Cloud Native Landscape & Trail Map</div>
+      <span class="framework-tag tag-cloud">CLOUD-NATIVE</span>
+    </div>
+    <div class="framework-body">
+      The Cloud Native Computing Foundation maintains the definitive map of cloud-native technologies organized by category: provisioning, runtime, orchestration, observability, platform, and application definition. Kubernetes, Prometheus, Envoy, Jaeger, Argo, and Flux are all CNCF projects. <strong>Why it matters in practice:</strong> Understanding the CNCF landscape allows engineers to identify the right category of tool before evaluating individual options — preventing the common mistake of using the wrong type of tool entirely (e.g., using a logging tool to solve a tracing problem).
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 4 ===================== -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-purple"></div>
+      <h2>Production Readiness Checklist</h2>
+      <div class="section-sub">The operational gates a system must pass before and after deployment</div>
+    </div>
+  </div>
+
+  <p class="prose">The following checklist synthesizes the production readiness standards used at companies like Google, Netflix, and Amazon. Each item represents not just a check, but a design decision made during development. Systems that fail production are almost always missing multiple items from this list — rarely just one.</p>
+
+  <div class="callout callout-orange">
+    <strong>Critical mindset shift:</strong> Production readiness is not a pre-deployment checklist — it is a continuous operational posture. A system that was production-ready six months ago may not be today if traffic has grown 10× and the original capacity estimates no longer hold.
+  </div>
+
+  <div class="checklist-section">
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-security">🔒 Security</div>
+      <ul class="checklist-items">
+        <li>All secrets stored in a secrets manager (Vault, AWS Secrets Manager, GCP Secret Manager) — never in environment variables or code<span class="item-note">Zero-trust principle: secrets are short-lived, rotated automatically, and never stored at rest in plaintext.</span></li>
+        <li>All external endpoints are authenticated (OAuth 2.0 / OIDC) and authorized (RBAC/ABAC)<span class="item-note">Every unauthenticated endpoint is an attack surface. Treat internal APIs the same as external ones.</span></li>
+        <li>Input validation and output encoding applied at all trust boundaries<span class="item-note">Addresses OWASP A03 (Injection) and A02 (Cryptographic Failures).</span></li>
+        <li>Dependency vulnerabilities scanned in CI (Snyk, Dependabot, Trivy) with policy enforcement<span class="item-note">Software supply chain attacks (SolarWinds, Log4Shell) target transitive dependencies.</span></li>
+        <li>mTLS enforced for all service-to-service communication within the cluster<span class="item-note">A compromised internal service should not be able to freely call other services.</span></li>
+        <li>Security headers configured: HSTS, CSP, X-Frame-Options, Referrer-Policy<span class="item-note">Browser-enforced protections that require zero runtime cost.</span></li>
+        <li>Container images run as non-root user with read-only filesystem where possible<span class="item-note">Limits blast radius if the application process is compromised.</span></li>
+        <li>Static analysis (SAST) and infrastructure scanning (tfsec, Checkov) in CI pipeline<span class="item-note">Shift-left: catch misconfiguration before it reaches production.</span></li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-observability">📊 Observability (Logs · Metrics · Traces)</div>
+      <ul class="checklist-items">
+        <li>Structured logging in JSON format with consistent fields: <code>trace_id</code>, <code>span_id</code>, <code>service</code>, <code>level</code>, <code>timestamp</code><span class="item-note">Unstructured logs cannot be queried at scale. Consistent fields enable cross-service correlation.</span></li>
+        <li>The four golden signals instrumented: Latency, Traffic, Errors, Saturation (Google SRE model)<span class="item-note">If you only track four things, track these. They predict all common failure modes.</span></li>
+        <li>Distributed tracing implemented with trace context propagation across all service calls<span class="item-note">Without tracing, debugging a latency spike in a microservices system is nearly impossible.</span></li>
+        <li>SLI/SLO defined and dashboards show current error budget burn rate<span class="item-note">Without an error budget, you cannot make data-driven decisions about when to slow down releases.</span></li>
+        <li>Alerts are actionable — every alert has a documented runbook and an on-call owner<span class="item-note">Alert fatigue kills operational effectiveness. Every alert that fires without a response degrades culture.</span></li>
+        <li>Business-level metrics tracked alongside technical metrics (orders/sec, conversions, active users)<span class="item-note">Technical metrics tell you the system is slow; business metrics tell you what the cost is.</span></li>
+        <li>Log retention policy defined and compliant with data regulations (GDPR, HIPAA)<span class="item-note">Retaining PII in logs indefinitely creates compliance risk independent of any security breach.</span></li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-scalability">⚡ Scalability</div>
+      <ul class="checklist-items">
+        <li>Horizontal scaling validated under load — no shared mutable state between instances<span class="item-note">Twelve-Factor Factor VI: stateless processes. Sessions must live in Redis/Memcached, not in-process.</span></li>
+        <li>Load tested at 2–3× expected peak traffic before any major launch<span class="item-note">Netflix chaos engineering principle: test at peak, not average. Systems fail at the edges.</span></li>
+        <li>Database connection pooling configured — unbounded connections will exhaust the DB under load<span class="item-note">A common production outage pattern: application scales fine, database collapses under connection count.</span></li>
+        <li>Rate limiting and circuit breakers implemented on all external service calls<span class="item-note">Cascading failures are the primary failure mode in distributed systems. Bulkhead patterns prevent one slow dependency from taking down the whole system.</span></li>
+        <li>Caching strategy defined: what to cache, cache TTL, and cache invalidation approach<span class="item-note">Cache invalidation is one of the two hard problems in computer science. Have an explicit strategy before going to production.</span></li>
+        <li>Autoscaling configured with appropriate CPU/memory targets and scale-in/out cooldown periods<span class="item-note">HPA in Kubernetes should target ~60–70% CPU to allow headroom for traffic spikes.</span></li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-reliability">🛡 Reliability</div>
+      <ul class="checklist-items">
+        <li>Health check endpoints implemented: <code>/healthz</code> (liveness) and <code>/readyz</code> (readiness) separately<span class="item-note">Conflating liveness and readiness causes cascading restarts. A slow dependency should mark a pod as not-ready, not trigger a restart loop.</span></li>
+        <li>Graceful shutdown implemented — in-flight requests complete before process exits<span class="item-note">Without graceful shutdown, rolling deployments cause intermittent 5xx errors on every deploy.</span></li>
+        <li>Timeout and retry policies defined for all downstream calls with exponential backoff and jitter<span class="item-note">Retries without jitter cause thundering herd on a recovering dependency, making recovery impossible.</span></li>
+        <li>Chaos engineering experiments run in staging: pod kill, network partition, dependency latency injection<span class="item-note">Netflix Chaos Monkey principle: if it can happen in production, simulate it in staging first.</span></li>
+        <li>Multi-AZ or multi-region deployment validated — no single-zone dependency<span class="item-note">AWS AZ failures happen. A service that survives an AZ failure with automatic failover has no single point of failure.</span></li>
+        <li>Runbooks documented for every known failure mode and every alert<span class="item-note">A runbook written before an incident is worth ten times one written during one.</span></li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-cicd">🚀 CI/CD Pipeline</div>
+      <ul class="checklist-items">
+        <li>Every merge to main triggers: unit tests → integration tests → SAST → container build → image scan → deploy to staging<span class="item-note">Google's DORA research shows elite performers have automated testing as the primary quality gate, not manual review.</span></li>
+        <li>Deployment strategy configured: blue/green, canary, or rolling — with automatic rollback on SLO breach<span class="item-note">Canary deployments at 1–5% traffic allow detection of production-only bugs with minimal user impact.</span></li>
+        <li>Container images are immutable and tagged with git SHA, not <code>latest</code><span class="item-note">Mutable tags are a reliability anti-pattern: two deployments with the same tag can run different code.</span></li>
+        <li>Infrastructure changes go through the same pipeline as application code (GitOps)<span class="item-note">Argo CD or Flux: production state is always reconciled with the Git repository as the single source of truth.</span></li>
+        <li>Deployment frequency and lead time tracked — alerts if pipeline duration degrades significantly<span class="item-note">A CI/CD pipeline that takes 45 minutes is a bottleneck that slows incident response.</span></li>
+        <li>Feature flags implemented for high-risk features — decouple deployment from release<span class="item-note">LaunchDarkly / Unleash: merge to main, deploy to production, release when ready. Reduces deployment risk dramatically.</span></li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-infra">🏗 Infrastructure & Deployment</div>
+      <ul class="checklist-items">
+        <li>All infrastructure defined as code (Terraform/Pulumi) with state stored remotely and locked<span class="item-note">Click-ops creates configuration drift. IaC is the only path to reproducible, auditable infrastructure.</span></li>
+        <li>Resource requests and limits set on all containers — no unbounded resource consumption<span class="item-note">Kubernetes without resource limits means one memory-leaking pod can evict all others on the node.</span></li>
+        <li>Network policies applied — pods communicate only with explicitly declared peers<span class="item-note">Default-allow networking means a compromised pod can freely scan the internal network.</span></li>
+        <li>Kubernetes RBAC configured — service accounts have minimal required permissions<span class="item-note">Principle of least privilege applied to infrastructure, not just application code.</span></li>
+        <li>Staging environment is architecturally identical to production (parity is mandatory)<span class="item-note">Twelve-Factor Factor X. Dev/staging parity differences are a primary source of production-only bugs.</span></li>
+        <li>Cost tagging strategy applied to all resources — team, service, environment labels mandatory<span class="item-note">Without tagging, cloud cost attribution is impossible and FinOps is guesswork.</span></li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title cg-dr">💾 Backup & Disaster Recovery</div>
+      <ul class="checklist-items">
+        <li>Recovery Time Objective (RTO) and Recovery Point Objective (RPO) explicitly defined and documented<span class="item-note">If you haven't defined RTO and RPO, you have implicitly accepted "unknown" — which is unacceptable for any production system.</span></li>
+        <li>Database backups automated, encrypted, stored cross-region, and restore tested monthly<span class="item-note">An untested backup is not a backup. Many teams discover their restore process is broken during an actual incident.</span></li>
+        <li>Disaster recovery runbook exercised with a full game day at least once per quarter<span class="item-note">AWS Gameday model: simulate a full regional failure, measure actual RTO, compare to target.</span></li>
+        <li>Data replication strategy defined for stateful services — async vs sync replication trade-offs documented<span class="item-note">Synchronous replication gives zero RPO but adds latency. Asynchronous replication may lose recent writes. Choose explicitly.</span></li>
+        <li>Multi-region failover tested — not just configured — with traffic shifted and validated end-to-end<span class="item-note">Route 53 / Cloud DNS failover policies that have never been tested are a false sense of security.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== SECTION 5 ===================== -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-yellow"></div>
+      <h2>Real-World Application</h2>
+      <div class="section-sub">How industry leaders operationalize these principles</div>
+    </div>
+  </div>
+
+  <p class="prose">Understanding how specific companies apply these concepts in practice accelerates learning more than any course. These are documented patterns from public engineering blogs, SREcon talks, and published books — not speculation.</p>
+
+  <div class="card-grid">
+    <div class="card blue">
+      <div class="card-title">Google — Production Readiness Reviews (PRR)</div>
+      <div class="card-body">Every service that reaches a defined traffic threshold must pass a formal Production Readiness Review conducted by SRE. The review verifies SLO definition, alert coverage, capacity planning, and on-call runbooks. SRE can veto a launch. This process directly implements ISO 25010 reliability and the SRE error budget model. Source: <em>Site Reliability Engineering</em> (Google, O'Reilly, free online).</div>
+    </div>
+    <div class="card yellow">
+      <div class="card-title">Netflix — Chaos Engineering at Scale</div>
+      <div class="card-body">Netflix runs Chaos Monkey, Chaos Kong (region failure), Latency Monkey, and Conformity Monkey continuously in production. The premise: systems that are never tested under failure conditions will fail unexpectedly. Their Hystrix library (now deprecated in favour of Resilience4j) popularised circuit breakers as a production primitive. Source: <em>Netflix Tech Blog</em>.</div>
+    </div>
+    <div class="card orange">
+      <div class="card-title">Amazon — Operational Readiness Reviews (ORR)</div>
+      <div class="card-body">Amazon's equivalent of Google's PRR. Every new service answers ~150 standardised questions covering security, scalability, monitoring, and rollback capability. The ORR is a living document — services are reviewed again after significant architectural changes. This is where NIST and ISO controls are operationalized into shipping criteria. Source: <em>AWS Well-Architected Framework</em>.</div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">Stripe — API Contract Stability</div>
+      <div class="card-body">Stripe maintains versioned API contracts and never breaks them — 2014 API versions are still supported. This operationalizes ISO 12207 compatibility requirements. Their approach: each API version is a snapshot; new versions add capabilities without removing old ones. Engineers at Stripe define API changes as first-class engineering decisions with the same scrutiny as architectural ones.</div>
+    </div>
+    <div class="card green">
+      <div class="card-title">Shopify — DORA Metrics as North Star</div>
+      <div class="card-body">Shopify publishes their DORA metric targets internally and measures them weekly. Deployment frequency is tracked per team. Lead time for changes is measured from first commit to production. Teams that fall into "low performer" DORA bands receive engineering support to improve pipeline efficiency — not criticism. This makes DevOps a measurable, improvable engineering discipline.</div>
+    </div>
+    <div class="card red">
+      <div class="card-title">LinkedIn — Canary Deployments at Scale</div>
+      <div class="card-body">LinkedIn's deployment system routes a small fraction of traffic to new deployments and automatically compares error rates, latency percentiles, and business metrics to the baseline. If a canary shows degradation beyond a configured threshold, the deployment is automatically rolled back without human intervention. This is the CI/CD principle of automatic rollback operationalized at scale.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 6 ===================== -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-blue"></div>
+      <h2>Hands-On Projects</h2>
+      <div class="section-sub">Practical implementations that build real engineering intuition</div>
+    </div>
+  </div>
+
+  <p class="prose">Reading about production-grade engineering is insufficient. The following projects are ordered by complexity and collectively cover every area of the production readiness checklist. Each is designed to produce something demonstrable — suitable for an engineering portfolio.</p>
+
+  <div class="project-card">
+    <div class="project-level level-inter">Intermediate · 1–2 weeks</div>
+    <div class="project-title">Twelve-Factor Microservice with Full Observability Stack</div>
+    <div class="project-desc">Build a REST API (any language) that strictly follows all twelve factors. Instrument it with Prometheus metrics covering the four golden signals. Ship structured JSON logs to a Loki or Elasticsearch instance. Implement distributed tracing with OpenTelemetry SDK and Jaeger. Write runbooks for the three most likely failure modes. Define an SLO and build a Grafana dashboard showing current error budget burn.</div>
+    <div class="project-tags">
+      <span class="project-tag">Twelve-Factor</span>
+      <span class="project-tag">Prometheus</span>
+      <span class="project-tag">OpenTelemetry</span>
+      <span class="project-tag">Grafana</span>
+      <span class="project-tag">Loki</span>
+      <span class="project-tag">SLO Design</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-level level-inter">Intermediate · 1–2 weeks</div>
+    <div class="project-title">Secure CI/CD Pipeline with Supply Chain Controls</div>
+    <div class="project-desc">Build a GitHub Actions (or GitLab CI) pipeline that runs: SAST with Semgrep, dependency scanning with Trivy or Snyk, container image build and push to a registry, image vulnerability scan with policy enforcement (fail on critical CVEs), and deployment to a Kubernetes cluster via Argo CD. Implement SLSA provenance attestation for the container image. The pipeline should refuse to promote images that fail any gate.</div>
+    <div class="project-tags">
+      <span class="project-tag">GitHub Actions</span>
+      <span class="project-tag">Semgrep</span>
+      <span class="project-tag">Trivy</span>
+      <span class="project-tag">Argo CD</span>
+      <span class="project-tag">SLSA</span>
+      <span class="project-tag">NIST SSDF</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-level level-adv">Advanced · 2–3 weeks</div>
+    <div class="project-title">Resilience Engineering Lab: Circuit Breakers & Chaos</div>
+    <div class="project-desc">Deploy a multi-service application to a local Kubernetes cluster (kind or k3d). Implement circuit breakers using Resilience4j or the Istio service mesh. Run Chaos Mesh or Litmus experiments: inject pod failures, add 500ms latency to a database connection, partition the network between services. Measure the impact on your SLO dashboard before and after each experiment. Document which experiments your system survived and which it did not.</div>
+    <div class="project-tags">
+      <span class="project-tag">Kubernetes</span>
+      <span class="project-tag">Istio / Envoy</span>
+      <span class="project-tag">Chaos Mesh</span>
+      <span class="project-tag">Circuit Breakers</span>
+      <span class="project-tag">Resilience4j</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-level level-adv">Advanced · 2–3 weeks</div>
+    <div class="project-title">Zero Trust Infrastructure with IaC</div>
+    <div class="project-desc">Provision a complete VPC/VNet using Terraform with: private subnets for all workloads, mTLS between services via SPIFFE/SPIRE or Istio, Kubernetes network policies (default deny, explicit allow), secrets management via HashiCorp Vault with dynamic database credentials, and RBAC configured to least privilege. Validate compliance with tfsec and Checkov in CI. Write a threat model document using the STRIDE methodology.</div>
+    <div class="project-tags">
+      <span class="project-tag">Terraform</span>
+      <span class="project-tag">HashiCorp Vault</span>
+      <span class="project-tag">SPIFFE/SPIRE</span>
+      <span class="project-tag">STRIDE</span>
+      <span class="project-tag">Zero Trust</span>
+      <span class="project-tag">OWASP</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-level level-senior">Senior · 3–4 weeks</div>
+    <div class="project-title">Full Production Readiness Review for an Existing System</div>
+    <div class="project-desc">Take any existing open-source application (e.g., a popular GitHub project) and conduct a formal Production Readiness Review modelled on Google's PRR process. Document findings across every dimension of the checklist in Section 4. Produce: an SLO proposal with justification, a gap analysis against OWASP Top 10, an IaC migration plan for any manually provisioned infrastructure, a DORA metrics baseline and improvement roadmap, and a disaster recovery plan with explicit RTO/RPO targets. Present findings as an architecture decision record (ADR).</div>
+    <div class="project-tags">
+      <span class="project-tag">PRR Process</span>
+      <span class="project-tag">OWASP Audit</span>
+      <span class="project-tag">SLO Design</span>
+      <span class="project-tag">DORA Metrics</span>
+      <span class="project-tag">ADR</span>
+      <span class="project-tag">DR Planning</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 7 ===================== -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-orange"></div>
+      <h2>Tools & Technologies</h2>
+      <div class="section-sub">The practitioner's toolkit — what companies actually use in production</div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="divider-text">Observability</span></div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon">📈</div>
+      <div>
+        <div class="tool-name">Prometheus + Grafana</div>
+        <div class="tool-desc">The de-facto open-source metrics stack. Prometheus scrapes time-series metrics; Grafana visualizes them. Industry standard for SLO dashboards and alerting rules.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🔍</div>
+      <div>
+        <div class="tool-name">OpenTelemetry</div>
+        <div class="tool-desc">CNCF standard for instrumentation. Vendor-neutral SDK for traces, metrics, and logs. Eliminates lock-in to Datadog, Jaeger, or any single backend.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🗂</div>
+      <div>
+        <div class="tool-name">Grafana Loki / ELK Stack</div>
+        <div class="tool-desc">Loki (log aggregation, Prometheus-style) or Elasticsearch + Kibana for structured log querying at scale. Used alongside Prometheus, not instead of it.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🕸</div>
+      <div>
+        <div class="tool-name">Jaeger / Tempo</div>
+        <div class="tool-desc">Distributed tracing backends. Jaeger (CNCF) and Grafana Tempo are the primary open-source options. Tempo integrates natively with Loki and Prometheus.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="divider-text">CI/CD & Deployment</span></div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon">🔄</div>
+      <div>
+        <div class="tool-name">Argo CD / Flux</div>
+        <div class="tool-desc">GitOps continuous delivery for Kubernetes. Reconciles cluster state with Git repository. Both are CNCF projects used at scale in enterprise environments.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🏗</div>
+      <div>
+        <div class="tool-name">GitHub Actions / GitLab CI</div>
+        <div class="tool-desc">Primary CI platforms. GitHub Actions dominates for open-source; GitLab CI is preferred in enterprise self-hosted environments with strict data locality requirements.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🏴</div>
+      <div>
+        <div class="tool-name">LaunchDarkly / Unleash</div>
+        <div class="tool-desc">Feature flag platforms. LaunchDarkly is the enterprise standard; Unleash is the open-source alternative. Both enable deployment-release decoupling.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📦</div>
+      <div>
+        <div class="tool-name">Helm / Kustomize</div>
+        <div class="tool-desc">Kubernetes package management. Helm for templating parameterized deployments; Kustomize for overlay-based environment configuration. Often used together.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="divider-text">Security</span></div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon">🛡</div>
+      <div>
+        <div class="tool-name">Trivy / Snyk</div>
+        <div class="tool-desc">Container and dependency vulnerability scanning. Trivy is open-source and fast; Snyk adds developer-facing remediation advice and policy enforcement.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🔐</div>
+      <div>
+        <div class="tool-name">HashiCorp Vault</div>
+        <div class="tool-desc">Secrets management, dynamic credentials, and PKI. Industry standard for any organization beyond basic cloud-provider secrets managers.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🔎</div>
+      <div>
+        <div class="tool-name">Semgrep / SonarQube</div>
+        <div class="tool-desc">Static application security testing (SAST). Semgrep is fast and highly customizable; SonarQube provides a full quality gate with historical trending.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🌐</div>
+      <div>
+        <div class="tool-name">Istio / Cilium</div>
+        <div class="tool-desc">Service mesh (Istio) and eBPF-based networking (Cilium) for mTLS, network policy enforcement, and traffic observability at the kernel level.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="divider-text">Infrastructure</span></div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon">🏔</div>
+      <div>
+        <div class="tool-name">Terraform / Pulumi</div>
+        <div class="tool-desc">Infrastructure as Code. Terraform (HCL, declarative) dominates; Pulumi (TypeScript/Python/Go) is preferred where developers want to use general-purpose languages.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">⚙</div>
+      <div>
+        <div class="tool-name">Kubernetes (EKS / GKE / AKS)</div>
+        <div class="tool-desc">Container orchestration. Managed Kubernetes via cloud providers eliminates control-plane operational burden. The CNCF Trail Map shows the full surrounding ecosystem.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">💥</div>
+      <div>
+        <div class="tool-name">Chaos Mesh / Litmus</div>
+        <div class="tool-desc">Chaos engineering platforms for Kubernetes. Inject pod failures, network latency, CPU pressure, and disk I/O errors in a controlled, observable way.</div>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">✅</div>
+      <div>
+        <div class="tool-name">tfsec / Checkov / OPA</div>
+        <div class="tool-desc">Infrastructure policy enforcement. Scan Terraform and Kubernetes manifests for security misconfigurations before they reach production. OPA (Open Policy Agent) enables custom policy-as-code.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 8 ===================== -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <div class="section-title-block">
+      <div class="accent-bar bar-purple"></div>
+      <h2>Official & High-Quality Resources</h2>
+      <div class="section-sub">Primary sources only — standards bodies, research, and authoritative documentation</div>
+    </div>
+  </div>
+
+  <p class="prose">The resources below are the primary sources used by senior engineers and architects. They are the actual specifications, research papers, and authoritative books that industry practices are derived from — not second-hand summaries.</p>
+
+  <div class="divider"><span class="divider-text">Standards & Specifications</span></div>
+  <ul class="resource-list">
+    <li>
+      <span class="res-type rt-spec">Spec</span>
+      <div class="res-content">
+        <div class="res-title">ISO/IEC 25010:2023 — Systems and Software Quality Requirements</div>
+        <div class="res-desc">The definitive quality model defining 8 quality characteristics and 31 sub-characteristics. The vocabulary of every NFR discussion at senior level.</div>
+        <div class="res-url">iso.org/standard/78176.html</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-spec">Spec</span>
+      <div class="res-content">
+        <div class="res-title">OWASP Top 10 (2021) — Web Application Security Risks</div>
+        <div class="res-desc">The authoritative ranked list of web application security risks. Mandatory reading for any engineer writing server-side code. Freely available in full.</div>
+        <div class="res-url">owasp.org/www-project-top-ten</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-spec">Spec</span>
+      <div class="res-content">
+        <div class="res-title">NIST SP 800-218 — Secure Software Development Framework (SSDF)</div>
+        <div class="res-desc">The US government framework for secure software development practices. Increasingly referenced in enterprise procurement. Freely downloadable as PDF.</div>
+        <div class="res-url">csrc.nist.gov/publications/detail/sp/800-218/final</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-spec">Spec</span>
+      <div class="res-content">
+        <div class="res-title">The Twelve-Factor App — Adam Wiggins (Heroku)</div>
+        <div class="res-desc">The foundational methodology for building cloud-native, scalable SaaS applications. Freely available. Understand every factor deeply, not just as a checklist.</div>
+        <div class="res-url">12factor.net</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-doc">Doc</span>
+      <div class="res-content">
+        <div class="res-title">AWS Well-Architected Framework</div>
+        <div class="res-desc">Amazon's five-pillar framework: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization. The basis for Amazon's ORR process. Freely available.</div>
+        <div class="res-url">docs.aws.amazon.com/wellarchitected/latest/framework</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-doc">Doc</span>
+      <div class="res-content">
+        <div class="res-title">Google Cloud Architecture Framework</div>
+        <div class="res-desc">GCP's equivalent framework covering system design, operational excellence, security, privacy, reliability, and cost optimization. Directly maps to production readiness criteria.</div>
+        <div class="res-url">cloud.google.com/architecture/framework</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-doc">Doc</span>
+      <div class="res-content">
+        <div class="res-title">CNCF Cloud Native Landscape & Trail Map</div>
+        <div class="res-desc">The definitive map of the cloud-native ecosystem. Essential for understanding tool categories before selecting individual tools. Maintained continuously by the CNCF community.</div>
+        <div class="res-url">landscape.cncf.io / github.com/cncf/trailmap</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-doc">Doc</span>
+      <div class="res-content">
+        <div class="res-title">Kubernetes Official Documentation</div>
+        <div class="res-desc">The primary source for Kubernetes concepts, API references, and best practices. The concepts section (especially scheduling, storage, and security) is essential for production Kubernetes usage.</div>
+        <div class="res-url">kubernetes.io/docs</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="divider"><span class="divider-text">Authoritative Books</span></div>
+  <ul class="resource-list">
+    <li>
+      <span class="res-type rt-book">Book</span>
+      <div class="res-content">
+        <div class="res-title">Site Reliability Engineering — Beyer, Jones, Petoff, Murphy (Google, O'Reilly)</div>
+        <div class="res-desc">The canonical text on SRE. Covers SLOs, error budgets, toil, PRR process, and incident management. Freely available in full at the Google SRE website. Read chapters 1–4, 9, 13, and 21 first.</div>
+        <div class="res-url">sre.google/sre-book/table-of-contents</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-book">Book</span>
+      <div class="res-content">
+        <div class="res-title">The SRE Workbook — Beyer, Murphy, et al. (Google, O'Reilly)</div>
+        <div class="res-desc">The practical companion to the SRE book. Includes worked examples of SLO implementation, alerting strategies, and incident management playbooks. Also freely available online.</div>
+        <div class="res-url">sre.google/workbook/table-of-contents</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-book">Book</span>
+      <div class="res-content">
+        <div class="res-title">Accelerate — Nicole Forsgren, Jez Humble, Gene Kim</div>
+        <div class="res-desc">The research foundation behind DORA metrics. Presents statistical evidence connecting software delivery performance to organizational performance. Essential for engineering leadership conversations.</div>
+        <div class="res-url">itrevolution.com/product/accelerate</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-book">Book</span>
+      <div class="res-content">
+        <div class="res-title">Designing Distributed Systems — Brendan Burns (Microsoft / Kubernetes co-creator)</div>
+        <div class="res-desc">Covers distributed systems patterns: sidecar, ambassador, adapter, scatter-gather, and more. Freely available. Provides the vocabulary for architectural discussions at senior level.</div>
+        <div class="res-url">azure.microsoft.com/en-us/resources/designing-distributed-systems</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="divider"><span class="divider-text">Research & Engineering Publications</span></div>
+  <ul class="resource-list">
+    <li>
+      <span class="res-type rt-paper">Research</span>
+      <div class="res-content">
+        <div class="res-title">DORA State of DevOps Report (Annual) — Google Cloud</div>
+        <div class="res-desc">The primary empirical research on DevOps performance metrics. Each year's report provides updated benchmarks for elite, high, medium, and low performer bands across the four DORA metrics.</div>
+        <div class="res-url">dora.dev/research</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-paper">Research</span>
+      <div class="res-content">
+        <div class="res-title">Google Engineering Practices Documentation</div>
+        <div class="res-desc">Google's internal engineering practices made public: code review standards, testing philosophy, and engineering culture principles. Directly applicable to any engineering team.</div>
+        <div class="res-url">google.github.io/eng-practices</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-paper">Research</span>
+      <div class="res-content">
+        <div class="res-title">Netflix Tech Blog — High Availability & Chaos Engineering</div>
+        <div class="res-desc">Primary source for Netflix's chaos engineering practices, resilience patterns, and distributed systems learnings. Original Chaos Monkey and Hystrix posts remain essential reading.</div>
+        <div class="res-url">netflixtechblog.com</div>
+      </div>
+    </li>
+    <li>
+      <span class="res-type rt-guide">Guide</span>
+      <div class="res-content">
+        <div class="res-title">OWASP Application Security Verification Standard (ASVS)</div>
+        <div class="res-desc">The detailed security testing framework that operationalizes OWASP Top 10 into specific, verifiable requirements at three assurance levels. Used as the basis for security architecture reviews.</div>
+        <div class="res-url">owasp.org/www-project-application-security-verification-standard</div>
+      </div>
+    </li>
+  </ul>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-text">Production-Grade Engineering Roadmap · <span class="footer-accent">Senior Engineering Edition</span></div>
+  <div class="footer-text">Standards: ISO/IEC · OWASP · NIST · CNCF · Google SRE · DORA</div>
+</div>
+
+</body>
+</html>

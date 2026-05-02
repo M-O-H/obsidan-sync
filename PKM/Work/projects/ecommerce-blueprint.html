@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eCommerce Platform Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080b0f;
+    --bg2: #0d1117;
+    --bg3: #111820;
+    --surface: #161d27;
+    --surface2: #1c2530;
+    --border: #1f2d3d;
+    --border2: #2a3d54;
+    --accent: #00d4ff;
+    --accent2: #ff6b35;
+    --accent3: #39ff14;
+    --text: #c8d8e8;
+    --text2: #7a9ab8;
+    --text3: #3d5a73;
+    --heading: #e8f4ff;
+    --mono: 'JetBrains Mono', monospace;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  /* ─── GRID BACKGROUND ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── LAYOUT ─── */
+  .shell {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .sidebar-logo {
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-logo .logo-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-logo h1 {
+    font-family: var(--display);
+    font-size: 26px;
+    color: var(--heading);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .sidebar-logo .version {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  .nav-section-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text3);
+    padding: 18px 20px 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text2);
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+    font-family: var(--mono);
+    user-select: none;
+    text-decoration: none;
+  }
+
+  .nav-item:hover { color: var(--text); background: var(--surface); }
+
+  .nav-item.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: rgba(0,212,255,0.04);
+  }
+
+  .nav-item .nav-icon {
+    width: 16px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .nav-item .nav-num {
+    margin-left: auto;
+    font-size: 9px;
+    color: var(--text3);
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+  }
+
+  .stack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 7px;
+    font-size: 9px;
+    font-family: var(--mono);
+    color: var(--text2);
+  }
+
+  /* ─── MAIN CONTENT ─── */
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    min-width: 0;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 60px 60px 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: 'BLUEPRINT';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: var(--display);
+    font-size: 120px;
+    color: rgba(0,212,255,0.03);
+    letter-spacing: 10px;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 3px;
+    padding: 4px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h2 {
+    font-family: var(--display);
+    font-size: 64px;
+    color: var(--heading);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .hero h2 span { color: var(--accent); }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text2);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    width: fit-content;
+  }
+
+  .stat {
+    padding: 12px 24px;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-val {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  .stat-val.green { color: var(--accent3); }
+  .stat-val.orange { color: var(--accent2); }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    display: none;
+    padding: 40px 60px;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.2);
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: 36px;
+    color: var(--heading);
+    letter-spacing: 2px;
+  }
+
+  /* ─── ARCH DIAGRAM ─── */
+  .arch-diagram {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--text2);
+    overflow-x: auto;
+    position: relative;
+  }
+
+  .arch-diagram pre {
+    white-space: pre;
+    font-family: var(--mono);
+  }
+
+  .arch-layer {
+    margin-bottom: 24px;
+  }
+
+  .arch-layer-title {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  /* ─── CARDS GRID ─── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+
+  .card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+
+  .card-icon {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  .card-desc {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  .card-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid var(--border2);
+    color: var(--text3);
+  }
+
+  .card-tag.blue { border-color: rgba(0,212,255,0.3); color: var(--accent); }
+  .card-tag.orange { border-color: rgba(255,107,53,0.3); color: var(--accent2); }
+  .card-tag.green { border-color: rgba(57,255,20,0.3); color: var(--accent3); }
+
+  /* ─── CODE BLOCKS ─── */
+  .code-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .code-lang {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+
+  .code-copy {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.15s;
+  }
+
+  .code-copy:hover { color: var(--text); }
+
+  .code-body {
+    padding: 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text2);
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Syntax highlights */
+  .kw { color: #ff79c6; }
+  .str { color: #f1fa8c; }
+  .fn { color: #50fa7b; }
+  .cm { color: var(--text3); font-style: italic; }
+  .num { color: #bd93f9; }
+  .prop { color: #8be9fd; }
+
+  /* ─── FOLDER TREE ─── */
+  .tree {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 2;
+    overflow-x: auto;
+  }
+
+  .tree-dir { color: var(--accent); }
+  .tree-file { color: var(--text2); }
+  .tree-comment { color: var(--text3); }
+  .tree-line { display: block; white-space: nowrap; }
+
+  /* ─── TABLES ─── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: var(--mono);
+    margin: 16px 0;
+  }
+
+  .data-table th {
+    text-align: left;
+    padding: 8px 16px;
+    background: var(--surface);
+    color: var(--text3);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+  }
+
+  .data-table tr:hover td { background: var(--surface); }
+
+  .data-table td:first-child { color: var(--heading); }
+
+  .badge {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 2px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .badge-blue { background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
+  .badge-orange { background: rgba(255,107,53,0.1); color: var(--accent2); border: 1px solid rgba(255,107,53,0.2); }
+  .badge-green { background: rgba(57,255,20,0.1); color: var(--accent3); border: 1px solid rgba(57,255,20,0.2); }
+  .badge-gray { background: rgba(255,255,255,0.05); color: var(--text3); border: 1px solid var(--border); }
+
+  /* ─── FLOW DIAGRAM ─── */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 20px 0;
+    overflow-x: auto;
+    padding: 8px 0;
+  }
+
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+  }
+
+  .flow-box {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--heading);
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .flow-box.highlight {
+    border-color: var(--accent);
+    background: rgba(0,212,255,0.06);
+    color: var(--accent);
+  }
+
+  .flow-box.warn {
+    border-color: var(--accent2);
+    background: rgba(255,107,53,0.06);
+    color: var(--accent2);
+  }
+
+  .flow-label {
+    font-family: var(--mono);
+    font-size: 8px;
+    color: var(--text3);
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  .flow-arrow {
+    color: var(--border2);
+    font-size: 18px;
+    padding: 0 4px;
+    flex-shrink: 0;
+    margin-bottom: 18px;
+  }
+
+  /* ─── ACCORDION ─── */
+  .accordion {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: var(--surface);
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    user-select: none;
+    transition: background 0.15s;
+  }
+
+  .accordion-header:hover { background: var(--surface2); }
+
+  .accordion-toggle {
+    font-size: 14px;
+    color: var(--text3);
+    transition: transform 0.2s;
+  }
+
+  .accordion.open .accordion-toggle { transform: rotate(45deg); color: var(--accent); }
+
+  .accordion-body {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+  }
+
+  .accordion.open .accordion-body { display: block; }
+
+  /* ─── PHASE TIMELINE ─── */
+  .phases {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .phases::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .phase {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 24px;
+    position: relative;
+  }
+
+  .phase-dot {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text2);
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s;
+  }
+
+  .phase:hover .phase-dot {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,255,0.08);
+  }
+
+  .phase-content { flex: 1; padding-top: 4px; }
+
+  .phase-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+
+  .phase-sub {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  .phase-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+
+  /* ─── DECISION TABLE ─── */
+  .decision-row {
+    display: grid;
+    grid-template-columns: 140px 120px 120px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .decision-row:first-child {
+    background: var(--surface);
+  }
+
+  .decision-cell {
+    padding: 10px 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    border-right: 1px solid var(--border);
+  }
+
+  .decision-cell:last-child { border-right: none; }
+
+  .decision-row:first-child .decision-cell {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  .decision-row:not(:first-child) .decision-cell:nth-child(1) { color: var(--heading); }
+  .decision-row:not(:first-child) .decision-cell:nth-child(2) { color: var(--accent); }
+  .decision-row:not(:first-child) .decision-cell:nth-child(3) { color: var(--text3); text-decoration: line-through; }
+  .decision-row:not(:first-child) .decision-cell:nth-child(4) { color: var(--text2); }
+
+  .decision-table {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 16px 0;
+  }
+
+  /* ─── SECURITY CHECKLIST ─── */
+  .checklist { list-style: none; margin: 12px 0; }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text2);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 2px;
+    background: rgba(57,255,20,0.1);
+    border: 1px solid rgba(57,255,20,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--accent3);
+    margin-top: 1px;
+  }
+
+  /* ─── METRIC BOXES ─── */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+  }
+
+  .metric-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .metric-warning {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent2);
+    margin-bottom: 2px;
+  }
+
+  .metric-critical {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #ff4444;
+  }
+
+  /* ─── PROSE ─── */
+  .prose { color: var(--text2); line-height: 1.7; font-size: 13px; }
+  .prose p { margin-bottom: 12px; }
+  .prose strong { color: var(--heading); font-weight: 500; }
+  .prose em { color: var(--accent); font-style: normal; font-family: var(--mono); font-size: 12px; }
+  .prose h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 24px 0 10px;
+  }
+
+  /* ─── SEARCH ─── */
+  .search-wrap {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .search-input {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 7px 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .search-input::placeholder { color: var(--text3); }
+  .search-input:focus { border-color: var(--border2); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .section { padding: 24px; }
+    .hero { padding: 32px 24px; }
+    .hero h2 { font-size: 42px; }
+    .hero-stats { flex-wrap: wrap; }
+    .decision-row { grid-template-columns: 1fr 1fr; }
+    .decision-row .decision-cell:nth-child(3),
+    .decision-row .decision-cell:nth-child(4) { display: none; }
+  }
+
+  /* ─── MOBILE NAV ─── */
+  .mobile-nav {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    overflow-x: auto;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .mobile-nav { display: flex; }
+  }
+
+  .mobile-tab {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+    background: none;
+  }
+
+  .mobile-tab.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,255,0.08);
+  }
+
+  /* divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 8px;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+  .highlight-box {
+    background: rgba(0,212,255,0.04);
+    border: 1px solid rgba(0,212,255,0.15);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+
+  .highlight-box.orange {
+    background: rgba(255,107,53,0.04);
+    border-color: rgba(255,107,53,0.15);
+  }
+
+  .highlight-box .hb-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .highlight-box.orange .hb-title { color: var(--accent2); }
+
+  .highlight-box .hb-body {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-tag">// v1.0.0</div>
+      <h1>eCOM<br>BLUEPRINT</h1>
+      <div class="version">Production-grade · Solo-dev friendly</div>
+    </div>
+
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="jump to section..." id="searchInput" />
+    </div>
+
+    <div class="nav-section-label">Architecture</div>
+    <a class="nav-item active" data-section="overview" href="#">
+      <span class="nav-icon">◈</span> System Overview
+      <span class="nav-num">01</span>
+    </a>
+    <a class="nav-item" data-section="monorepo" href="#">
+      <span class="nav-icon">⊞</span> Monorepo Structure
+      <span class="nav-num">02</span>
+    </a>
+
+    <div class="nav-section-label">Application</div>
+    <a class="nav-item" data-section="backend" href="#">
+      <span class="nav-icon">⚙</span> Backend API
+      <span class="nav-num">03</span>
+    </a>
+    <a class="nav-item" data-section="frontend" href="#">
+      <span class="nav-icon">◻</span> Frontend Apps
+      <span class="nav-num">04</span>
+    </a>
+    <a class="nav-item" data-section="database" href="#">
+      <span class="nav-icon">⬡</span> Database & Storage
+      <span class="nav-num">05</span>
+    </a>
+
+    <div class="nav-section-label">Operations</div>
+    <a class="nav-item" data-section="cicd" href="#">
+      <span class="nav-icon">⟳</span> CI/CD Pipeline
+      <span class="nav-num">06</span>
+    </a>
+    <a class="nav-item" data-section="git" href="#">
+      <span class="nav-icon">⑂</span> Git Workflow
+      <span class="nav-num">07</span>
+    </a>
+    <a class="nav-item" data-section="observability" href="#">
+      <span class="nav-icon">◉</span> Observability
+      <span class="nav-num">08</span>
+    </a>
+
+    <div class="nav-section-label">Quality</div>
+    <a class="nav-item" data-section="security" href="#">
+      <span class="nav-icon">⊛</span> Security
+      <span class="nav-num">09</span>
+    </a>
+    <a class="nav-item" data-section="performance" href="#">
+      <span class="nav-icon">⚡</span> Performance
+      <span class="nav-num">10</span>
+    </a>
+    <a class="nav-item" data-section="devex" href="#">
+      <span class="nav-icon">⌘</span> Dev Experience
+      <span class="nav-num">11</span>
+    </a>
+    <a class="nav-item" data-section="decisions" href="#">
+      <span class="nav-icon">⊕</span> Decision Log
+      <span class="nav-num">✦</span>
+    </a>
+
+    <div class="sidebar-footer">
+      Stack
+      <div class="stack-pills">
+        <span class="pill">NestJS</span>
+        <span class="pill">Next.js 14</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Redis</span>
+        <span class="pill">Turborepo</span>
+        <span class="pill">AWS ECS</span>
+        <span class="pill">Stripe</span>
+        <span class="pill">Prisma</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav">
+      <button class="mobile-tab active" data-section="overview">Overview</button>
+      <button class="mobile-tab" data-section="monorepo">Monorepo</button>
+      <button class="mobile-tab" data-section="backend">Backend</button>
+      <button class="mobile-tab" data-section="frontend">Frontend</button>
+      <button class="mobile-tab" data-section="database">Database</button>
+      <button class="mobile-tab" data-section="cicd">CI/CD</button>
+      <button class="mobile-tab" data-section="git">Git</button>
+      <button class="mobile-tab" data-section="observability">Observability</button>
+      <button class="mobile-tab" data-section="security">Security</button>
+      <button class="mobile-tab" data-section="performance">Performance</button>
+      <button class="mobile-tab" data-section="devex">DX</button>
+      <button class="mobile-tab" data-section="decisions">Decisions</button>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-badge">PRODUCTION-GRADE ECOMMERCE BLUEPRINT</div>
+      <h2>SYSTEM<br><span>BLUEPRINT</span></h2>
+      <p class="hero-sub">
+        An opinionated, practical architecture for a scalable eCommerce platform.
+        Designed for a solo developer shipping production software — without enterprise overhead.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-val">11</div>
+          <div class="stat-label">Sections</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val green">3</div>
+          <div class="stat-label">Apps</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val orange">6</div>
+          <div class="stat-label">API Modules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">∞</div>
+          <div class="stat-label">Scale ceiling</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 01: OVERVIEW -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section active" id="sec-overview">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">SYSTEM OVERVIEW</h2>
+      </div>
+
+      <div class="prose">
+        <p>Three independent applications sharing a monorepo, communicating through a central API. The storefront faces end-users, the admin manages operations, and the API handles all business logic.</p>
+      </div>
+
+      <div class="arch-diagram">
+        <div class="arch-layer">
+          <div class="arch-layer-title">// CLIENTS</div>
+          <pre>  ┌──────────────────────────┐        ┌──────────────────────────┐
+  │    Storefront (Next.js)  │        │  Admin Dashboard (Next.js)│
+  │    app.yourdomain.com    │        │  admin.yourdomain.com     │
+  └─────────────┬────────────┘        └─────────────┬─────────────┘
+                └──────────────────┬─────────────────┘</pre>
+        </div>
+        <div class="arch-layer">
+          <div class="arch-layer-title">// EDGE + LOAD BALANCING</div>
+          <pre>                         ▼
+              ┌──────────────────────┐
+              │    CloudFront CDN    │  ← Static assets, WAF
+              └──────────┬───────────┘
+                         ▼
+              ┌──────────────────────┐
+              │   AWS App Load Balancer│
+              └──────────┬───────────┘</pre>
+        </div>
+        <div class="arch-layer">
+          <div class="arch-layer-title">// SERVICES</div>
+          <pre>              ┌──────────────────────┐
+              │  NestJS API (ECS)    │
+              │  /api/v1/*           │
+              └──────┬───────────────┘
+                     │
+    ┌────────────────┼───────────────┐
+    ▼                ▼               ▼
+┌────────┐    ┌──────────┐    ┌──────────┐
+│PostgreSQL│  │  Redis   │    │ AWS SQS  │
+│(RDS)   │    │(ElastiCache│  │ (Events) │
+└────────┘    └──────────┘    └──────────┘</pre>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Communication Patterns</div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Used For</th>
+            <th>Technology</th>
+            <th>Sync?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>REST</td>
+            <td>All client ↔ API CRUD</td>
+            <td>HTTP/JSON</td>
+            <td><span class="badge badge-blue">SYNC</span></td>
+          </tr>
+          <tr>
+            <td>Events</td>
+            <td>Order placed → email, inventory update</td>
+            <td>AWS SQS/SNS</td>
+            <td><span class="badge badge-orange">ASYNC</span></td>
+          </tr>
+          <tr>
+            <td>Webhooks</td>
+            <td>Stripe payment events</td>
+            <td>HTTPS POST</td>
+            <td><span class="badge badge-orange">ASYNC</span></td>
+          </tr>
+          <tr>
+            <td>Redis Pub/Sub</td>
+            <td>Real-time stock updates (optional)</td>
+            <td>Redis</td>
+            <td><span class="badge badge-green">REALTIME</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <div class="hb-title">Why REST over GraphQL?</div>
+        <div class="hb-body">For a solo dev, REST with OpenAPI is faster to build, easier to debug, and has better tooling. GraphQL is justified only when query shapes are highly variable — eCommerce rarely needs this. Add GraphQL if you build a public API for third-party integrations later.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 02: MONOREPO -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-monorepo">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">MONOREPO STRUCTURE</h2>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">Tooling Choice: Turborepo + pnpm workspaces</div>
+        <div class="hb-body">
+          <strong>Turborepo</strong> wins over Nx for its zero-config remote caching, simpler mental model for small teams, and native pnpm support. Turborepo remote cache means a CI build that hasn't changed gets restored in seconds.
+        </div>
+      </div>
+
+      <div class="label">Folder Structure</div>
+      <div class="tree">
+        <span class="tree-line"><span class="tree-dir">ecommerce/</span></span>
+        <span class="tree-line">├── <span class="tree-dir">apps/</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">storefront/</span>          <span class="tree-comment"># Next.js 14 App Router — user-facing</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">admin/</span>               <span class="tree-comment"># Next.js 14 App Router — management panel</span></span>
+        <span class="tree-line">│   └── <span class="tree-dir">api/</span>                 <span class="tree-comment"># NestJS — REST API</span></span>
+        <span class="tree-line">│       └── <span class="tree-dir">src/modules/</span></span>
+        <span class="tree-line">│           ├── <span class="tree-dir">auth/</span></span>
+        <span class="tree-line">│           ├── <span class="tree-dir">users/</span></span>
+        <span class="tree-line">│           ├── <span class="tree-dir">products/</span></span>
+        <span class="tree-line">│           ├── <span class="tree-dir">orders/</span></span>
+        <span class="tree-line">│           ├── <span class="tree-dir">payments/</span></span>
+        <span class="tree-line">│           └── <span class="tree-dir">inventory/</span></span>
+        <span class="tree-line">├── <span class="tree-dir">packages/</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">ui/</span>                  <span class="tree-comment"># Shared React component library</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">types/</span>               <span class="tree-comment"># Shared TS types &amp; API interfaces</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">utils/</span>               <span class="tree-comment"># Pure utility functions</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">config/</span>              <span class="tree-comment"># ESLint, TS base, Tailwind config</span></span>
+        <span class="tree-line">│   └── <span class="tree-dir">api-client/</span>          <span class="tree-comment"># Generated from OpenAPI spec</span></span>
+        <span class="tree-line">├── <span class="tree-dir">infrastructure/</span></span>
+        <span class="tree-line">│   ├── <span class="tree-dir">terraform/</span>           <span class="tree-comment"># AWS IaC (dev/staging/prod)</span></span>
+        <span class="tree-line">│   └── <span class="tree-dir">docker/</span>              <span class="tree-comment"># docker-compose for local dev</span></span>
+        <span class="tree-line">├── <span class="tree-dir">.github/workflows/</span>      <span class="tree-comment"># CI/CD pipelines</span></span>
+        <span class="tree-line">├── <span class="tree-file">turbo.json</span></span>
+        <span class="tree-line">├── <span class="tree-file">pnpm-workspace.yaml</span></span>
+        <span class="tree-line">└── <span class="tree-file">.env.example</span></span>
+      </div>
+
+      <hr class="divider">
+
+      <div class="accordion open">
+        <div class="accordion-header">
+          <span>turbo.json — pipeline config</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-lang">JSON</span>
+              <button class="code-copy" onclick="copyCode(this)">copy</button>
+            </div>
+            <div class="code-body">{
+  <span class="prop">"pipeline"</span>: {
+    <span class="prop">"build"</span>: {
+      <span class="prop">"dependsOn"</span>: [<span class="str">"^build"</span>],        <span class="cm">// Build deps first</span>
+      <span class="prop">"outputs"</span>: [<span class="str">".next/**"</span>, <span class="str">"dist/**"</span>]
+    },
+    <span class="prop">"test"</span>: {
+      <span class="prop">"dependsOn"</span>: [<span class="str">"^build"</span>],
+      <span class="prop">"outputs"</span>: [<span class="str">"coverage/**"</span>]
+    },
+    <span class="prop">"dev"</span>: {
+      <span class="prop">"cache"</span>: <span class="kw">false</span>,           <span class="cm">// Never cache dev servers</span>
+      <span class="prop">"persistent"</span>: <span class="kw">true</span>
+    }
+  }
+}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>pnpm-workspace.yaml</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">YAML</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+            <div class="code-body">packages:
+  - <span class="str">"apps/*"</span>
+  - <span class="str">"packages/*"</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 03: BACKEND -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-backend">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">BACKEND API</h2>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🔐</div>
+          <div class="card-title">AUTH MODULE</div>
+          <div class="card-desc">JWT access tokens (15min) + refresh tokens (7d, HttpOnly cookie). Token rotation on every refresh. Redis blocklist for revoked tokens.</div>
+          <span class="card-tag blue">JWT + OAuth</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <div class="card-title">PRODUCTS MODULE</div>
+          <div class="card-desc">CRUD with variants, images, categories. Public read endpoints. Admin-only write. ISR cache invalidation on update.</div>
+          <span class="card-tag green">Public GET</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛍️</div>
+          <div class="card-title">ORDERS MODULE</div>
+          <div class="card-desc">State machine: PENDING → CONFIRMED → PROCESSING → SHIPPED → DELIVERED. Optimistic inventory locking. Full audit trail via OrderEvent.</div>
+          <span class="card-tag orange">State Machine</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">💳</div>
+          <div class="card-title">PAYMENTS MODULE</div>
+          <div class="card-desc">Stripe PaymentIntent flow. Webhook handler with signature verification. Idempotency key support. Dispute notification.</div>
+          <span class="card-tag blue">Stripe</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <div class="card-title">INVENTORY MODULE</div>
+          <div class="card-desc">Tracks quantity, reserved stock, and version for optimistic locking. Low-stock threshold alerts. Updated atomically with order confirmation.</div>
+          <span class="card-tag green">Optimistic Lock</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">👤</div>
+          <div class="card-title">USERS MODULE</div>
+          <div class="card-desc">Roles: CUSTOMER / ADMIN / SUPER_ADMIN. Profile management. Address book. Email verification. Soft delete (status flag, not hard delete).</div>
+          <span class="card-tag orange">RBAC</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="label">Order State Machine</div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-box highlight">PENDING</div>
+          <div class="flow-label">created</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">CONFIRMED</div>
+          <div class="flow-label">stripe webhook</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">PROCESSING</div>
+          <div class="flow-label">fulfillment</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">SHIPPED</div>
+          <div class="flow-label">tracking added</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">DELIVERED</div>
+          <div class="flow-label">confirmed</div>
+        </div>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-box warn">CANCELLED</div>
+          <div class="flow-label">any stage</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box warn">REFUNDED</div>
+          <div class="flow-label">post-cancel</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">main.ts bootstrap — security setup</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">TYPESCRIPT</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+        <div class="code-body"><span class="kw">async function</span> <span class="fn">bootstrap</span>() {
+  <span class="kw">const</span> app = <span class="kw">await</span> NestFactory.<span class="fn">create</span>(AppModule);
+
+  app.<span class="fn">use</span>(<span class="fn">helmet</span>());                          <span class="cm">// Security headers</span>
+
+  app.<span class="fn">enableCors</span>({
+    origin: [process.env.STOREFRONT_URL, process.env.ADMIN_URL],
+    credentials: <span class="kw">true</span>,
+  });
+
+  app.<span class="fn">useGlobalGuards</span>(<span class="kw">new</span> <span class="fn">ThrottlerGuard</span>());  <span class="cm">// Rate limiting</span>
+
+  app.<span class="fn">useGlobalPipes</span>(<span class="kw">new</span> <span class="fn">ValidationPipe</span>({
+    whitelist: <span class="kw">true</span>,            <span class="cm">// Strip unknown fields</span>
+    forbidNonWhitelisted: <span class="kw">true</span>,
+    transform: <span class="kw">true</span>,
+  }));
+
+  <span class="cm">// Stripe webhooks need raw body — BEFORE json middleware</span>
+  app.<span class="fn">use</span>(<span class="str">'/payments/webhook'</span>, express.<span class="fn">raw</span>({ type: <span class="str">'application/json'</span> }));
+
+  app.<span class="fn">useGlobalFilters</span>(<span class="kw">new</span> <span class="fn">AllExceptionsFilter</span>());
+
+  <span class="kw">await</span> app.<span class="fn">listen</span>(<span class="num">3001</span>);
+}</div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Logging Strategy</div>
+      <table class="data-table">
+        <thead><tr><th>Environment</th><th>Format</th><th>Level</th><th>Transport</th></tr></thead>
+        <tbody>
+          <tr><td>Development</td><td>Pretty-print</td><td>debug</td><td>Console</td></tr>
+          <tr><td>Staging</td><td>JSON</td><td>info</td><td>Console → CloudWatch</td></tr>
+          <tr><td>Production</td><td>JSON</td><td>warn + error</td><td>CloudWatch + Sentry</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 04: FRONTEND -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-frontend">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">FRONTEND APPS</h2>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="label">Storefront — Rendering Strategy</div>
+          <table class="data-table">
+            <thead><tr><th>Page</th><th>Strategy</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Product listing</td><td><span class="badge badge-green">SSG + ISR</span></td><td>SEO + perf</td></tr>
+              <tr><td>Product detail</td><td><span class="badge badge-green">ISR 1h</span></td><td>SEO + fresh stock</td></tr>
+              <tr><td>Cart</td><td><span class="badge badge-blue">CSR</span></td><td>User-specific</td></tr>
+              <tr><td>Checkout</td><td><span class="badge badge-blue">CSR</span></td><td>Dynamic, secure</td></tr>
+              <tr><td>Account</td><td><span class="badge badge-orange">SSR</span></td><td>Personalized</td></tr>
+              <tr><td>Home</td><td><span class="badge badge-green">SSG + ISR</span></td><td>SEO priority</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="label">Admin Dashboard — Pages</div>
+          <table class="data-table">
+            <thead><tr><th>Route</th><th>Access</th></tr></thead>
+            <tbody>
+              <tr><td>/</td><td><span class="badge badge-gray">ADMIN</span> Analytics overview</td></tr>
+              <tr><td>/products</td><td><span class="badge badge-gray">ADMIN</span> Product CRUD table</td></tr>
+              <tr><td>/orders</td><td><span class="badge badge-gray">ADMIN</span> Order management</td></tr>
+              <tr><td>/users</td><td><span class="badge badge-orange">SUPER_ADMIN</span></td></tr>
+              <tr><td>/inventory</td><td><span class="badge badge-gray">ADMIN</span> Stock levels</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Cart State — Zustand store with localStorage persistence</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">TYPESCRIPT</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+            <div class="code-body"><span class="kw">export const</span> <span class="fn">useCartStore</span> = <span class="fn">create</span>&lt;CartStore&gt;()(
+  <span class="fn">persist</span>(
+    (set, get) => ({
+      items: [],
+      <span class="fn">addItem</span>: (product, quantity) => <span class="fn">set</span>((state) => {
+        <span class="kw">const</span> existing = state.items.<span class="fn">find</span>(i => i.product.id === product.id);
+        <span class="kw">if</span> (existing) {
+          <span class="kw">return</span> { items: state.items.<span class="fn">map</span>(i =>
+            i.product.id === product.id
+              ? { ...i, quantity: i.quantity + quantity }
+              : i
+          )};
+        }
+        <span class="kw">return</span> { items: [...state.items, { product, quantity }] };
+      }),
+      <span class="fn">total</span>: () => get().items.<span class="fn">reduce</span>(
+        (sum, item) => sum + item.product.price * item.quantity, <span class="num">0</span>
+      ),
+    }),
+    { name: <span class="str">'cart-storage'</span> }
+  )
+);</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Data fetching — React Query hooks</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">TYPESCRIPT</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+            <div class="code-body"><span class="kw">export function</span> <span class="fn">useProducts</span>(filters: ProductFilters) {
+  <span class="kw">return</span> <span class="fn">useQuery</span>({
+    queryKey: [<span class="str">'products'</span>, filters],
+    queryFn: () => apiClient.products.<span class="fn">list</span>(filters),
+    staleTime: <span class="num">5</span> * <span class="num">60</span> * <span class="num">1000</span>,   <span class="cm">// 5 minutes</span>
+  });
+}
+
+<span class="kw">export function</span> <span class="fn">useCreateOrder</span>() {
+  <span class="kw">const</span> queryClient = <span class="fn">useQueryClient</span>();
+  <span class="kw">return</span> <span class="fn">useMutation</span>({
+    mutationFn: apiClient.orders.<span class="fn">create</span>,
+    <span class="fn">onSuccess</span>: () => {
+      queryClient.<span class="fn">invalidateQueries</span>({ queryKey: [<span class="str">'orders'</span>] });
+      useCartStore.<span class="fn">getState</span>().<span class="fn">clearCart</span>();
+    },
+  });
+}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 05: DATABASE -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-database">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">DATABASE & STORAGE</h2>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🐘</div>
+          <div class="card-title">PostgreSQL 16</div>
+          <div class="card-desc">Primary data store. ACID transactions for inventory + order atomicity. JSON columns for shipping address snapshots. Managed via AWS RDS.</div>
+          <span class="card-tag blue">RDS</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔷</div>
+          <div class="card-title">Prisma ORM</div>
+          <div class="card-desc">Type-safe queries, auto-generated client, excellent migration workflow. Use <code style="color:var(--accent);font-size:11px">$transaction</code> for inventory + order creation atomicity.</div>
+          <span class="card-tag green">Type-safe</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Redis Cache</div>
+          <div class="card-desc">Cache-aside pattern. Product data (1h), listings (5min), inventory counts (30s), rate limit counters (1min). Explicit invalidation on admin writes.</div>
+          <span class="card-tag orange">ElastiCache</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">📁</div>
+          <div class="card-title">AWS S3</div>
+          <div class="card-desc">Product images processed on upload via Lambda+sharp into 3 sizes (thumbnail/card/hero) as WebP. CloudFront serves all variants with long-lived cache headers.</div>
+          <span class="card-tag blue">CloudFront</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Prisma Schema — Core Models</div>
+
+      <div class="accordion open">
+        <div class="accordion-header">
+          <span>schema.prisma — key models</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">PRISMA</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+            <div class="code-body"><span class="kw">model</span> <span class="fn">Product</span> {
+  id          <span class="prop">String</span>        @id @default(cuid())
+  slug        <span class="prop">String</span>        @unique
+  name        <span class="prop">String</span>
+  price       <span class="prop">Decimal</span>       @db.Decimal(<span class="num">10</span>, <span class="num">2</span>)
+  status      <span class="prop">ProductStatus</span> @default(DRAFT)
+  variants    <span class="prop">ProductVariant</span>[]
+  inventory   <span class="prop">Inventory</span>?
+  @@index([slug])
+  @@index([status, categoryId])
+}
+
+<span class="kw">model</span> <span class="fn">Inventory</span> {
+  id        <span class="prop">String</span>  @id @default(cuid())
+  productId <span class="prop">String</span>  @unique
+  quantity  <span class="prop">Int</span>     @default(<span class="num">0</span>)
+  reserved  <span class="prop">Int</span>     @default(<span class="num">0</span>)  <span class="cm">// In active orders</span>
+  version   <span class="prop">Int</span>     @default(<span class="num">0</span>)  <span class="cm">// Optimistic lock</span>
+}
+
+<span class="kw">model</span> <span class="fn">Order</span> {
+  id              <span class="prop">String</span>      @id @default(cuid())
+  status          <span class="prop">OrderStatus</span> @default(PENDING)
+  total           <span class="prop">Decimal</span>     @db.Decimal(<span class="num">10</span>, <span class="num">2</span>)
+  stripePaymentId <span class="prop">String</span>?
+  shippingAddress <span class="prop">Json</span>        <span class="cm">// Snapshot at order time</span>
+  items           <span class="prop">OrderItem</span>[]
+  events          <span class="prop">OrderEvent</span>[]  <span class="cm">// Full audit trail</span>
+  @@index([userId, status])
+}</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Redis Cache Key Patterns</div>
+      <table class="data-table">
+        <thead><tr><th>Key Pattern</th><th>TTL</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td>product:{slug}</td><td>3600s</td><td>Product detail</td></tr>
+          <tr><td>products:list:{hash}</td><td>300s</td><td>Filtered listing</td></tr>
+          <tr><td>inventory:{productId}</td><td>30s</td><td>Stock count (hot)</td></tr>
+          <tr><td>session:{token}</td><td>900s</td><td>JWT blocklist (JTI)</td></tr>
+          <tr><td>rate_limit:{ip}</td><td>60s</td><td>Request counter</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 06: CI/CD -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-cicd">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">CI/CD PIPELINE</h2>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">Core Principle: Only build what changed</div>
+        <div class="hb-body">Use <strong>dorny/paths-filter</strong> to detect which apps changed. Combined with Turborepo remote cache, a PR touching only the storefront never builds or deploys the API. CI time drops from 8min to 90sec.</div>
+      </div>
+
+      <div class="label">Pipeline per Environment</div>
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-dot">PR</div>
+          <div class="phase-content">
+            <div class="phase-title">Every Pull Request → ci.yml</div>
+            <div class="phase-sub">Spins up Postgres + Redis containers. Runs: type-check → lint → migrate test DB → test with coverage → upload to Codecov.</div>
+            <div class="phase-tags">
+              <span class="badge badge-gray">type-check</span>
+              <span class="badge badge-gray">lint</span>
+              <span class="badge badge-gray">test</span>
+              <span class="badge badge-blue">coverage</span>
+            </div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-dot">STG</div>
+          <div class="phase-content">
+            <div class="phase-title">Merge to develop → deploy to staging</div>
+            <div class="phase-sub">Affected apps detected. Docker image built and pushed to ECR. Prisma migrations run as a one-off ECS task. ECS service updated. aws ecs wait for stable deployment.</div>
+            <div class="phase-tags">
+              <span class="badge badge-orange">docker build</span>
+              <span class="badge badge-orange">ECR push</span>
+              <span class="badge badge-orange">migrate</span>
+              <span class="badge badge-orange">ECS deploy</span>
+            </div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-dot">PRD</div>
+          <div class="phase-content">
+            <div class="phase-title">Merge to main → deploy to production</div>
+            <div class="phase-sub">Same steps as staging but with production cluster. Migrations run before service update. Waits for services-stable before marking success.</div>
+            <div class="phase-tags">
+              <span class="badge badge-green">production</span>
+              <span class="badge badge-green">zero-downtime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>deploy-api.yml — change detection + ECS deploy</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">YAML</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+            <div class="code-body">jobs:
+  changes:
+    outputs:
+      api: ${{ steps.filter.outputs.api }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            api:
+              - <span class="str">'apps/api/**'</span>
+              - <span class="str">'packages/**'</span>
+
+  deploy:
+    <span class="prop">needs</span>: changes
+    <span class="prop">if</span>: needs.changes.outputs.api == 'true'
+    steps:
+      - name: Build and push image
+        run: |
+          docker build -t $ECR_REGISTRY/ecommerce-api:${{ github.sha }} \
+            -f apps/api/Dockerfile .
+          docker push $ECR_REGISTRY/ecommerce-api:${{ github.sha }}
+
+      - name: Run migrations (ECS one-off task)
+        run: aws ecs run-task --cluster prod --task-definition api-migrate
+
+      - name: Deploy new task definition
+        run: aws ecs update-service --cluster prod --service api --force-new-deployment
+
+      - name: Wait for stable
+        run: aws ecs wait services-stable --cluster prod --services api</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Dockerfile — multi-stage build</span>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">DOCKERFILE</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+            <div class="code-body"><span class="kw">FROM</span> node:20-alpine <span class="kw">AS</span> base
+RUN npm install -g pnpm
+
+<span class="kw">FROM</span> base <span class="kw">AS</span> deps
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY apps/api/package.json ./apps/api/
+RUN pnpm install --frozen-lockfile
+
+<span class="kw">FROM</span> deps <span class="kw">AS</span> build
+COPY . .
+RUN pnpm --filter api build
+
+<span class="kw">FROM</span> node:20-alpine <span class="kw">AS</span> runner   <span class="cm"># Lean production image</span>
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=build /app/apps/api/dist ./dist
+COPY --from=build /app/apps/api/prisma ./prisma
+EXPOSE 3001
+CMD [<span class="str">"node"</span>, <span class="str">"dist/main.js"</span>]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 07: GIT -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-git">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 class="section-title">GIT WORKFLOW</h2>
+      </div>
+
+      <div class="highlight-box orange">
+        <div class="hb-title">Strategy: Modified Gitflow (not pure trunk-based)</div>
+        <div class="hb-body">Pure trunk-based development requires mature feature flag infrastructure. For a solo dev shipping Stripe payment flows, the <strong>develop buffer branch</strong> prevents half-done features from reaching production. Trunk-based becomes viable when you have 3+ developers and feature flags wired up.</div>
+      </div>
+
+      <div class="label">Branch Model</div>
+      <div class="arch-diagram">
+        <pre>main          ← Production. Protected. Linear history only.
+  │
+  └── develop ← Staging. Integration branch. CI gate.
+        │
+        ├── feature/cart-persistence
+        ├── feature/stripe-webhooks
+        ├── fix/order-total-rounding
+        └── hotfix/payment-timeout   ← branches FROM main, merges TO main + develop</pre>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Branch Protection Rules</div>
+      <ul class="checklist">
+        <li><span class="check-icon">✓</span>Require PR — no direct pushes to main or develop</li>
+        <li><span class="check-icon">✓</span>Required status checks: ci / Lint, Type-check, Test must pass</li>
+        <li><span class="check-icon">✓</span>Require linear history (rebase only, no merge commits)</li>
+        <li><span class="check-icon">✓</span>No force pushes, ever</li>
+        <li><span class="check-icon">✓</span>Conventional commits enforced via commitlint in CI</li>
+      </ul>
+
+      <hr class="divider">
+      <div class="label">Conventional Commits</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">BASH</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+        <div class="code-body"><span class="cm"># Format: type(scope): description</span>
+feat(orders): add order cancellation endpoint
+fix(payments): handle Stripe idempotency key collision
+chore(deps): upgrade Prisma to 5.x
+refactor(auth): extract token rotation into separate service
+perf(products): add missing index on categoryId column</div>
+      </div>
+
+      <div class="label" style="margin-top:20px">Versioning: Changesets</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">BASH</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+        <div class="code-body">pnpm changeset          <span class="cm"># Describe what changed</span>
+pnpm changeset version  <span class="cm"># Bump package versions</span>
+pnpm changeset publish  <span class="cm"># Publish shared packages if needed</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 08: OBSERVABILITY -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-observability">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2 class="section-title">OBSERVABILITY</h2>
+      </div>
+
+      <div class="prose">
+        <p>A solo dev doesn't need to self-host Prometheus. Use managed services — they're cheaper than your time.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🔴</div>
+          <div class="card-title">SENTRY</div>
+          <div class="card-desc">Error tracking, performance traces, session replays. 10% trace sampling in production. Critical errors trigger Slack notifications.</div>
+          <span class="card-tag orange">Application Layer</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">☁️</div>
+          <div class="card-title">CLOUDWATCH</div>
+          <div class="card-desc">API logs (JSON structured), ECS container metrics, RDS performance, ALB access logs. CloudWatch Logs Insights for ad-hoc log queries.</div>
+          <span class="card-tag blue">Infrastructure</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <div class="card-title">GRAFANA CLOUD</div>
+          <div class="card-desc">Free tier pulls from CloudWatch. Pre-built dashboards for ECS, RDS, Redis. Alerting to PagerDuty or email. 14-day retention.</div>
+          <span class="card-tag green">Dashboards</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔔</div>
+          <div class="card-title">BETTER UPTIME</div>
+          <div class="card-desc">HTTP endpoint monitoring every 30s from multiple regions. Instant SMS/email on downtime. Status page for your customers.</div>
+          <span class="card-tag orange">Uptime</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Alerting Thresholds</div>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">API p99 latency</div>
+          <div class="metric-warning">⚠ warn: &gt;1s</div>
+          <div class="metric-critical">✖ crit: &gt;3s</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Error rate</div>
+          <div class="metric-warning">⚠ warn: &gt;1%</div>
+          <div class="metric-critical">✖ crit: &gt;5%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">DB connections</div>
+          <div class="metric-warning">⚠ warn: &gt;70%</div>
+          <div class="metric-critical">✖ crit: &gt;90%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">SQS queue depth</div>
+          <div class="metric-warning">⚠ warn: &gt;100</div>
+          <div class="metric-critical">✖ crit: &gt;1000</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Failed payments</div>
+          <div class="metric-warning">⚠ warn: &gt;2%</div>
+          <div class="metric-critical">✖ crit: &gt;10%</div>
+        </div>
+      </div>
+
+      <div class="label">Structured Log Format</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">JSON</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+        <div class="code-body">{
+  <span class="prop">"level"</span>: <span class="str">"error"</span>,
+  <span class="prop">"timestamp"</span>: <span class="str">"2025-03-15T10:23:44.000Z"</span>,
+  <span class="prop">"context"</span>: <span class="str">"OrdersService"</span>,
+  <span class="prop">"message"</span>: <span class="str">"Failed to confirm order"</span>,
+  <span class="prop">"orderId"</span>: <span class="str">"clx123abc"</span>,
+  <span class="prop">"userId"</span>: <span class="str">"user_xyz"</span>,
+  <span class="prop">"traceId"</span>: <span class="str">"abc-123-def-456"</span>,  <span class="cm">// from X-Request-ID header</span>
+  <span class="prop">"error"</span>: <span class="str">"Connection timeout"</span>
+}</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 09: SECURITY -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-security">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <h2 class="section-title">SECURITY</h2>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="label">Auth Best Practices</div>
+          <ul class="checklist">
+            <li><span class="check-icon">✓</span>bcrypt passwords, salt rounds ≥ 12</li>
+            <li><span class="check-icon">✓</span>Access tokens: 15min expiry</li>
+            <li><span class="check-icon">✓</span>Refresh tokens: 7d, HttpOnly cookie</li>
+            <li><span class="check-icon">✓</span>Token rotation on every refresh</li>
+            <li><span class="check-icon">✓</span>Redis JTI blocklist for logged-out tokens</li>
+            <li><span class="check-icon">✓</span>OAuth links to existing email if match</li>
+          </ul>
+        </div>
+        <div>
+          <div class="label">Secrets Management</div>
+          <ul class="checklist">
+            <li><span class="check-icon">✓</span>.env.local (gitignored) for local dev</li>
+            <li><span class="check-icon">✓</span>AWS Secrets Manager → ECS env vars</li>
+            <li><span class="check-icon">✓</span>GitHub Secrets for CI/CD</li>
+            <li><span class="check-icon">✓</span>Zod env validation on startup</li>
+            <li><span class="check-icon">✓</span>Never log secrets (Sentry scrubbing)</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">HTTP Security Headers (via Helmet)</div>
+      <table class="data-table">
+        <thead><tr><th>Header</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Strict-Transport-Security</td><td>max-age=31536000; includeSubDomains</td></tr>
+          <tr><td>X-Content-Type-Options</td><td>nosniff</td></tr>
+          <tr><td>X-Frame-Options</td><td>DENY</td></tr>
+          <tr><td>Referrer-Policy</td><td>strict-origin-when-cross-origin</td></tr>
+          <tr><td>Content-Security-Policy</td><td>Restrict script sources to own domain</td></tr>
+        </tbody>
+      </table>
+
+      <div class="label">Rate Limiting</div>
+      <table class="data-table">
+        <thead><tr><th>Endpoint Group</th><th>Limit</th><th>Window</th></tr></thead>
+        <tbody>
+          <tr><td>Default (all routes)</td><td>100 req</td><td>60s per IP</td></tr>
+          <tr><td>Auth endpoints</td><td>10 req</td><td>60s per IP</td></tr>
+          <tr><td>Payment endpoints</td><td>20 req</td><td>60s per user</td></tr>
+        </tbody>
+      </table>
+
+      <div class="label">Input Sanitization</div>
+      <ul class="checklist">
+        <li><span class="check-icon">✓</span>class-validator DTOs with whitelist:true strip all extra fields</li>
+        <li><span class="check-icon">✓</span>sanitize-html for rich text (product descriptions)</li>
+        <li><span class="check-icon">✓</span>Prisma parameterized queries — SQL injection impossible</li>
+        <li><span class="check-icon">✓</span>File upload MIME validation server-side (not just extension)</li>
+        <li><span class="check-icon">✓</span>Stripe webhook signature verification — reject anything unsigned</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 10: PERFORMANCE -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-performance">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2 class="section-title">PERFORMANCE & SCALING</h2>
+      </div>
+
+      <div class="label">Scaling Phases</div>
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-dot" style="font-size:9px">P1</div>
+          <div class="phase-content">
+            <div class="phase-title">0 – 10k orders/month · Single region</div>
+            <div class="phase-sub">ECS Fargate: 2 tasks (1 vCPU, 2GB each). RDS t3.medium, single AZ. ElastiCache t3.micro. Storefront on Vercel (free tier handles traffic bursts). Total AWS cost: ~$80/month.</div>
+            <div class="phase-tags">
+              <span class="badge badge-gray">2 ECS tasks</span>
+              <span class="badge badge-gray">RDS t3.medium</span>
+              <span class="badge badge-gray">~$80/mo</span>
+            </div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-dot" style="font-size:9px">P2</div>
+          <div class="phase-content">
+            <div class="phase-title">10k – 100k orders/month · Add redundancy</div>
+            <div class="phase-sub">ECS auto-scaling (CPU > 70%). RDS Multi-AZ + read replica for analytics. ElastiCache cluster mode (3 nodes). SQS for all async processing. Estimated cost: ~$300/month.</div>
+            <div class="phase-tags">
+              <span class="badge badge-blue">auto-scale</span>
+              <span class="badge badge-blue">multi-AZ</span>
+              <span class="badge badge-blue">read replica</span>
+            </div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-dot" style="font-size:9px">P3</div>
+          <div class="phase-content">
+            <div class="phase-title">100k+ orders/month · Optimize</div>
+            <div class="phase-sub">Extract search to Typesense. Analytics to read replica or ClickHouse. PgBouncer for connection pooling. Consider extracting payments service if it becomes a bottleneck.</div>
+            <div class="phase-tags">
+              <span class="badge badge-green">Typesense</span>
+              <span class="badge badge-green">ClickHouse</span>
+              <span class="badge badge-green">PgBouncer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">CDN Cache Strategy</div>
+      <table class="data-table">
+        <thead><tr><th>Path</th><th>Cache</th><th>Cache-Control</th></tr></thead>
+        <tbody>
+          <tr><td>/static/* (hashed assets)</td><td>CloudFront ∞</td><td>max-age=31536000, immutable</td></tr>
+          <tr><td>/_next/* (Next.js)</td><td>CloudFront, per header</td><td>Next.js controlled</td></tr>
+          <tr><td>/images/* (products)</td><td>CloudFront 24h</td><td>max-age=86400, public</td></tr>
+          <tr><td>/api/* (dynamic)</td><td>No cache</td><td>no-store</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION 11: DEV EXPERIENCE -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-devex">
+      <div class="section-header">
+        <span class="section-num">11</span>
+        <h2 class="section-title">DEV EXPERIENCE</h2>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">Single command setup from zero</div>
+        <div class="hb-body"><code style="font-family:var(--mono);color:var(--accent)">pnpm setup</code> — installs deps, starts Docker services, runs migrations, seeds database. You should be at localhost:3000 within 3 minutes of cloning.</div>
+      </div>
+
+      <div class="label">npm scripts (root package.json)</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">BASH</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+        <div class="code-body">pnpm dev              <span class="cm"># Start all 3 apps simultaneously</span>
+pnpm dev:api          <span class="cm"># API only — http://localhost:3001</span>
+pnpm dev:storefront   <span class="cm"># Storefront — http://localhost:3000</span>
+pnpm dev:admin        <span class="cm"># Admin — http://localhost:3002</span>
+
+pnpm db:up            <span class="cm"># Start Docker services</span>
+pnpm db:migrate       <span class="cm"># Run pending migrations</span>
+pnpm db:studio        <span class="cm"># Prisma Studio — http://localhost:5555</span>
+pnpm db:seed          <span class="cm"># Seed with sample products/users</span>
+pnpm db:reset         <span class="cm"># Wipe + re-migrate + re-seed</span>
+
+pnpm setup            <span class="cm"># install + db:up + migrate + seed</span>
+pnpm build            <span class="cm"># Build all apps (Turborepo cached)</span>
+pnpm test             <span class="cm"># Run all tests</span>
+pnpm lint             <span class="cm"># Lint all packages</span></div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">docker-compose.yml — local services</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">YAML</span><button class="code-copy" onclick="copyCode(this)">copy</button></div>
+        <div class="code-body">services:
+  postgres:
+    image: postgres:16-alpine
+    ports: [<span class="str">"5432:5432"</span>]
+    environment:
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ecommerce
+      POSTGRES_DB: ecommerce_dev
+
+  redis:
+    image: redis:7-alpine
+    ports: [<span class="str">"6379:6379"</span>]
+
+  mailhog:                        <span class="cm"># Catch all dev emails</span>
+    image: mailhog/mailhog
+    ports:
+      - <span class="str">"1025:1025"</span>              <span class="cm"># SMTP</span>
+      - <span class="str">"8025:8025"</span>              <span class="cm"># Web UI → view emails here</span>
+
+  localstack:                     <span class="cm"># Local S3</span>
+    image: localstack/localstack
+    ports: [<span class="str">"4566:4566"</span>]
+    environment:
+      SERVICES: s3</div>
+      </div>
+
+      <hr class="divider">
+      <div class="label">Local Dev URL Reference</div>
+      <table class="data-table">
+        <thead><tr><th>Service</th><th>URL</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Storefront</td><td>http://localhost:3000</td><td>Next.js dev server</td></tr>
+          <tr><td>Admin Dashboard</td><td>http://localhost:3002</td><td>Next.js dev server</td></tr>
+          <tr><td>API</td><td>http://localhost:3001</td><td>NestJS dev server</td></tr>
+          <tr><td>Swagger Docs</td><td>http://localhost:3001/api/docs</td><td>Disabled in production</td></tr>
+          <tr><td>MailHog</td><td>http://localhost:8025</td><td>Catch all dev emails</td></tr>
+          <tr><td>Prisma Studio</td><td>http://localhost:5555</td><td>Run: pnpm db:studio</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SECTION: DECISIONS -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="section" id="sec-decisions">
+      <div class="section-header">
+        <span class="section-num">✦</span>
+        <h2 class="section-title">DECISION LOG</h2>
+      </div>
+
+      <div class="prose">
+        <p>Every architectural decision in this blueprint is intentional. This log captures the <em>why</em> — useful for future-you and for onboarding contributors.</p>
+      </div>
+
+      <div class="decision-table">
+        <div class="decision-row">
+          <div class="decision-cell">Decision</div>
+          <div class="decision-cell">Chosen</div>
+          <div class="decision-cell">Rejected</div>
+          <div class="decision-cell">Reasoning</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">Monorepo tool</div>
+          <div class="decision-cell">Turborepo</div>
+          <div class="decision-cell">Nx</div>
+          <div class="decision-cell">Simpler mental model, zero-config remote cache, faster cold builds</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">API framework</div>
+          <div class="decision-cell">NestJS</div>
+          <div class="decision-cell">Express, Fastify</div>
+          <div class="decision-cell">Built-in DI, decorators, modules, Swagger, guards, pipes — structure from day one</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">API style</div>
+          <div class="decision-cell">REST</div>
+          <div class="decision-cell">GraphQL</div>
+          <div class="decision-cell">eCommerce query patterns are predictable; simpler tooling, better caching</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">ORM</div>
+          <div class="decision-cell">Prisma</div>
+          <div class="decision-cell">TypeORM, Drizzle</div>
+          <div class="decision-cell">Best DX, type-safe, excellent migration workflow, great Postgres support</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">Frontend</div>
+          <div class="decision-cell">Next.js 14</div>
+          <div class="decision-cell">Remix, Vite+React</div>
+          <div class="decision-cell">SSR/SSG/ISR hybrid, ecosystem, Vercel for zero-config deploys</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">State (cart)</div>
+          <div class="decision-cell">Zustand</div>
+          <div class="decision-cell">Redux, Jotai</div>
+          <div class="decision-cell">Minimal boilerplate, built-in persistence, perfect for cart use case</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">Auth approach</div>
+          <div class="decision-cell">JWT + Refresh</div>
+          <div class="decision-cell">Sessions</div>
+          <div class="decision-cell">Stateless, works across services, no session store overhead</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">Database</div>
+          <div class="decision-cell">PostgreSQL</div>
+          <div class="decision-cell">MySQL, MongoDB</div>
+          <div class="decision-cell">ACID, JSON columns, best ecosystem, RDS managed, Prisma first-class</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">Git strategy</div>
+          <div class="decision-cell">Mod. Gitflow</div>
+          <div class="decision-cell">Trunk-based</div>
+          <div class="decision-cell">Safer for solo dev; develop buffer prevents shipping partial payment flows</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-cell">Cloud</div>
+          <div class="decision-cell">AWS ECS</div>
+          <div class="decision-cell">Kubernetes, fly.io</div>
+          <div class="decision-cell">Managed, no cluster ops, integrates with RDS/ElastiCache/SQS natively</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // ─── NAVIGATION ───────────────────────────────────────────
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.mobile-tab').forEach(n => n.classList.remove('active'));
+
+    const target = document.getElementById('sec-' + id);
+    if (target) target.classList.add('active');
+
+    document.querySelectorAll(`[data-section="${id}"]`).forEach(el => {
+      el.classList.add('active');
+    });
+  }
+
+  document.querySelectorAll('[data-section]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault();
+      showSection(el.dataset.section);
+    });
+  });
+
+  // ─── ACCORDIONS ───────────────────────────────────────────
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.parentElement.classList.toggle('open');
+    });
+  });
+
+  // ─── COPY CODE ────────────────────────────────────────────
+  function copyCode(btn) {
+    const body = btn.closest('.code-block').querySelector('.code-body');
+    const text = body.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'copied!';
+      btn.style.color = 'var(--accent3)';
+      setTimeout(() => {
+        btn.textContent = 'copy';
+        btn.style.color = '';
+      }, 1500);
+    });
+  }
+
+  // ─── SEARCH ───────────────────────────────────────────────
+  const sectionMap = {
+    'overview': ['overview', 'architecture', 'system', 'communication', 'rest'],
+    'monorepo': ['monorepo', 'turborepo', 'pnpm', 'structure', 'folders', 'packages'],
+    'backend': ['backend', 'api', 'nestjs', 'modules', 'auth', 'orders', 'payments', 'stripe', 'logging'],
+    'frontend': ['frontend', 'next', 'storefront', 'admin', 'cart', 'zustand', 'react query'],
+    'database': ['database', 'postgres', 'prisma', 'redis', 's3', 'schema', 'cache', 'storage'],
+    'cicd': ['cicd', 'ci', 'cd', 'github actions', 'docker', 'ecs', 'deploy', 'pipeline'],
+    'git': ['git', 'gitflow', 'branches', 'workflow', 'conventional commits', 'changesets'],
+    'observability': ['observability', 'sentry', 'cloudwatch', 'grafana', 'logging', 'monitoring', 'alerts'],
+    'security': ['security', 'auth', 'jwt', 'helmet', 'rate limit', 'csrf', 'cors', 'secrets'],
+    'performance': ['performance', 'cdn', 'scaling', 'cloudfront', 'cache', 'ecs', 'fargate'],
+    'devex': ['devex', 'developer', 'local', 'docker compose', 'setup', 'scripts', 'mailhog'],
+    'decisions': ['decisions', 'why', 'rationale', 'comparison', 'choice'],
+  };
+
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) return;
+      for (const [section, keywords] of Object.entries(sectionMap)) {
+        if (keywords.some(k => k.includes(q) || q.includes(k))) {
+          showSection(section);
+          e.target.value = '';
+          return;
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

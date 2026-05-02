@@ -1,0 +1,405 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary)}
+.root{padding:1.5rem 0}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2rem}
+.nav button{font-size:13px;padding:6px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s}
+.nav button.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
+.section{display:none}
+.section.active{display:block}
+h2{font-size:18px;font-weight:500;margin-bottom:1.25rem}
+h3{font-size:15px;font-weight:500;margin-bottom:.6rem;color:var(--color-text-primary)}
+p,li{font-size:14px;line-height:1.7;color:var(--color-text-secondary)}
+ul{padding-left:1.1rem}
+li{margin-bottom:4px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 9px;border-radius:var(--border-radius-md);margin-bottom:.5rem}
+.tag.green{background:#EAF3DE;color:#3B6D11}
+.tag.blue{background:#E6F1FB;color:#185FA5}
+.tag.amber{background:#FAEEDA;color:#854F0B}
+.tag.purple{background:#EEEDFE;color:#3C3489}
+.tag.red{background:#FCEBEB;color:#A32D2D}
+.tag.teal{background:#E1F5EE;color:#0F6E56}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.phase-nav{display:flex;gap:6px;margin-bottom:1.25rem;flex-wrap:wrap}
+.phase-btn{font-size:12px;padding:5px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer}
+.phase-btn.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
+.phase{display:none}
+.phase.active{display:block}
+.step{display:flex;gap:12px;margin-bottom:1rem;align-items:flex-start}
+.step-num{min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;background:var(--color-background-secondary);color:var(--color-text-primary);flex-shrink:0}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.25rem 0}
+.code-label{font-family:var(--font-mono);font-size:12px;background:var(--color-background-secondary);padding:3px 8px;border-radius:4px;color:var(--color-text-secondary)}
+.layer-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.25rem}
+.layer-tab{font-size:12px;padding:5px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer}
+.layer-tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500;border-color:var(--color-border-primary)}
+.layer{display:none}
+.layer.active{display:block}
+.pitfall{border-left:3px solid #E24B4A;padding-left:.75rem;margin:.6rem 0}
+.pitfall p{color:var(--color-text-secondary);font-size:13px}
+.best{border-left:3px solid #1D9E75;padding-left:.75rem;margin:.6rem 0}
+.best p{color:var(--color-text-secondary);font-size:13px}
+.workflow-step{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;cursor:pointer;border:0.5px solid var(--color-border-tertiary);margin-bottom:.75rem}
+.workflow-step.open{border-color:var(--color-border-primary)}
+.wf-header{display:flex;justify-content:space-between;align-items:center}
+.wf-header h3{margin:0}
+.wf-body{display:none;margin-top:.75rem;padding-top:.75rem;border-top:0.5px solid var(--color-border-tertiary)}
+.workflow-step.open .wf-body{display:block}
+.arrow{font-size:12px;color:var(--color-text-tertiary)}
+.project-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.25rem}
+.project-tab{font-size:12px;padding:5px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer}
+.project-tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500;border-color:var(--color-border-primary)}
+.project{display:none}
+.project.active{display:block}
+.checklist-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.checklist-item:last-child{border-bottom:none}
+.check{width:18px;height:18px;border-radius:4px;border:0.5px solid var(--color-border-secondary);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:2px}
+.check.done{background:#E1F5EE;border-color:#1D9E75;color:#0F6E56}
+.progress-bar{height:4px;background:var(--color-background-secondary);border-radius:2px;margin-bottom:1.5rem}
+.progress-fill{height:4px;background:#1D9E75;border-radius:2px;transition:width .3s}
+</style>
+
+<div class="root">
+<div class="nav" id="mainNav">
+  <button class="active" onclick="showSection('mindset',this)">Mindset</button>
+  <button onclick="showSection('phases',this)">Learning phases</button>
+  <button onclick="showSection('layers',this)">Engineering layers</button>
+  <button onclick="showSection('workflow',this)">Workflow</button>
+  <button onclick="showSection('project',this)">Your project</button>
+</div>
+
+<div id="mindset" class="section active">
+  <h2>The right engineering mindset</h2>
+  <div class="card">
+    <span class="tag purple">Core principle</span>
+    <h3>Build first, learn in context</h3>
+    <p>Industry standards are not academic rules — they are solutions to real problems engineers encountered at scale. You only truly understand a standard when you have felt the pain it solves. Read just enough to start, then build, then read again to understand <em>why</em>.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag green">Do this</span>
+      <h3>Productive habits</h3>
+      <ul>
+        <li>Pick one feature, build it end-to-end before moving on</li>
+        <li>Write code as if a senior engineer will review it tomorrow</li>
+        <li>Commit to explaining every line you write</li>
+        <li>Treat your project as a production codebase from day one</li>
+        <li>Research standards after you feel the problem, not before</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag red">Avoid these</span>
+      <h3>Common mistakes</h3>
+      <ul>
+        <li>Tutorial hopping without finishing anything</li>
+        <li>Over-engineering before you have working code</li>
+        <li>Copying patterns without understanding the intent</li>
+        <li>Skipping error handling because "it works locally"</li>
+        <li>Learning auth theory without building an auth system</li>
+        <li>Ignoring code review feedback as optional</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag amber">Mental model</span>
+    <h3>The two questions to ask always</h3>
+    <p style="margin-bottom:.6rem"><strong style="font-weight:500">1. "What breaks if this fails at scale?"</strong> — Forces you to think beyond the happy path.</p>
+    <p><strong style="font-weight:500">2. "Would I be comfortable if a senior engineer read this code right now?"</strong> — If not, stop and improve it before moving forward.</p>
+  </div>
+</div>
+
+<div id="phases" class="section">
+  <h2>Learning phases</h2>
+  <div class="phase-nav">
+    <button class="phase-btn active" onclick="showPhase('foundation',this)">1. Foundation</button>
+    <button class="phase-btn" onclick="showPhase('backend',this)">2. Core backend</button>
+    <button class="phase-btn" onclick="showPhase('frontend',this)">3. Frontend</button>
+    <button class="phase-btn" onclick="showPhase('devops',this)">4. DevOps & CI/CD</button>
+    <button class="phase-btn" onclick="showPhase('production',this)">5. Production</button>
+  </div>
+
+  <div id="foundation" class="phase active">
+    <div class="card"><span class="tag purple">Phase 1</span><h3>Foundation — code quality & structure</h3>
+    <p style="margin-bottom:.75rem">This phase is about developing habits that compound. Skipping it means accumulating technical debt that will slow every subsequent phase.</p>
+    <div class="divider"></div>
+    <h3>What to learn</h3>
+    <ul><li>SOLID principles and when to apply each</li><li>Clean code conventions — naming, function size, single responsibility</li><li>Git workflow: feature branches, conventional commits, PR descriptions</li><li>Monorepo structure and workspace tooling (Turborepo, pnpm workspaces)</li><li>TypeScript strictly — <span class="code-label">strict: true</span>, no <span class="code-label">any</span></li></ul>
+    <div class="divider"></div>
+    <h3>What to build</h3>
+    <ul><li>Set up your NestJS + Next.js monorepo with shared types package</li><li>Create a consistent folder structure for both apps</li><li>Configure ESLint, Prettier, Husky pre-commit hooks</li><li>Write your first feature with meaningful commit history</li></ul>
+    <div class="divider"></div>
+    <h3>Industry standard at this phase</h3>
+    <p>Code that any engineer can read without asking questions. Every PR has a clear description. Every commit is atomic and intentional.</p></div>
+  </div>
+
+  <div id="backend" class="phase">
+    <div class="card"><span class="tag blue">Phase 2</span><h3>Core backend — API, auth, database</h3>
+    <p style="margin-bottom:.75rem">This is where most of the real engineering happens. Mistakes here are the hardest to fix later.</p>
+    <div class="divider"></div>
+    <h3>What to learn</h3>
+    <ul><li>RESTful conventions — resource naming, HTTP verbs, status codes</li><li>JWT + refresh token rotation, PKCE for OAuth flows</li><li>Database schema design, migrations, and indexing strategy</li><li>Repository pattern and service layer separation in NestJS</li><li>Input validation and DTO design with class-validator</li><li>Rate limiting, CORS, and helmet security headers</li></ul>
+    <div class="divider"></div>
+    <h3>What to build</h3>
+    <ul><li>Full auth system: register, login, refresh, logout, token revocation</li><li>Products API with pagination, filtering, sorting</li><li>Orders API with state machine transitions (pending → paid → shipped)</li><li>Guards and decorators for role-based access control</li></ul>
+    <div class="divider"></div>
+    <h3>Industry standard at this phase</h3>
+    <p>APIs that behave predictably, fail gracefully with structured errors, and handle edge cases. Auth that cannot be bypassed by a simple token replay.</p></div>
+  </div>
+
+  <div id="frontend" class="phase">
+    <div class="card"><span class="tag teal">Phase 3</span><h3>Frontend integration</h3>
+    <p style="margin-bottom:.75rem">The frontend is not just UI — it is a client contract with your API. Treating it as such changes how you approach both sides.</p>
+    <div class="divider"></div>
+    <h3>What to learn</h3>
+    <ul><li>Next.js App Router — server vs client components, data fetching patterns</li><li>API client abstraction (React Query or SWR for caching, revalidation)</li><li>Token handling in middleware — silent refresh, route protection</li><li>Optimistic UI and error boundaries</li><li>Form validation mirroring backend DTO rules</li></ul>
+    <div class="divider"></div>
+    <h3>What to build</h3>
+    <ul><li>Auth flow: login, register, silent token refresh on page load</li><li>Product listing page with server-side filtering and pagination</li><li>Cart and checkout with optimistic updates</li><li>Protected admin routes with middleware-level guards</li></ul>
+    <div class="divider"></div>
+    <h3>Industry standard at this phase</h3>
+    <p>A UI that works without a reload, fails gracefully on API errors, and never exposes tokens in localStorage or the DOM.</p></div>
+  </div>
+
+  <div id="devops" class="phase">
+    <div class="card"><span class="tag amber">Phase 4</span><h3>DevOps & CI/CD</h3>
+    <div class="divider"></div>
+    <h3>What to learn</h3>
+    <ul><li>Docker — multi-stage builds, .dockerignore, environment parity</li><li>GitHub Actions — lint, test, build, deploy pipeline</li><li>Environment variable management across environments</li><li>Database migrations as part of the deployment pipeline</li><li>Basic Nginx reverse proxy configuration</li></ul>
+    <div class="divider"></div>
+    <h3>What to build</h3>
+    <ul><li>Dockerfiles for both apps, docker-compose for local dev</li><li>CI pipeline that blocks merges on failing tests</li><li>CD pipeline that deploys to staging on merge to main</li><li>Automated database migration step in deployment</li></ul>
+    <div class="divider"></div>
+    <h3>Industry standard at this phase</h3>
+    <p>No manual deployments. Every merge to main triggers a reproducible, automated deploy. No environment-specific code — only environment-specific configuration.</p></div>
+  </div>
+
+  <div id="production" class="phase">
+    <div class="card"><span class="tag red">Phase 5</span><h3>Production readiness</h3>
+    <div class="divider"></div>
+    <h3>What to learn</h3>
+    <ul><li>Structured logging with correlation IDs across requests</li><li>Health check endpoints and uptime monitoring</li><li>Error tracking (Sentry or equivalent) and alerting</li><li>Database connection pooling and query optimization</li><li>Security audit — OWASP Top 10 checklist</li><li>Load testing and understanding your system's bottlenecks</li></ul>
+    <div class="divider"></div>
+    <h3>What to build</h3>
+    <ul><li>Logging middleware that tags every request with a trace ID</li><li><span class="code-label">/health</span> and <span class="code-label">/ready</span> endpoints with dependency checks</li><li>Global exception filter with structured error responses</li><li>Admin dashboard with real order/product metrics</li></ul>
+    <div class="divider"></div>
+    <h3>Industry standard at this phase</h3>
+    <p>You can diagnose any production issue from logs alone. Your system degrades gracefully rather than failing completely. You know your system's limits before your users do.</p></div>
+  </div>
+</div>
+
+<div id="layers" class="section">
+  <h2>Engineering layers</h2>
+  <div class="layer-tabs">
+    <button class="layer-tab active" onclick="showLayer('code',this)">Code structure</button>
+    <button class="layer-tab" onclick="showLayer('auth',this)">Auth & security</button>
+    <button class="layer-tab" onclick="showLayer('api',this)">API design</button>
+    <button class="layer-tab" onclick="showLayer('data',this)">Data layer</button>
+    <button class="layer-tab" onclick="showLayer('infra',this)">Infrastructure</button>
+    <button class="layer-tab" onclick="showLayer('obs',this)">Observability</button>
+  </div>
+
+  <div id="code" class="layer active">
+    <h3>Key principles</h3>
+    <div class="best"><p>Separate by concern, not by file type. Group feature modules together — <span class="code-label">auth/</span>, <span class="code-label">orders/</span>, <span class="code-label">products/</span> — not by layer across the whole app.</p></div>
+    <div class="best"><p>Shared types and utilities live in a <span class="code-label">packages/</span> directory accessible to both apps. Never duplicate type definitions.</p></div>
+    <div class="best"><p>Every function does one thing. Every module has a single, clear responsibility. If you struggle to name it, that is a design signal.</p></div>
+    <div class="divider"></div>
+    <h3>Common pitfalls</h3>
+    <div class="pitfall"><p>Putting business logic in controllers. Controllers should only handle HTTP concerns — validation, delegation, and response shaping.</p></div>
+    <div class="pitfall"><p>Fat service files that know about the database schema. Services should depend on repositories, not on ORM entities directly.</p></div>
+    <div class="pitfall"><p>Circular dependencies between modules, usually caused by poor domain boundary decisions.</p></div>
+  </div>
+
+  <div id="auth" class="layer">
+    <h3>Key principles</h3>
+    <div class="best"><p>Short-lived access tokens (15 min), long-lived refresh tokens stored as httpOnly cookies, never in localStorage.</p></div>
+    <div class="best"><p>Refresh token rotation on every use. A used refresh token should be invalidated immediately to prevent replay attacks.</p></div>
+    <div class="best"><p>RBAC at the guard level — roles stored in the JWT, validated on every protected request without a database call.</p></div>
+    <div class="divider"></div>
+    <h3>Common pitfalls</h3>
+    <div class="pitfall"><p>Storing JWTs in localStorage. XSS can steal them. Use httpOnly cookies for refresh tokens, memory for access tokens.</p></div>
+    <div class="pitfall"><p>Not implementing token revocation. A logout should invalidate the server-side refresh token, not just delete the cookie client-side.</p></div>
+    <div class="pitfall"><p>Checking permissions in service methods instead of guards. By the time code reaches a service, authorization should already be resolved.</p></div>
+  </div>
+
+  <div id="api" class="layer">
+    <h3>Key principles</h3>
+    <div class="best"><p>Resource-oriented URLs. <span class="code-label">POST /orders</span> not <span class="code-label">POST /createOrder</span>. HTTP verbs carry the action — the URL should identify the resource.</p></div>
+    <div class="best"><p>Consistent error envelope: always return <span class="code-label">statusCode</span>, <span class="code-label">message</span>, <span class="code-label">error</span>, and optionally <span class="code-label">details</span> for validation errors.</p></div>
+    <div class="best"><p>Versioning from day one. <span class="code-label">/api/v1/</span> prefix costs nothing now and saves a painful migration later.</p></div>
+    <div class="divider"></div>
+    <h3>Common pitfalls</h3>
+    <div class="pitfall"><p>Returning 200 with an error body. HTTP status codes exist precisely for this — use them. A failed request is not a 200.</p></div>
+    <div class="pitfall"><p>Exposing database IDs directly. Use UUIDs or slugs. Sequential integer IDs leak business information and enable enumeration attacks.</p></div>
+    <div class="pitfall"><p>No pagination on list endpoints. Every list endpoint that hits a database needs cursor or offset pagination from the start.</p></div>
+  </div>
+
+  <div id="data" class="layer">
+    <h3>Key principles</h3>
+    <div class="best"><p>Every schema change is a migration file, committed to source control, and run automatically in CI. No manual ALTER TABLE commands in production.</p></div>
+    <div class="best"><p>Index on every foreign key and every column that appears in a WHERE or ORDER BY clause on a large table.</p></div>
+    <div class="best"><p>Use transactions for operations that must succeed or fail together — e.g. creating an order and decrementing stock must be atomic.</p></div>
+    <div class="divider"></div>
+    <h3>Common pitfalls</h3>
+    <div class="pitfall"><p>N+1 queries. A product listing that fires a separate query per product to get its category is an N+1 problem. Use eager loading or data loaders.</p></div>
+    <div class="pitfall"><p>Soft deletes without considering their impact on unique constraints and join performance. Think through the full read path before implementing.</p></div>
+    <div class="pitfall"><p>Storing sensitive data unencrypted. Passwords, payment tokens, PII — each has a different appropriate storage strategy.</p></div>
+  </div>
+
+  <div id="infra" class="layer">
+    <h3>Key principles</h3>
+    <div class="best"><p>Infrastructure as code. If it is not in a file committed to git, it does not reliably exist. Use docker-compose locally, proper IaC (Terraform, Pulumi) for production.</p></div>
+    <div class="best"><p>Twelve-factor app principles: configuration from environment variables, stateless processes, explicit dependencies.</p></div>
+    <div class="best"><p>Separate environments — local, staging, production — with identical configuration structure and different values.</p></div>
+    <div class="divider"></div>
+    <h3>Common pitfalls</h3>
+    <div class="pitfall"><p>Environment-specific code branches like <span class="code-label">if (env === 'production')</span> inside application logic. Behavior should not change between environments, only configuration.</p></div>
+    <div class="pitfall"><p>Committing <span class="code-label">.env</span> files. Use <span class="code-label">.env.example</span> with placeholder values in the repo and a secrets manager for real values.</p></div>
+  </div>
+
+  <div id="obs" class="layer">
+    <h3>Key principles</h3>
+    <div class="best"><p>Every request gets a correlation ID generated at the entry point and attached to every log line it produces — across both NestJS and Next.js.</p></div>
+    <div class="best"><p>Log at the right level: DEBUG for development noise, INFO for business events, WARN for recoverable anomalies, ERROR for failures requiring attention.</p></div>
+    <div class="best"><p>Metrics on the things that matter: request duration, error rate, database query time, and queue depth if applicable.</p></div>
+    <div class="divider"></div>
+    <h3>Common pitfalls</h3>
+    <div class="pitfall"><p>Logging everything at INFO level. When everything is important, nothing is — and searching through logs becomes painful at scale.</p></div>
+    <div class="pitfall"><p>No alerting until after a user reports a problem. Set up alerts on error rate thresholds before go-live, not after the first incident.</p></div>
+    <div class="pitfall"><p>Logging PII or tokens in plain text. Treat your logs as potentially accessible and redact sensitive fields before writing.</p></div>
+  </div>
+</div>
+
+<div id="workflow" class="section">
+  <h2>Repeatable feature workflow</h2>
+  <p style="margin-bottom:1.25rem;font-size:14px">Follow this loop for every feature. Click each step to expand.</p>
+
+  <div class="workflow-step open" onclick="toggleWf(this)">
+    <div class="wf-header"><h3>1. Build — make it work first</h3><span class="arrow">▾</span></div>
+    <div class="wf-body">
+      <p>Write the simplest implementation that satisfies the requirements. Do not optimize. Do not abstract prematurely. Working code that you can reason about is more valuable than elegant code that does not exist yet.</p>
+      <ul style="margin-top:.6rem"><li>Write the DTO and validate inputs at the controller</li><li>Implement the service method with direct, readable logic</li><li>Write the repository query — raw and obvious</li><li>Return a consistent response shape</li></ul>
+    </div>
+  </div>
+
+  <div class="workflow-step" onclick="toggleWf(this)">
+    <div class="wf-header"><h3>2. Research — understand the standard</h3><span class="arrow">▸</span></div>
+    <div class="wf-body">
+      <p>Now that you have working code and feel the problem space, research how the industry solves this. Read documentation, well-regarded open-source code, or engineering blog posts from companies that have solved similar problems at scale.</p>
+      <ul style="margin-top:.6rem"><li>Look up the relevant RFC or standard (e.g. RFC 6749 for OAuth)</li><li>Read NestJS or Next.js official docs for the pattern you just implemented</li><li>Check if your approach matches what senior engineers recommend</li></ul>
+    </div>
+  </div>
+
+  <div class="workflow-step" onclick="toggleWf(this)">
+    <div class="wf-header"><h3>3. Improve — close the gap</h3><span class="arrow">▸</span></div>
+    <div class="wf-body">
+      <p>Apply what you learned. This is where research becomes real understanding. The goal is not to perfectly match every standard — it is to consciously choose where your implementation differs and know exactly why.</p>
+      <ul style="margin-top:.6rem"><li>Add missing error handling and edge cases</li><li>Improve naming to match domain language</li><li>Add security controls you had not considered</li><li>Write or improve input validation to match your DTO intent</li></ul>
+    </div>
+  </div>
+
+  <div class="workflow-step" onclick="toggleWf(this)">
+    <div class="wf-header"><h3>4. Refactor — make it maintainable</h3><span class="arrow">▸</span></div>
+    <div class="wf-body">
+      <p>Restructure without changing behavior. Extract duplicated logic, rename for clarity, flatten unnecessary nesting, and ensure the code reads like a story — top to bottom, without needing comments to explain <em>what</em> it does.</p>
+      <ul style="margin-top:.6rem"><li>Extract shared logic into utilities or base classes</li><li>Ensure each function/method has one clear purpose</li><li>Remove dead code and commented-out blocks</li><li>Check that modules respect their boundaries</li></ul>
+    </div>
+  </div>
+
+  <div class="workflow-step" onclick="toggleWf(this)">
+    <div class="wf-header"><h3>5. Document — leave a clear trail</h3><span class="arrow">▸</span></div>
+    <div class="wf-body">
+      <p>Documentation is not optional — it is part of the feature. A future engineer (often yourself in three months) will need to understand not just what the code does, but why key decisions were made.</p>
+      <ul style="margin-top:.6rem"><li>Add JSDoc to public service methods and non-obvious utilities</li><li>Update or add Swagger decorators to your NestJS controllers</li><li>Write a meaningful PR description covering what changed and why</li><li>Note any non-obvious constraints or known limitations</li></ul>
+    </div>
+  </div>
+</div>
+
+<div id="project" class="section">
+  <h2>Applied to your e-commerce project</h2>
+  <div class="project-tabs">
+    <button class="project-tab active" onclick="showProject('authp',this)">Auth system</button>
+    <button class="project-tab" onclick="showProject('productp',this)">Product & orders</button>
+    <button class="project-tab" onclick="showProject('adminp',this)">Admin panel</button>
+  </div>
+
+  <div id="authp" class="project active">
+    <div class="progress-bar"><div class="progress-fill" id="auth-prog" style="width:0%"></div></div>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">Track your progress — click items as you complete them.</p>
+    <div id="auth-list">
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'auth-prog','auth-list')"></div><div><strong style="font-weight:500;font-size:14px">NestJS auth module</strong><p style="font-size:13px">PassportJS with JWT strategy. Separate <span class="code-label">auth.service.ts</span> for token logic, <span class="code-label">users.service.ts</span> for user CRUD. Never mix them.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'auth-prog','auth-list')"></div><div><strong style="font-weight:500;font-size:14px">Access + refresh token pair</strong><p style="font-size:13px">Access token: 15 min, in-memory on client. Refresh token: 7 days, httpOnly cookie. Rotation on every <span class="code-label">POST /auth/refresh</span>.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'auth-prog','auth-list')"></div><div><strong style="font-weight:500;font-size:14px">Token revocation table</strong><p style="font-size:13px">Store refresh token hashes in the database. On logout, mark as revoked. On refresh, validate against the store before issuing a new pair.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'auth-prog','auth-list')"></div><div><strong style="font-weight:500;font-size:14px">RBAC guards</strong><p style="font-size:13px">Custom <span class="code-label">@Roles()</span> decorator + <span class="code-label">RolesGuard</span>. Apply globally with role overrides per route. Roles: CUSTOMER, ADMIN.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'auth-prog','auth-list')"></div><div><strong style="font-weight:500;font-size:14px">Next.js middleware auth</strong><p style="font-size:13px">Middleware reads the refresh cookie, calls <span class="code-label">/auth/refresh</span> silently if the access token is absent or expired, then injects the fresh token into the request.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'auth-prog','auth-list')"></div><div><strong style="font-weight:500;font-size:14px">Rate limiting on auth routes</strong><p style="font-size:13px"><span class="code-label">@nestjs/throttler</span> with stricter limits on <span class="code-label">/auth/login</span> and <span class="code-label">/auth/register</span>. Log and alert on repeated failures.</p></div></div>
+    </div>
+  </div>
+
+  <div id="productp" class="project">
+    <div class="progress-bar"><div class="progress-fill" id="product-prog" style="width:0%"></div></div>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">Track your progress — click items as you complete them.</p>
+    <div id="product-list">
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'product-prog','product-list')"></div><div><strong style="font-weight:500;font-size:14px">Products module with pagination</strong><p style="font-size:13px">Cursor-based pagination on <span class="code-label">GET /products</span>. Filter by category, price range, and availability. Sort by price and created date. Indexed on all filter columns.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'product-prog','product-list')"></div><div><strong style="font-weight:500;font-size:14px">Order state machine</strong><p style="font-size:13px">Valid transitions: PENDING → PAID → PROCESSING → SHIPPED → DELIVERED. CANCELLED available from PENDING and PAID only. Enforce in the service layer, not in the database.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'product-prog','product-list')"></div><div><strong style="font-weight:500;font-size:14px">Atomic inventory update</strong><p style="font-size:13px">Decrement stock and create the order inside a single database transaction. Use optimistic locking or a <span class="code-label">WHERE stock > 0</span> guard in the UPDATE query to prevent overselling.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'product-prog','product-list')"></div><div><strong style="font-weight:500;font-size:14px">Structured error responses</strong><p style="font-size:13px">Global exception filter that catches all errors and returns <span class="code-label">{"statusCode", "message", "error", "timestamp", "path"}</span>. Never expose stack traces in production.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'product-prog','product-list')"></div><div><strong style="font-weight:500;font-size:14px">Next.js product page with SSR</strong><p style="font-size:13px">Product detail pages use <span class="code-label">generateStaticParams</span> for static generation where possible. Cart state managed with Zustand or Context, synchronized to the server on order creation.</p></div></div>
+    </div>
+  </div>
+
+  <div id="adminp" class="project">
+    <div class="progress-bar"><div class="progress-fill" id="admin-prog" style="width:0%"></div></div>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">Track your progress — click items as you complete them.</p>
+    <div id="admin-list">
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'admin-prog','admin-list')"></div><div><strong style="font-weight:500;font-size:14px">Middleware-level route protection</strong><p style="font-size:13px">Next.js middleware checks for ADMIN role in the token payload before any admin route renders. Server-side protection, not just client-side redirect.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'admin-prog','admin-list')"></div><div><strong style="font-weight:500;font-size:14px">Admin-only API endpoints</strong><p style="font-size:13px">Separate controller prefix <span class="code-label">/admin/</span> with <span class="code-label">@Roles('ADMIN')</span> applied at the controller level. No route-level override possible without explicit intent.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'admin-prog','admin-list')"></div><div><strong style="font-weight:500;font-size:14px">Audit log for admin actions</strong><p style="font-size:13px">Every destructive or sensitive action (delete product, update order status, modify user) writes a record: who, what, when, and the before/after values.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'admin-prog','admin-list')"></div><div><strong style="font-weight:500;font-size:14px">Dashboard metrics endpoint</strong><p style="font-size:13px"><span class="code-label">GET /admin/metrics</span> returns daily revenue, order counts by status, and low-stock alerts. Use database aggregation queries — never compute in application memory.</p></div></div>
+      <div class="checklist-item"><div class="check" onclick="toggleCheck(this,'admin-prog','admin-list')"></div><div><strong style="font-weight:500;font-size:14px">Swagger documentation</strong><p style="font-size:13px">Every NestJS controller decorated with <span class="code-label">@ApiTags</span>, every DTO with <span class="code-label">@ApiProperty</span>. Admin routes tagged separately and marked as requiring bearer auth. Available at <span class="code-label">/api/docs</span>.</p></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function showSection(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('#mainNav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function showPhase(id,btn){
+  document.querySelectorAll('.phase').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.phase-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function showLayer(id,btn){
+  document.querySelectorAll('.layer').forEach(l=>l.classList.remove('active'));
+  document.querySelectorAll('.layer-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function showProject(id,btn){
+  document.querySelectorAll('.project').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.project-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function toggleWf(el){
+  el.classList.toggle('open');
+  const arrow=el.querySelector('.arrow');
+  arrow.textContent=el.classList.contains('open')?'▾':'▸';
+}
+function toggleCheck(el,progId,listId){
+  el.classList.toggle('done');
+  el.textContent=el.classList.contains('done')?'✓':'';
+  const list=document.getElementById(listId);
+  const total=list.querySelectorAll('.check').length;
+  const done=list.querySelectorAll('.check.done').length;
+  const pct=Math.round((done/total)*100);
+  document.getElementById(progId).style.width=pct+'%';
+}
+</script>
