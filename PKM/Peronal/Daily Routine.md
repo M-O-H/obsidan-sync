@@ -13,7 +13,7 @@ Testosterone/cortisol peaks
 - [[Shower]]
 - sunlight (natural dopamine)
 #### 6:00 AM
-- [[Career]] - [[2026 Goals]]
+- [[Career MOC]] - [[2026 Goals]]
 
 ---
 ## Midday 12-1 PM
@@ -42,7 +42,7 @@ Identify achievable goals
 Keep yourself accountable 
 [[Effective Study]]
 - prayers
-- [[Career]]
+- [[Career MOC]]
 - [[Exercise]], [[Self-Care]]
 - [[Tasks]]
 - [[study]]
