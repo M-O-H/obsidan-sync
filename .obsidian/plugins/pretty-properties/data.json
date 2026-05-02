@@ -40,7 +40,7 @@
   "bannerHeight": 250,
   "bannerHeightMobile": 300,
   "bannerHeightPopover": 100,
-  "bannerMargin": -20,
+  "bannerMargin": -70,
   "bannerMarginMobile": 0,
   "bannerFading": true,
   "coverDefaultWidth1": 100,
