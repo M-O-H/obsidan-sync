@@ -12,10 +12,26 @@
       "folder": "PKM/Peronal/Habits",
       "tag": "#p/Habit",
       "pattern": ""
+    },
+    {
+      "folder": "PKM/Peronal/Finance",
+      "tag": "#p/Finance",
+      "pattern": ""
+    },
+    {
+      "folder": "heal",
+      "tag": "",
+      "pattern": ""
     }
   ],
   "use_regex_to_check_for_excluded_folder": false,
   "excluded_folder": [
+    {
+      "folder": ""
+    },
+    {
+      "folder": ""
+    },
     {
       "folder": ""
     }
