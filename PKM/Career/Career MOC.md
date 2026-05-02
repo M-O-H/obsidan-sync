@@ -3,6 +3,5 @@ banner: PKM/assets/images/banners/idée fixe __ ʸᵃⁿᵈᵉʳᵉᵎᵇ_ ᵏ�
 icon: 💻 Career
 tags:
   - map
-  - "#career"
 ---
 ## Projects
