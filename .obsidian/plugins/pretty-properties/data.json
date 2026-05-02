@@ -20,6 +20,14 @@
     "Next Read": {
       "pillColor": "yellow",
       "textColor": "yellow"
+    },
+    "title": {
+      "pillColor": "green",
+      "textColor": {
+        "h": 124,
+        "s": 100,
+        "l": 50
+      }
     }
   },
   "tagColors": {
@@ -66,7 +74,7 @@
   "bannersFolder": "PKM/assets/banners",
   "coversFolder": "PKM/assets/covers",
   "showColorSettings": true,
-  "showTextColorSettings": false,
+  "showTextColorSettings": true,
   "showHiddenSettings": false,
   "showHiddenEmptySettings": false,
   "iconsFolder": "",
@@ -91,7 +99,7 @@
   "enableCustomDateFormat": false,
   "enableCustomDateFormatInBases": false,
   "enableRelativeDateColors": false,
-  "settingsTab": "DATES",
+  "settingsTab": "PROPERTY_SETTINGS",
   "enableTaskNotesCount": false,
   "allTNTasksCount": "tn_tasks",
   "completedTNTasksCount": "tn_tasks_completed",
@@ -113,7 +121,7 @@
   "showTagColorSettings": true,
   "iconSizeMobile": 70,
   "iconSizePopover": 50,
-  "hidePropertiesInPropTab": false,
+  "hidePropertiesInPropTab": true,
   "autoTasksCount": true,
   "enableColoredTagsInTagPane": true,
   "mathProperties": [],
@@ -137,16 +145,16 @@
   "enableBannersInPopover": true,
   "enableIconsInPopover": false,
   "enableCoversInPopover": true,
-  "hideAllEmptyProperties": false,
+  "hideAllEmptyProperties": true,
   "hiddenWhenEmptyProperties": [],
   "iconInTitle": true,
   "titleIconSize": 30,
   "titleTextIconMatchTitleSize": true,
   "imageLinkFormat": "link",
-  "hideMetadataContainerIfAllPropertiesHiddenEditing": false,
-  "hideMetadataContainerIfAllPropertiesHiddenReading": false,
-  "autoHidePropertiesWithBanner": false,
+  "hideMetadataContainerIfAllPropertiesHiddenEditing": true,
+  "hideMetadataContainerIfAllPropertiesHiddenReading": true,
+  "autoHidePropertiesWithBanner": true,
   "hideCoverCollapsed": true,
-  "hidePropTitle": false,
+  "hidePropTitle": true,
   "hideAddPropertyButton": true
 }
