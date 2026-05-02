@@ -30,5 +30,6 @@
   "tabSize": 4,
   "showInlineTitle": false,
   "defaultViewMode": "source",
-  "livePreview": true
+  "livePreview": true,
+  "vimMode": true
 }
