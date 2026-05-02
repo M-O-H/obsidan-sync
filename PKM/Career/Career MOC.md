@@ -4,4 +4,3 @@ icon: 💻 Career
 tags:
   - map
 ---
-## Projects
