@@ -18,3 +18,9 @@ isbn10: 132350882
 localCoverImage: PKM/assets/covers/Clean Code.jpg
 status: Reading
 ---
+
+
+## Reading Journey
+
+- 2026-05-02: Started
+- 2026-05-02: 33
