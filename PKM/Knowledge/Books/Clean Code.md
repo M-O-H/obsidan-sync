@@ -15,7 +15,7 @@ link: https://books.google.com/books/about/Clean_Code.html?hl=&id=hjEFCAAAQBAJ
 previewLink: http://books.google.com/books?id=hjEFCAAAQBAJ&dq=Clean+code&hl=&as_pt=BOOKS&cd=1&source=gbs_api
 isbn13: 9780132350884
 isbn10: 132350882
-localCoverImage: PKM/assets/covers/Clean Code.jpg
+localCoverImage: PKM/assets/images/covers/Clean Code.jpg
 status: Reading
 ---
 

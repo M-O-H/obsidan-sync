@@ -15,6 +15,6 @@ link: https://books.google.com/books/about/Designing_Data_Intensive_Applications
 previewLink: http://books.google.com/books?id=zFheDgAAQBAJ&printsec=frontcover&dq=Design+Data+intensive+application&hl=&as_pt=BOOKS&cd=1&source=gbs_api
 isbn13: 9781491903117
 isbn10: 1491903112
-localCoverImage: PKM/assets/covers/Designing Data-Intensive Applications.jpg
+localCoverImage: PKM/assets/images/covers/Designing Data-Intensive Applications.jpg
 status: Plan to read
 ---

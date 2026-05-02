@@ -15,6 +15,6 @@
   "showCoverImageInSearch": true,
   "enableCoverImageSave": true,
   "enableCoverImageEdgeCurl": false,
-  "coverImagePath": "PKM/assets/covers",
+  "coverImagePath": "PKM/assets/images/covers",
   "askForLocale": true
 }
