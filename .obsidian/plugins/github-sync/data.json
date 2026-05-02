@@ -1,5 +1,5 @@
 {
-  "remoteURL": "git@github.com:M-O-H/obsidan-sync.git",
+  "remoteURL": "https://github.com/M-O-H/obsidan-sync.git",
   "gitLocation": "",
   "syncinterval": 0,
   "isSyncOnLoad": false,
