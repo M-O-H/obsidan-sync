@@ -1,5 +1,5 @@
 ---
-banner: PKM/assets/banners/Library-gif.gif
+banner: PKM/assets/images/banners/Library-gif.gif
 icon: ✨ Title
 tags:
   - Tem
