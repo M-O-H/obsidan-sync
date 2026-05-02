@@ -15,6 +15,6 @@ link: https://books.google.com/books/about/The_Pragmatic_Programmer.html?hl=&id=
 previewLink: http://books.google.com/books?id=sNeFxAEACAAJ&dq=The+progmatic+programmer&hl=&as_pt=BOOKS&cd=3&source=gbs_api
 isbn10: 135957052
 isbn13: 9780135957059
-localCoverImage: PKM/assets/covers/The Pragmatic Programmer.jpg
+localCoverImage: PKM/assets/images/covers/The Pragmatic Programmer.jpg
 status: Next Read
 ---

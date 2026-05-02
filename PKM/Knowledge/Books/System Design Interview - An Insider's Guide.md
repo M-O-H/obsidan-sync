@@ -14,6 +14,6 @@ description: The system design interview is considered to be the most complex an
 link: https://books.google.com/books/about/System_Design_Interview_An_Insider_s_Gui.html?hl=&id=b_mUzQEACAAJ
 previewLink: http://books.google.com/books?id=b_mUzQEACAAJ&dq=system+design+intreview&hl=&as_pt=BOOKS&cd=1&source=gbs_api
 isbn13: 9798645383572
-localCoverImage: PKM/assets/covers/System Design Interview - An Insider's Guide.jpg
+localCoverImage: PKM/assets/images/covers/System Design Interview - An Insider's Guide.jpg
 status: Plan to read
 ---
