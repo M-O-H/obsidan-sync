@@ -28,5 +28,7 @@
   "propertiesInDocument": "visible",
   "rightToLeft": false,
   "tabSize": 4,
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "defaultViewMode": "source",
+  "livePreview": true
 }

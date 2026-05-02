@@ -22,12 +22,12 @@
       "textColor": "yellow"
     },
     "title": {
-      "pillColor": "green",
-      "textColor": {
-        "h": 124,
+      "pillColor": {
+        "h": 270,
         "s": 100,
-        "l": 50
-      }
+        "l": 32
+      },
+      "textColor": "pink"
     }
   },
   "tagColors": {
@@ -125,7 +125,7 @@
   "autoTasksCount": true,
   "enableColoredTagsInTagPane": true,
   "mathProperties": [],
-  "enableMath": false,
+  "enableMath": true,
   "dataVersion": 0,
   "dateColors": {
     "past": {
@@ -145,16 +145,16 @@
   "enableBannersInPopover": true,
   "enableIconsInPopover": false,
   "enableCoversInPopover": true,
-  "hideAllEmptyProperties": true,
+  "hideAllEmptyProperties": false,
   "hiddenWhenEmptyProperties": [],
   "iconInTitle": true,
   "titleIconSize": 30,
   "titleTextIconMatchTitleSize": true,
   "imageLinkFormat": "link",
-  "hideMetadataContainerIfAllPropertiesHiddenEditing": true,
-  "hideMetadataContainerIfAllPropertiesHiddenReading": true,
-  "autoHidePropertiesWithBanner": true,
+  "hideMetadataContainerIfAllPropertiesHiddenEditing": false,
+  "hideMetadataContainerIfAllPropertiesHiddenReading": false,
+  "autoHidePropertiesWithBanner": false,
   "hideCoverCollapsed": true,
-  "hidePropTitle": true,
-  "hideAddPropertyButton": true
+  "hidePropTitle": false,
+  "hideAddPropertyButton": false
 }
