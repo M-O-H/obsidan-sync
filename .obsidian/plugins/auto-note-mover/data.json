@@ -7,6 +7,11 @@
       "folder": "PKM/Career/projects",
       "tag": "#swe/project",
       "pattern": ""
+    },
+    {
+      "folder": "PKM/Peronal/Habits",
+      "tag": "",
+      "pattern": ""
     }
   ],
   "use_regex_to_check_for_excluded_folder": false,
