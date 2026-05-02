@@ -2,7 +2,7 @@
   "settingsVersion": 20250408,
   "booksFolder": "PKM/Knowledge/Books",
   "bookProperties": {
-    "cover": "PKM/assets/covers/",
+    "cover": "localCoverImage",
     "author": "author",
     "published": "published",
     "pages": "pages",
