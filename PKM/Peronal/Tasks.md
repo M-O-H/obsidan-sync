@@ -8,7 +8,8 @@ List of tasks I should complete
 - intro introduce daily notes
 
 ### To-Do List
--[]
+- [ ] Clean Solar planes
+- [ ] Cut Trees
 
 ## Priority Tasks
 - Scholarship & living aboard
