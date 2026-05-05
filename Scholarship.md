@@ -1,3 +1,7 @@
+---
+tags:
+  - k/Study
+---
 ## Japan scholarship 
 ### Requirements 
 - Passport 
