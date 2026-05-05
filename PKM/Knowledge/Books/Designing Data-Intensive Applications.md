@@ -18,3 +18,6 @@ isbn10: 1491903112
 localCoverImage: PKM/assets/images/covers/Designing Data-Intensive Applications.jpg
 status: Plan to read
 ---
+
+## Take notes 
+I dont know to to take notes yet lol
