@@ -4,5 +4,14 @@ tags:
 ---
 OPEN API
 ```
-export OPENROUTER_API_KEY="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"
+# ============================================
+# AI PLUGINS
+# ============================================
+export OPENROUTER_API_KEY=
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+# export ANTHROPIC_BASE_URL="http://localhost:11434/v1"
+# export ANTHROPIC_AUTH_TOKEN="lcoal-model"
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
 ```
