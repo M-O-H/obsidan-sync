@@ -6,6 +6,10 @@ List of tasks I should complete
 - Plan to balance my dopamine levels
 - Plan [[Habits]], [[study]], [[Self-Care]], [[Exercise]], [[Islamic]]
 - intro introduce daily notes
+
+### To-Do List
+-[]
+
 ## Priority Tasks
 - Scholarship & living aboard
 - Build a strong career Portfolio (deadline before aid).
