@@ -7,7 +7,7 @@
 - Supervisor or Most Respected Professor, plus if teach subject related to your research plan
 - 
 
-### TIp Format 
+### tips and  Format 
 - 
 
 
