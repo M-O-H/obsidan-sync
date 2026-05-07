@@ -4,7 +4,7 @@
 - Strong Recommendation: "The most important thing is that the professor 'strongly recommends' you."
 - Adaptability and Agency: "I would probably emphasize adaptability and agency the most because these are traits that are the most important doing research in a foreign country."
 - Research Experience: "It definitely won't hurt. I think showing that you have experience with the type of research you want to do in Japan can help."
-- Supervisor or Most Respected Professor
+- Supervisor or Most Respected Professor, plus if teach subject 
 - 
 
 ### Format
