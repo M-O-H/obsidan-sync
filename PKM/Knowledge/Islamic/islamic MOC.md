@@ -1,5 +1,5 @@
 
 - [[Quran]]
 - [[Sunnah]]
-- [[Hadiths]]
+- [[Hadith]]
 - [[Azkar]]
