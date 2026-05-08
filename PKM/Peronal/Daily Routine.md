@@ -7,7 +7,7 @@
 > - **Prepare before night:** Decide your day before night so you can focus on implementing.
 
 ## Morning 5-12 am 
-Testosterone/cortisol peaks  do (any problem solving tasks)
+Testosterone/cortisol peaks do any problem solving tasks
 #### 5:00 AM
 - [[Exercise]] - [[Stretch]]
 - [[Shower]] - [[Self-Care]]
