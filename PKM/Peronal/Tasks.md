@@ -4,7 +4,7 @@ List of tasks I should complete
 ## Daily Tasks
 - Career: implement CI/CD, web-admin Dashboard
 - Plan to balance my dopamine levels
-- Plan [[Habits]], [[study]], [[Self-Care]], [[Exercise]], [[Islamic]]
+- Plan [[Habits]], [[study]], [[Self-Care]], [[Exercise]], [[islamic MOC]]
 - intro introduce daily notes
 
 ### To-Do List
