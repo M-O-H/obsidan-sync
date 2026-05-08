@@ -1,1 +1,1 @@
--[ - ] Cutting noise completely for  
+-[ - ] cutting high [[Dopamine]] activity and noise completely for full day 
