@@ -9,3 +9,6 @@ https://rss.app/feeds/n7jJkMrYULb7tVUd.xml
 
 وزارة الصحة
 https://rss.app/feeds/Ej2ni3S8V32wvVLX.xml
+
+وزارة التعليم 
+https://rss.app/feeds/6frE8cSTMVflxksY.xml
