@@ -2,4 +2,4 @@
 - [[Quran]]
 - [[Sunnah]]
 - [[Hadiths]]
-- 
+- [[Azkar]]
