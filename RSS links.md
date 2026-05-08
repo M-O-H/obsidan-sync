@@ -23,6 +23,8 @@ https://rss.app/feeds/LCVKltqROg5dHULi.xml
 
 وزارة الداخلية/ مكتب الشرطة 
 https://rss.app/feeds/mmMQ70bj88CTTZUQ.xml
+وزارة التعليم
+https://rss.app/feeds/i9r7xP0v5BZ002cJ.xml
 
 ## Primary resources 
 https://www.facebook.com/sdspokesperson
