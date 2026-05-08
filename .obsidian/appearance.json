@@ -1,7 +1,7 @@
 {
   "cssTheme": "Velocity",
   "baseFontSize": 14,
-  "accentColor": "#ffffff",
+  "accentColor": "#ba7c3d",
   "autoFullScreen": true,
   "slidingSidebar": true,
   "theme": "obsidian"
