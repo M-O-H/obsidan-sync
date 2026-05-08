@@ -14,3 +14,6 @@ https://rss.app/feeds/Ej2ni3S8V32wvVLX.xml
 
 وزارة التعليم 
 https://rss.app/feeds/6frE8cSTMVflxksY.xml
+
+وزارة الدفاع 
+https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
