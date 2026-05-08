@@ -7,5 +7,5 @@ SUNA: https://rss.app/feeds/ndLpB659rPP1dqme.xml
 وزارة الخارجية 
 https://rss.app/feeds/n7jJkMrYULb7tVUd.xml
 
-وزارة الصحو
+وزارة الصحة
 https://rss.app/feeds/Ej2ni3S8V32wvVLX.xml
