@@ -21,5 +21,6 @@ https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
 وزارة المالية 
 https://rss.app/feeds/LCVKltqROg5dHULi.xml
 
-وزارة الداخلية/
+وزارة الداخلية/ مكتب الشرطة 
+https://rss.app/feeds/mmMQ70bj88CTTZUQ.xml
 
