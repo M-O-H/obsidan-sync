@@ -1,3 +1,5 @@
 
 - [[Quran]]
+- [[Sunnah]]
+- [[Hadiths]]
 - 
