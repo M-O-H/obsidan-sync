@@ -10,7 +10,7 @@
 Testosterone/cortisol peaks do any problem solving tasks
 #### 5:00 AM
 - [[Exercise]] - [[Stretch]]
-- [[Shower]] - [[Self-Care]]
+- [[Selfcare]] - [[Self-Care]]
 - sunlight (natural dopamine)
 #### 6:00 AM
 - [[Career MOC]] - [[2026 Goals]]
