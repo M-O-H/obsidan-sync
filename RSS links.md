@@ -17,3 +17,9 @@ https://rss.app/feeds/6frE8cSTMVflxksY.xml
 
 وزارة الدفاع 
 https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
+
+وزارة المالية 
+https://rss.app/feeds/LCVKltqROg5dHULi.xml
+
+
+
