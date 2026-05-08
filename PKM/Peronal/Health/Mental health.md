@@ -1,4 +1,8 @@
 ## Mindset
-Change your mindset of live 
+#### Mindset that slow me down:
+
+**Employment**
+
+**Money**
 ## Related Notes
 - [[Dopamine]]
