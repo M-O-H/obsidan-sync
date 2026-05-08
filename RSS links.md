@@ -21,5 +21,5 @@ https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
 وزارة المالية 
 https://rss.app/feeds/LCVKltqROg5dHULi.xml
 
-
+وزارة الداخلية/
 
