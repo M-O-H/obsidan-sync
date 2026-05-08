@@ -21,6 +21,7 @@ Take short breaks, eat balanced protein-rich meals, or do light movement to comb
 
 - [[Skills]]
 - [[study]] 
+- [[Scholarship]]
 
 ---
 ## Afternoon 3-6 PM
