@@ -32,6 +32,11 @@
       "folder": "PKM/Peronal/Health",
       "tag": "#p/SelfCare",
       "pattern": ""
+    },
+    {
+      "folder": "PKM/Peronal/Finance",
+      "tag": "",
+      "pattern": ""
     }
   ],
   "use_regex_to_check_for_excluded_folder": false,
