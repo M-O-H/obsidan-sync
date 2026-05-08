@@ -27,7 +27,6 @@ Why? because you don't need to maintain focus  or dopamine level on entertainmen
 After all that maintaining and spikes in order to regulate you're dopamine to next
 that good hours of sleep essential.
 
-#### 
 
 #### To-Do
 Dopamine Tracking Graph
