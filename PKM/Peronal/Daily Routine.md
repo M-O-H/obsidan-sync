@@ -36,7 +36,7 @@ Prioritize relaxation, winding down, or reflection—no strenuous work. Low test
 - Recall, organize and improve next day.
 
 ---
-# priority 
+###  priority 
 Before anything 
 Identify achievable goals 
 Keep yourself accountable 
