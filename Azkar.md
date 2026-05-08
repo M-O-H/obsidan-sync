@@ -1,0 +1,6 @@
+---
+tags:
+  - k/Islamic
+---
+# morning 
+``
