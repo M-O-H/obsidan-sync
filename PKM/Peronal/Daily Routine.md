@@ -18,7 +18,7 @@ Testosterone/cortisol peaks do any problem solving tasks
 ## Midday 12-1 PM
 Take short breaks, eat balanced protein-rich meals, or do light movement to combat the energy dip.
 
-- [[Skills]]
+- [[Skills MOC]]
 - [[study]] 
 - [[Scholarship]]
 
@@ -47,6 +47,6 @@ Keep yourself accountable
 - [[Tasks]]
 - [[study]]
 - [[Habits]]
-- [[Skills]]
+- [[Skills MOC]]
 - socialize
 - [[Hobbies]]
