@@ -24,3 +24,5 @@ https://rss.app/feeds/LCVKltqROg5dHULi.xml
 وزارة الداخلية/ مكتب الشرطة 
 https://rss.app/feeds/mmMQ70bj88CTTZUQ.xml
 
+## Primary resources 
+https://www.facebook.com/sdspokesperson
