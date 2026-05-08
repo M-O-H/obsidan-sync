@@ -1,6 +1,3 @@
 
-## Quran 
-
-## Sunnah
-### Ahadith
-## others 
+- [[Quran]]
+- 
