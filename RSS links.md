@@ -16,7 +16,7 @@ https://www.facebook.com/FMOH.SUDAN
 (https://www.facebook.com/www.MOHE.GOV.SD)
 
 وزارة الدفاع 
-https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
+https://x.com/SudaneseAF?t=SuqywabwKm0Yod94Z_b41A&s=09
 
 وزارة المالية 
 https://www.facebook.com/SudanFinance
