@@ -19,7 +19,7 @@ https://rss.app/feeds/6frE8cSTMVflxksY.xml
 https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
 
 وزارة المالية 
-https://rss.app/feeds/LCVKltqROg5dHULi.xml
+https://www.facebook.com/SudanFinance
 
 وزارة الداخلية/ مكتب الشرطة 
 https://rss.app/feeds/mmMQ70bj88CTTZUQ.xml
