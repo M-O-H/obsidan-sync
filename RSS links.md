@@ -13,9 +13,10 @@ https://x.com/MofaSudan?t=mPRX-raMCJpK6dsFyjD1XA&s=09
 
 وزارة الصحة
 https://www.facebook.com/FMOH.SUDAN
+https://rss.app/feeds/kY3ClNxEWmVDTP7h.xml
 
 وزارة التعليم 
-(https://www.facebook.com/www.MOHE.GOV.SD)
+https://www.facebook.com/www.MOHE.GOV.SD
 
 وزارة الدفاع 
 https://x.com/SudaneseAF?t=SuqywabwKm0Yod94Z_b41A&s=09
