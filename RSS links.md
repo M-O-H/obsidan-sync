@@ -10,7 +10,7 @@ https://rss.app/feeds/BuGpGO0PqWzlLm9y.xml
 https://x.com/MofaSudan?t=mPRX-raMCJpK6dsFyjD1XA&s=09
 
 وزارة الصحة
-https://rss.app/feeds/Ej2ni3S8V32wvVLX.xml
+https://www.facebook.com/FMOH.SUDAN
 
 وزارة التعليم 
 https://rss.app/feeds/6frE8cSTMVflxksY.xml
