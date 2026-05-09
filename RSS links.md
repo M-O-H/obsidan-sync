@@ -19,6 +19,7 @@ https://www.facebook.com/FMOH.SUDAN
 
 وزارة الدفاع 
 https://x.com/SudaneseAF?t=SuqywabwKm0Yod94Z_b41A&s=09
+https://www.facebook.com/sudanese.menistry.of.defence
 
 https://www.facebook.com/sudanese.menistry.of.defence
 وزارة المالية 
@@ -27,7 +28,6 @@ https://www.facebook.com/SudanFinance
 وزارة الداخلية/ مكتب الشرطة 
 https://rss.app/feeds/mmMQ70bj88CTTZUQ.xml
 وزارة التعليم
-https://rss.app/feeds/i9r7xP0v5BZ002cJ.xml
-
+https://www.facebook.com/profile.php?id=100086242721189
 ## Primary resources 
 https://www.facebook.com/sdspokesperson
