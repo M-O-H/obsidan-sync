@@ -13,7 +13,7 @@ https://x.com/MofaSudan?t=mPRX-raMCJpK6dsFyjD1XA&s=09
 https://www.facebook.com/FMOH.SUDAN
 
 وزارة التعليم 
-https://rss.app/feeds/6frE8cSTMVflxksY.xml
+(https://www.facebook.com/www.MOHE.GOV.SD)
 
 وزارة الدفاع 
 https://rss.app/feeds/NupyE4qfXwDjKNBL.xml
