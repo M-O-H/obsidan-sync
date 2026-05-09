@@ -4,6 +4,8 @@ SUNA: https://rss.app/feeds/ndLpB659rPP1dqme.xml
 مجلس السيادة الانتقالي https://rss.app/feeds/jpeaqOkCbsdhtSUv.xml
 SAF
 https://rss.app/feeds/BuGpGO0PqWzlLm9y.xml
+مخابرات
+https://www.facebook.com/profile.php?id=100071906672549
 
 ## Ministers 
 وزارة الخارجية 
