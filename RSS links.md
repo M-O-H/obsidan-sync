@@ -7,7 +7,7 @@ https://rss.app/feeds/BuGpGO0PqWzlLm9y.xml
 
 ## Ministers 
 وزارة الخارجية 
-https://rss.app/feeds/n7jJkMrYULb7tVUd.xml
+https://x.com/MofaSudan?t=mPRX-raMCJpK6dsFyjD1XA&s=09
 
 وزارة الصحة
 https://rss.app/feeds/Ej2ni3S8V32wvVLX.xml
