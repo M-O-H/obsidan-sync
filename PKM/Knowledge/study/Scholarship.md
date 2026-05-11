@@ -18,3 +18,7 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 ## Educational Records
 - Basic Crown Private School
 - 
+
+
+### Research plan
+- 
