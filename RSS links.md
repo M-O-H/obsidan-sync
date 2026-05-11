@@ -23,6 +23,7 @@ https://rss.app/feeds/wS0fQkyvXfpxXYpf.xml
 https://x.com/SudaneseAF?t=SuqywabwKm0Yod94Z_b41A&s=09
 https://www.facebook.com/sudanese.menistry.of.defence
 https://rss.app/feeds/TD8qlw4hhSROHW1A.xml
+https://www.facebook.com/sudanese.menistry.of.defenceك
 
 https://www.facebook.com/sudanese.menistry.of.defence
 وزارة المالية 
