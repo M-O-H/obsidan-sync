@@ -61,3 +61,6 @@ The MEXT Brainstorming Master Prompt
 
         The "Why Japan" & Home Country Impact Equation: (Why this requires Japanese labs and how it directly benefits Sudan)
 ```
+
+## Topics
+- Telecommunications 
