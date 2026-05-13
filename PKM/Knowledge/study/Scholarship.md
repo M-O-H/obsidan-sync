@@ -25,6 +25,7 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 - **logical evolution of your past studies** 
 - **burning problem in your home country** and leverages Japan's unique assets
 - such as specific databases, advanced equipment, or specific professors—to research a solution
+- methodological soundness,
 
 **Impact**
 tying your AI research to structural, economic, or technological challenges in Sudan while leveraging Japan's unique expertise is the ultimate formula for success.
