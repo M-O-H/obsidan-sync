@@ -22,6 +22,7 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 
 ### Research plan
 - **Digital/tech infrastructure**
+- Deep Learning for Network Fault Prediction in Telecoms
 - [[Sudanese Digital Payment Network Design]]
 ### Strong aspects 
 - **logical evolution of your past studies** 
