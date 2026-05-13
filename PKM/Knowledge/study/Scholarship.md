@@ -25,7 +25,8 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 **Impact**
 tying your AI research to structural, economic, or technological challenges in Sudan while leveraging Japan's unique expertise is the ultimate formula for success.
  - bridge between japan and sudan
--  
+-  benefit from japan special technology add apply it on sudan
+  
 
 **prompts**
 ```
