@@ -35,6 +35,24 @@ tying your AI research to structural, economic, or technological challenges in S
   
 
 **prompts**
+```
+search for burring problems in sudan
+
+that can be solved my leverages Japan's unique assets:
+
+criteria:
+
+- fields of AI/Data
+
+- should be feasible as research plan
+
+- Diplomatic Impact
+
+- Societal Impact
+
+curate past related research plans as references locally or globaly
+```
+
 
 ```
 The MEXT Brainstorming Master Prompt
