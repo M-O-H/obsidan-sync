@@ -32,6 +32,7 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 **Machine learning** towards e-govermwmt 
 - Transfer Learning for Arabic Administrative Document Classification
 - ML-Based Anomaly Detection for E-Government System Logs
+- Federated Learning for Distributed Government Data Without Centralization
 ### Strong aspects 
 - **logical evolution of your past studies** 
 - **burning problem in your home country** and leverages Japan's unique assets
