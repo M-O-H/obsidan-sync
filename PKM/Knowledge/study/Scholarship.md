@@ -26,7 +26,6 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 - Federated Learning for Privacy-Preserving Public Services
 - [[Sudanese Digital Payment Network Design]]
 - Deep Learning Based Digital Identity Verification Towards Trustworthy E-Government Services
-- Generative AI for Government Automation
 - AI for Telecom Network Anomaly Detection in Unmanaged Networks
 - Generative AI for Public Administration Automation in Resource-Constrained Governments
 ### Strong aspects 
