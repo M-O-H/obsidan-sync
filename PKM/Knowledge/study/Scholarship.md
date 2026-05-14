@@ -28,6 +28,9 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 - Deep Learning Based Digital Identity Verification Towards Trustworthy E-Government Services
 - AI for Telecom Network Anomaly Detection in Unmanaged Networks
 - Generative AI for Public Administration Automation in Resource-Constrained Governments
+
+**Machine learning**
+- 
 ### Strong aspects 
 - **logical evolution of your past studies** 
 - **burning problem in your home country** and leverages Japan's unique assets
