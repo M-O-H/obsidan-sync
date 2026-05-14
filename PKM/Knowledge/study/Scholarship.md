@@ -29,8 +29,9 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 - AI for Telecom Network Anomaly Detection in Unmanaged Networks
 - Generative AI for Public Administration Automation in Resource-Constrained Governments
 
-**Machine learning**
+**Machine learning** towards e-govermwmt 
 - Transfer Learning for Arabic Administrative Document Classification
+- ML-Based Anomaly Detection for E-Government System Logs
 ### Strong aspects 
 - **logical evolution of your past studies** 
 - **burning problem in your home country** and leverages Japan's unique assets
