@@ -26,6 +26,7 @@ https://www.sdn.emb-japan.go.jp/itpr_en/culture_education.html?utm_source=chatgp
 - Federated Learning for Privacy-Preserving Public Services
 - [[Sudanese Digital Payment Network Design]]
 - Deep Learning Based Digital Identity Verification Towards Trustworthy E-Government Services
+- 
 ### Strong aspects 
 - **logical evolution of your past studies** 
 - **burning problem in your home country** and leverages Japan's unique assets
