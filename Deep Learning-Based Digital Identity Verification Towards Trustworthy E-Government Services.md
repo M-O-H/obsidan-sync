@@ -13,11 +13,12 @@ humanity
 
 ### 2-2. Research Plan
 #### Research Goals
-Sudan scored 0.2759/1.0 on the UN E-Government Development Index in 2024 (below Africa's average of 0.4247) and holds
-Cybersecurity Tier 4 status with an AI preparedness score of 24.63/100 [1]. SudaPass — announced for imminent launch —
-will authenticate citizens via facial biometrics [2], yet no peer-reviewed deep learning framework exists for this system. Japan's
-NII, NEC, and Digital Agency have solved exactly the problems Sudan faces [3,4,5]. This research transfers and adapts those
-solutions. Specific goals: (i) design a multi-modal biometric fusion architecture for SudaPass-compatible deployment; (ii)
-develop a presentation attack detection module robust to deepfakes under Sudan's device-diversity conditions; (iii) implement
-a communication-efficient federated learning protocol validated under low-bandwidth distributed-ministry simulation; and (iv)
-conduct a fairness audit and debiasing study for Sudan's demographic population.
+
+The UN E-Government Development Index 2024 placed Sudan at 0.2759/1.0, below Africa’s average of 0.4247.
+Occupying the Cybersecurity Tier 4 with an AI preparedness score of 24.63/100 [1]. SudaPass to be launched shortly - Announcement.
+The citizen authentication via facial biometrics is going to be done by [2]. However, no peer-reviewed deep learning framework exists for this system. Japanese
+NII, NEC, Digital Agency are exactly solving the kind of problems Sudan faces. This study applies and modifies those.
+Answers. Specific objectives (i) to design a multimodal biometric fusion architecture suitable for SudaPass deployment; (ii).
+Create a presentation attack detection module that is robust to deepfakes under Sudan’s device-diversity conditions. 
+A communication-efficient federated learning protocol that was validated in a low-bandwidth distributed ministry simulation.
+Carry out a fairness audit and debiasing study for the population of Sudan.
