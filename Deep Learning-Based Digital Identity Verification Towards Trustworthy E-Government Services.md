@@ -24,7 +24,9 @@ This thesis addresses that gap by investigating the application of deep learning
 
 
 
-
+##  Past and Present Field of Study
+The digital world has empowered citizens to interact with authorities in new ways. Things like tax filing, benefit claims and other legal registration that occurred physically are now available on the internet. Correspondingly, traditional verifications methods like passwords and PINs are now the standard form of confirming user identity. However, these techniques prove what a person knows, instead of who they are, leaving them open to theft, reuse and social engineering.
+Inasmuch as biometric-based approaches offer a more trustworthy alternative, it confirms physical traits such as facial geometry, fingerprints and iris patterns−characteristics that cannot be forged or forgotten. The development of deep learning has enabled neural networks to learn complex representations from the data directly and achieve accuracy that exceeds that of classical pattern recognition methods by far and also under real-world variations in lighting, pose, and image quality.
 
 
 
