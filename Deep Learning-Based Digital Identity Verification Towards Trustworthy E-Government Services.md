@@ -3,18 +3,19 @@ Title: A set of trustworthy e-government solutions relying on digital identity v
 
 
 ## introduction
-The advent of digital platforms has changed the way citizens engage with government institutions. Once, these services could only be availed by being physically present. But now, they are made available online. This change creates an important challenge, which is to remotely and reliably verify user identification at scale.
+#### Background
 
-Conventional verification methods like passwords and PINs identify what one knows not who one is. They are susceptible to stealing, reusing, and social engineering. So they aren’t enough for government deals. Biometric-based approaches that verify characteristics, like the geometry of the face, fingerprints, and iris patterns, are more reliable as they cannot be forged. They are also something you cannot forget.
-Biometric verification's accuracy and scalability has enhanced drastically due to deep learning. 
+The advent of digital platforms has transformed how citizens engage with government institutions. Services that once required physical presence — such as tax filing, benefit claims, and legal registration — are now delivered online. Alongside this shift, conventional verification methods such as passwords and PINs have become the standard means of confirming user identity. However, these methods authenticate what a person _knows_, not who they _are_, making them vulnerable to theft, reuse, and social engineering.
 
-Deep neural networks that learn complex representations from data achieve performance far exceeding classical pattern recognition techniques; especially under real-world conditions involving variations in lighting, pose, and image quality.
+Biometric-based approaches offer a more reliable alternative by verifying inherent physical characteristics such as facial geometry, fingerprints, and iris patterns — traits that cannot be forged or forgotten. Deep learning has further advanced this field, enabling neural networks to learn complex representations directly from data and achieve accuracy that far exceeds classical pattern recognition methods, even under real-world conditions involving variations in lighting, pose, and image quality.
 
-The verification of identities in e-government services is one of the most demanding applications. Mistakes can be serious threatening fraud, identity theft and public trust but minimizing access and over-engineering can reinforce exclusion of vulnerable populations. To effectively deploy , it is important to strike a balance between security and fairness, fairness and accessibility, and transparency. 
+---
 
-This thesis examines the role of deep learning in digital identity verification for e-government application design, focusing on trustworthiness as a design criterion. It examines what these existing approaches lack, proposes and evaluates verification architectures based on deep learning, and discusses the implications for digital governance that is secure, fair and citizen-centered.
+#### Problem Formulation
 
+Despite these advances, deploying identity verification in e-government contexts remains a significant challenge. Verification errors carry serious consequences — including fraud, identity theft, and erosion of public trust — while overly restrictive systems risk excluding vulnerable populations. No existing approach fully balances security, fairness, accessibility, and transparency in a government service context.
 
+This thesis addresses that gap by investigating the application of deep learning to digital identity verification for e-government services, with trustworthiness as a central design criterion. It evaluates the limitations of current approaches, proposes and tests deep learning-based verification architectures, and discusses implications for governance that is secure, equitable, and citizen-centered.
 
 
 
