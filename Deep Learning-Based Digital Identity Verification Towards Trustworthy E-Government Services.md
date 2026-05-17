@@ -10,7 +10,9 @@ Biometric verification's accuracy and scalability has enhanced drastically due t
 
 Deep neural networks that learn complex representations from data achieve performance far exceeding classical pattern recognition techniques; especially under real-world conditions involving variations in lighting, pose, and image quality.
 
-The verification of identities in e-government services is one of the most demanding applications. Mistakes can be serious threatening fraud, identity theft and public trust but minimizing access and over-engineering can reinforce exclusion of vulnerable populations. To effectively deploy , it is important to strike a balance between security and fairness, fairness and accessibility, and transparency. This thesis examines the role of deep learning in digital identity verification for e-government application design, focusing on trustworthiness as a design criterion. It examines what these existing approaches lack, proposes and evaluates verification architectures based on deep learning, and discusses the implications for digital governance that is secure, fair and citizen-centered.
+The verification of identities in e-government services is one of the most demanding applications. Mistakes can be serious threatening fraud, identity theft and public trust but minimizing access and over-engineering can reinforce exclusion of vulnerable populations. To effectively deploy , it is important to strike a balance between security and fairness, fairness and accessibility, and transparency. 
+
+This thesis examines the role of deep learning in digital identity verification for e-government application design, focusing on trustworthiness as a design criterion. It examines what these existing approaches lack, proposes and evaluates verification architectures based on deep learning, and discusses the implications for digital governance that is secure, fair and citizen-centered.
 
 
 
