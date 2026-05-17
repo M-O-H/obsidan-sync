@@ -1,6 +1,31 @@
 Title: A set of trustworthy e-government solutions relying on digital identity verification using deep learning.
-## 1. Past and Present Field of Study - rewrite
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- 
 ### 2-1. The subject of study in Japan.
 A set of trustworthy e-government solutions relying on digital identity verification using deep learning.
 Research Theme: A unified deep learning-based framework for security and privacy with provable security guarantees.
