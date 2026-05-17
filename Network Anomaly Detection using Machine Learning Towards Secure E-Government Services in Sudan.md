@@ -26,7 +26,7 @@ Tavallaee et al. [3] conducted a detailed analysis of the KDD Cup 1999 dataset w
 3.3 Deep Learning Approaches
 Javaid et al. [4] applied a deep learning architecture based on sparse autoencoders to the problem of network intrusion detection. Their model learned compact feature representations of network traffic in an unsupervised manner and used reconstruction error as an anomaly score. The approach showed improved detection rates for novel attack types compared to traditional shallow classifiers, supporting the use of representation learning for network anomaly detection.
 
-4. Challenges and Suggestions
+## 4. Challenges and Suggestions
 Signature-based limitations: Current network monitoring tools deployed in e-government environments use rule-based detection that requires frequent manual signature updates. Novel attack vectors — particularly those designed to evade known detection rules — are systematically missed. This results in a detection gap that grows as attackers develop more sophisticated evasion techniques.
 Class imbalance: In real network traffic, attack instances represent a very small proportion of total traffic. Standard ML classifiers trained on imbalanced datasets tend to achieve high overall accuracy by classifying almost all traffic as normal, achieving very low detection rates for actual attacks [3]. Addressing this imbalance is a critical technical challenge.
 Feature selection: Network traffic data contains a large number of potentially relevant features. Not all features contribute equally to anomaly detection, and irrelevant features can degrade classifier performance and increase computational cost. Statistical feature selection methods such as information gain and correlation-based filtering can identify the most discriminative features for a given network environment [5].
@@ -39,8 +39,7 @@ Step 4: Train supervised classifiers on labeled traffic samples using the select
 Step 5: Combine unsupervised normality scores with supervised classification confidence to produce a final anomaly score
 Step 6: Flag high-scoring traffic samples for analyst review and incorporate analyst feedback to retrain models iteratively
 
-
-5. Research Methodology
+## 5. Research Methodology
 The objective of this study is to develop a machine learning framework that detects network anomalies in e-government infrastructure with higher accuracy and lower false positive rates than existing rule-based systems. The following phases constitute the research methodology:
 
 Review and analyze prior work on network anomaly detection, benchmark datasets, and ML algorithms used in this domain.
@@ -49,7 +48,6 @@ Apply information gain and correlation-based methods to identify and retain the 
 Design and implement an ensemble detection model combining unsupervised anomaly scoring with supervised classification.
 Evaluate the proposed model against baseline classifiers using standard metrics including detection rate, false positive rate, precision, recall, and F1-score.
 Develop a lightweight prototype system suitable for deployment in resource-constrained network environments.
-
 
 6. Research Planning
 Objectives 1 and 2 will be carried out first, as reviewing existing work and collecting suitable datasets are prerequisites for all subsequent phases. Objectives 3 and 4 build directly on the outputs of the review and data collection phases and are expected to be achievable within the first year of the program.
@@ -61,7 +59,7 @@ The availability of representative network traffic data from Sudanese e-governme
 
 These remain estimates subject to a tolerance margin, giving a maximum research timeline of 25 months.
 
-7. Conclusion and Expected Outcomes
+## 7. Conclusion and Expected Outcomes
 Sudan's e-government infrastructure has experienced growing exposure to network-based attacks in recent years. Due to international sanctions, government agencies cannot procure commercial network security monitoring products, leaving critical services exposed to anomalous traffic, denial-of-service attacks, and data exfiltration attempts. This research proposes to address this gap by developing a machine learning-based network anomaly detection system that can be deployed without reliance on commercial security vendors.
 Outcomes:
 
@@ -70,7 +68,7 @@ Improve detection rates for both known and novel network attack categories while
 Develop a lightweight open-source prototype system that government network administrators can deploy and maintain without access to commercial security tools.
 
 
-8. References
+## 8. References
 [1] Chandola, V., Banerjee, A., and Kumar, V. Anomaly Detection: A Survey. ACM Computing Surveys, 41(3):1–58, July 2009.
 [2] Lakhina, A., Crovella, M., and Diot, C. Diagnosing Network-Wide Traffic Anomalies. In Proceedings of ACM SIGCOMM, 2004.
 [3] Tavallaee, M., Bagheri, E., Lu, W., and Ghorbani, A. A Detailed Analysis of the KDD CUP 99 Data Set. In Proceedings of the IEEE Symposium on Computational Intelligence for Security and Defense Applications, 2009.
