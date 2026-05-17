@@ -3,7 +3,9 @@ Title: A set of trustworthy e-government solutions relying on digital identity v
 
 
 ## introduction
-
+The advent of digital platforms has changed the way citizens engage with government institutions. Once, these services could only be availed by being physically present. But now, they are made available online. This change creates an important challenge, which is to remotely and reliably verify user identification at scale.
+Conventional verification methods like passwords and PINs identify what one knows not who one is. They are susceptible to stealing, reusing, and social engineering. So they aren’t enough for government deals. Biometric-based approaches that verify characteristics, like the geometry of the face, fingerprints, and iris patterns, are more reliable as they cannot be forged. They are also something you cannot forget.
+Biometric verification's accuracy and scalability has enhanced drastically due to deep learning. Deep neural networks that learn complex representations from data achieve performance far exceeding classical pattern recognition techniques; especially under real-world conditions involving variations in lighting, pose, and image quality.
 
 
 
