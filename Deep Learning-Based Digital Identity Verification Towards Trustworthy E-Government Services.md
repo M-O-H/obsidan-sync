@@ -69,3 +69,5 @@ Answers. Specific objectives (i) to design a multimodal biometric fusion archite
 Create a presentation attack detection module that is robust to deepfakes under Sudan’s device-diversity conditions. 
 A communication-efficient federated learning protocol that was validated in a low-bandwidth distributed ministry simulation.
 Carry out a fairness audit and debiasing study for the population of Sudan.
+
+
