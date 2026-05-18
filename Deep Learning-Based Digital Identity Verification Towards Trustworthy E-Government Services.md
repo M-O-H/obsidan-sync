@@ -10,6 +10,8 @@ problem significance and objectives
 
 **Important**
 Research theme and plan in Japan
+Specify particularly the ultimate goal(s) of
+your research in Japan.
 
 ## introduction
 #### Background
