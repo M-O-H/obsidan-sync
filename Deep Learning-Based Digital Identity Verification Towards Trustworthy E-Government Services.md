@@ -3,7 +3,9 @@ yTitle: A set of trustworthy e-government solutions relying on digital identity 
 
 Headlines
 **Introductoin**
-background and 
+background
+problem formation
+problem significance and objectives
 
 
 ## introduction
