@@ -13,6 +13,9 @@ Research theme and plan in Japan
 Specify particularly the ultimate goal(s) of
 your research in Japan.
 
+**Research Methodology**
+
+
 ## introduction
 #### Background
 
