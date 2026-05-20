@@ -1,5 +1,5 @@
 ---
-banner: PKM/assets/images/banners/7fc335c948b88f9c13356cf23ea6302e.gif
+banner: PKM/assets/images/banners/e93bc48173622d879ade38b7694ed862.jpg
 ---
 
 - [[Quran]]
