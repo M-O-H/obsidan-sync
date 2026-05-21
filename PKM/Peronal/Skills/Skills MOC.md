@@ -7,3 +7,7 @@ tags:
 Public speaking 
 Body language 
 Networking 
+Influence people
+Leadership 
+Confident 
+Motivation 
