@@ -7,7 +7,7 @@ OPEN API
 # ============================================
 # AI PLUGINS
 # ============================================
-export OPENROUTER_API_KEY=
+export OPENROUTER_API_KEY=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
 export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
 export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
 # export ANTHROPIC_BASE_URL="http://localhost:11434/v1"
