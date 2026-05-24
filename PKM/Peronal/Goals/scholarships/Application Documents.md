@@ -1,3 +1,5 @@
 - Research Plans
 - 2 recommendation letters
 - IELTS (optional but good to have)
+- CV
+- ligial record
