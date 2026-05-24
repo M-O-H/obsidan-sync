@@ -1,3 +1,3 @@
 - Research Plans
-- ILETS
--
+- 2 recommendation letters
+- IELTS (optional but good to have)
