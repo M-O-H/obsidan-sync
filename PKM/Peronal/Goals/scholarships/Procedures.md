@@ -1,5 +1,5 @@
 # University Route
-Look for university sponsored by 
-- supervisor recommendation
+Look for university sponsored by government for scholarship
+- supervisor recommendation / Letter of Acceptance (LOA)
 - 
 # Embassy Route
