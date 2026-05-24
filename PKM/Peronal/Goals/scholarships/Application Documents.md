@@ -1,4 +1,5 @@
 # Common documents required in scholarship
+- application form (p)
 - Research Plans
 - supervisor recommendation / Letter of Acceptance (LOA)
 - supervisor 
