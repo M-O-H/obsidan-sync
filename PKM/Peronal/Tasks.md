@@ -9,7 +9,7 @@ List of tasks I should complete
 
 ### To-Do List
 - [ ] Clean Solar planes
-- [ ] Cut Trees
+- [ ] prepare CV for scholarship
 
 ## Priority Tasks
 - Scholarship & living aboard
