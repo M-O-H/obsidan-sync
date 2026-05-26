@@ -7,6 +7,7 @@ List of tasks I should complete
 - Plan [[Habits]], [[study]], [[Self-Care]], [[Exercise]], [[islamic MOC]]
 - intro introduce daily notes
 
+0118585484
 ### To-Do List
 - [ ] Clean Solar planes
 - [ ] prepare CV for scholarship
