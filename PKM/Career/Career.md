@@ -2,6 +2,7 @@
 - Web3
 - SWE
 ## Plan to land a job
-
-- side projects that solve really problem 
-- Co
+- Work experience (freelance )
+- side projects that solve a real problem 
+- GitHub Contribution
+- internship 
