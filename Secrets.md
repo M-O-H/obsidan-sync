@@ -18,3 +18,8 @@ export ANTHROPIC_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
 
 **School emails**
 mohammad.2018cscsb0038@ust.edu.sd
+
+### Playsafecard
+lylysu@cyclelove.cc
+Nighty114.pay
+https://smstome.com/united-kingdom/phone/447447254086/sms/9825
