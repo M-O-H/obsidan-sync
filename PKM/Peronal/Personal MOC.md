@@ -6,3 +6,4 @@ icon: Personal
 ---
 
 - [[Daily Routine]]
+- 
