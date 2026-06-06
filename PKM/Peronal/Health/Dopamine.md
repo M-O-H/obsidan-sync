@@ -32,6 +32,9 @@ After all that maintaining and spikes in order to regulate you're dopamine to ne
 that good hours of sleep essential.
 
 
+### Tips
+- 20 mins staring at wall before hard task
+
 #### To-Do
 Dopamine Tracking Graph
 Represent you're daily activities from waking to sleep in chart 
