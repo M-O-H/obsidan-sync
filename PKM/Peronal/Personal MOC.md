@@ -6,4 +6,4 @@ icon: Personal
 ---
 
 - [[Daily Routine]]
-- 
+- [[Dopamine]]
