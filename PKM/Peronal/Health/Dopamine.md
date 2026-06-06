@@ -32,8 +32,9 @@ After all that maintaining and spikes in order to regulate you're dopamine to ne
 that good hours of sleep essential.
 
 
-### Tips
-- 20 mins staring at wall before hard task
+### Rest system
+do this for 30 days
+- 20 mins staring at wall before doing hard task
 
 #### To-Do
 Dopamine Tracking Graph
