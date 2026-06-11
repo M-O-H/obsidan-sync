@@ -4,7 +4,7 @@
 - ### [mastersportal.com](https://www.mastersportal.com/scholarships/)
 - ### [wemakescholars.com](https://www.wemakescholars.com/)
 - ### [internationalscholarships.com](https://www.internationalscholarships.com/)
-
+- ### [opportunitydesk.org](https://opportunitydesk.org/)
 
 ## 🏛️ Government-Funded Scholarships by Country
 
