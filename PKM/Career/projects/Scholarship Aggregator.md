@@ -28,3 +28,16 @@
 - **Funds for Individuals** `fundsforindividuals.fundsforngos.org` — lists open master's scholarship applications for refugees and IDPs in Sudan and surrounding countries
 - **DAAD Scholarship Database** `daad.de` — fully funded master's in Germany for refugees, accepts UNHCR registration as documentation instead of standard paperwork
 - **Eduhub21** `eduhub21.com` — covers Arab-focused programs like the DAR Fellowship for Sudan, Palestine, Syria, and Yemen researchers
+
+|   |   |   |
+|---|---|---|
+|UNHCR Opportunities Portal|[services.unhcr.org/opportunities](https://services.unhcr.org/opportunities/search)|Refugee-specific aggregator|
+|Displaced Student Opportunities (UK)|[displacedstudentopportunities.org.uk](https://www.displacedstudentopportunities.org.uk/)|UK refugee portal|
+|Scholar Africa|[scholar.africa](https://scholar.africa/)|African student aggregator|
+|UnborderED Knowledge|[unborderedknowledge.com](https://www.unborderedknowledge.com/scholarships)|Canada refugee portal|
+|Scholars4Dev|[scholars4dev.com](https://www.scholars4dev.com/)|General (developing countries)|
+|Opportunity Desk|[opportunitydesk.org](https://opportunitydesk.org/)|General with alerts|
+|Mastersportal|[mastersportal.com](https://www.mastersportal.com/scholarships/)|Largest Master's database|
+|UNHCR Help|[help.unhcr.org](https://help.unhcr.org/)|Country-specific rights & services|
+|ReliefWeb|[reliefweb.int](https://reliefweb.int/)|Humanitarian updates|
+|UC Davis Backpack|[backpack.ucdavis.edu](https://backpack.ucdavis.edu/)|Digital credential storage|
