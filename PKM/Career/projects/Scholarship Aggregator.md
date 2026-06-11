@@ -41,3 +41,17 @@
 |UNHCR Help|[help.unhcr.org](https://help.unhcr.org/)|Country-specific rights & services|
 |ReliefWeb|[reliefweb.int](https://reliefweb.int/)|Humanitarian updates|
 |UC Davis Backpack|[backpack.ucdavis.edu](https://backpack.ucdavis.edu/)|Digital credential storage|
+
+
+# Scholarship Platforms for Students from Conflict-Affected Countries (Sudan Focus)  
+  
+| Platform | Conflict-Affected / Displaced Focus | Master's Scholarships | Fully Funded Opportunities | Country Filter | Field Filter | Deadline Tracking | Refugee/Displaced Tags | Email Alerts | Documentation Guidance |  
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|  
+| UNHCR Opportunities Portal | ⭐⭐⭐⭐⭐ Excellent | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Limited | ⭐⭐⭐⭐⭐ Excellent |  
+| DAFI Scholarship Programme | ⭐⭐⭐⭐⭐ Excellent | ⚠️ Limited | ✅ Yes | ⚠️ Country-Based | ❌ Limited | ✅ Yes | ✅ Yes | ❌ No | ⭐⭐⭐⭐ Good |  
+| ScholyHub | ⭐⭐ Limited | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No | ✅ Yes | ⚠️ Limited |  
+| Scholarship Positions | ⭐ Limited | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No | ✅ Yes | ⚠️ Limited |  
+| Opportunities for Africans | ⭐⭐⭐ Good | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Sometimes | ✅ Yes | ⚠️ Limited |  
+| Scholarships for Development | ⭐⭐⭐ Good | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Sometimes | ✅ Yes | ⭐⭐⭐ Moderate |  
+| Mastersportal Scholarships | ⭐ Limited | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No | ✅ Yes | ⚠️ Limited |  
+| Refugee Education UK Database | ⭐⭐⭐⭐⭐ Excellent | ⚠️ Some | ⚠️ Some | ⚠️ Limited | ⚠️ Limited | ✅ Yes | ✅ Yes | ⚠️ Limited | ⭐⭐⭐⭐⭐ Excellent |
