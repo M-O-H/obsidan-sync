@@ -46,7 +46,7 @@
 
 ---
 
-## 🟡 TIER 3 — African & Developing Country Aggregators
+## 🟡 TIER 4 — African & Developing Country Aggregators
 
 *Excellent for finding fully funded Master's scholarships available to Sudanese students.*
 
@@ -65,13 +65,13 @@
 
 *Large databases with strong filters but limited conflict-specific support.*
 
-| Resource | One-line value | Tags |
-|----------|----------------|------|
-| [Mastersportal Scholarships](https://www.mastersportal.com/scholarships/) | Largest global Master's scholarship database with country filters | 🎓 💰 📧 |
-| [WeMakeScholars](https://www.wemakescholars.com/) | Scholarship database with nationality and destination-country filters | 🎓 💰 📧 |
-| [InternationalScholarships.com](https://www.internationalscholarships.com/) | International scholarship search engine for universities and private organizations | 🎓 |
-| [ScholyHub](https://www.scholyhub.com/) | Scholarship discovery platform with filters and alerts | 🎓 💰 📧 |
-| [Scholarship Positions](https://www.scholarshippositions.com/) | Large scholarship database with deadline notifications | 🎓 💰 📧 |
+| Resource                                                                    | One-line value                                                                     | Tags     |
+| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------- |
+| [Mastersportal Scholarships](https://www.mastersportal.com/scholarships/)   | Largest global Master's scholarship database with country filters                  | 🎓 💰 📧 |
+| [WeMakeScholars](https://www.wemakescholars.com/)                           | Scholarship database with nationality and destination-country filters              | 🎓 💰 📧 |
+| [InternationalScholarships.com](https://www.internationalscholarships.com/) | International scholarship search engine for universities and private organizations | 🎓       |
+| [ScholyHub](https://www.scholyhub.com/)                                     | Scholarship discovery platform with filters and alerts                             | 🎓 💰 📧 |
+| [Scholarship Positions](https://www.scholarshippositions.com/)              | Large scholarship database with deadline notifications                             | 🎓 💰 📧 |
 
 ---
 
