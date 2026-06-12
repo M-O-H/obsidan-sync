@@ -7,8 +7,6 @@
 - 📧 Email alerts/newsletters
 - 📄 Alternative documentation accepted (UNHCR, refugee status, missing records)
 
-## Refugee & Displaced-Specific Platforms
-
 - [UNHCR Opportunities Portal](https://services.unhcr.org/opportunities/search) — Verified scholarships and education opportunities for refugees and displaced students worldwide. 🎓 💰 🇸🇩 📄
 
 - [DAFI Scholarship Programme](https://www.unhcr.org/education/dafi-scholarships.html) — UNHCR's flagship higher-education scholarship for refugees. 💰 🇸🇩 📄
@@ -23,8 +21,6 @@
 
 - [UnborderED Knowledge](https://www.unborderedknowledge.com/scholarships) — Scholarships and educational opportunities for displaced students in Canada. 🎓 📄
 
-## Sudan & Conflict-Zone Specialists
-
 - [ScholarshipTab](https://scholarshiptab.com/) — Scholarship database with a dedicated Sudan filter. 🎓 💰 🇸🇩
 
 - [ScholarshipSet](https://scholarshipset.com/) — Tracks scholarships for African and developing-country students. 🎓 💰 🇸🇩
@@ -35,17 +31,11 @@
 
 - [Scholar Africa](https://scholar.africa/) — Scholarship listings and matching for African students, including Sudanese applicants. 🎓 💰 🇸🇩
 
-## African & Developing Country Aggregators
-
 - [Scholars4Dev](https://www.scholars4dev.com/) — Curated database of fully funded scholarships for developing countries. 🎓 💰 📧
 
 - [Opportunities for Africans](https://www.opportunitiesforafricans.com/) — Scholarships, fellowships, grants, and competitions for Africans. 🎓 💰 📧
 
 - [Opportunity Desk](https://opportunitydesk.org/) — Deadline roundups, scholarships, fellowships, and grants. 🎓 💰 📧
-
-- [Scholarships for Development](https://www.scholars4dev.com/) — Curated opportunities for students from developing countries. 🎓 💰 📧
-
-## General Scholarship Aggregators
 
 - [Mastersportal Scholarships](https://www.mastersportal.com/scholarships/) — Largest global Master's scholarship database with country filters. 🎓 💰 📧
 
@@ -57,43 +47,26 @@
 
 - [Scholarship Positions](https://www.scholarshippositions.com/) — Large scholarship database with deadline notifications. 🎓 💰 📧
 
-## Government-Funded Scholarships
+- [DAAD](https://www.daad.de/) — Germany's fully funded scholarship programs, including opportunities relevant to refugees and displaced students. 🎓 💰 🇸🇩 📄
 
-- [DAAD](https://www.daad.de/) (Germany) — Includes refugee-focused programs and opportunities for displaced students. 🎓 💰 🇸🇩 📄
+- [Türkiye Burslari](https://www.turkiyeburslari.gov.tr/) — Fully funded Turkish government scholarship. Popular among Sudanese applicants. 🎓 💰 🇸🇩
 
-- [Türkiye Burslari](https://www.turkiyeburslari.gov.tr/) (Türkiye) — Popular among Sudanese applicants. 🎓 💰 🇸🇩
+- [Stipendium Hungaricum](https://stipendiumhungaricum.hu/) — Fully funded Hungarian government scholarship. Sudan is a participating country. 🎓 💰 🇸🇩
 
-- [Stipendium Hungaricum](https://stipendiumhungaricum.hu/) (Hungary) — Sudan is a participating country. 🎓 💰 🇸🇩
+- [Chevening](https://www.chevening.org/) — Fully funded UK government leadership scholarship. 🎓 💰
 
-- [Chevening](https://www.chevening.org/) (United Kingdom) — Fully funded leadership scholarship. 🎓 💰
+- [Commonwealth Scholarship](https://www.commonwealthscholarships.org/) — Fully funded Master's and PhD scholarships in the UK. 🎓 💰
 
-- [Commonwealth Scholarship](https://www.commonwealthscholarships.org/) (United Kingdom) — Fully funded Master's and PhD scholarships. 🎓 💰
+- [MEXT](https://www.studyinjapan.go.jp/) — Fully funded Japanese government scholarship. 🎓 💰
 
-- [MEXT](https://www.studyinjapan.go.jp/) (Japan) — Fully funded graduate studies. 🎓 💰
+- [Australia Awards](https://www.australiaawards.gov.au/) — Fully funded scholarships for students from developing countries. 🎓 💰
 
-- [Australia Awards](https://www.australiaawards.gov.au/) (Australia) — Supports students from developing countries. 🎓 💰
+- [Holland Scholarship](https://www.studyinnl.org/) — Dutch scholarship for international students (partial funding). 🎓
 
-- [Holland Scholarship](https://www.studyinnl.org/) (Netherlands) — Partial funding only. 🎓
+- [EURAXESS](https://euraxess.ec.europa.eu/) — Research and academic opportunities across Europe. 🎓
 
-- [EURAXESS](https://euraxess.ec.europa.eu/) (European Union) — Better suited to researchers and PhD applicants. 🎓
+- [UNHCR Help](https://help.unhcr.org/) — Education, legal, and refugee-support guidance. 📄
 
-## Support Tools
+- [UC Davis Backpack](https://backpack.ucdavis.edu/) — Secure digital storage for academic credentials and documents. 📄
 
-- [UNHCR Help](https://help.unhcr.org/) — Education and legal guidance for refugees and displaced persons.
-
-- [UC Davis Backpack](https://backpack.ucdavis.edu/) — Secure digital storage for academic credentials.
-
-- [ReliefWeb](https://reliefweb.int/) — Humanitarian updates and emergency education initiatives.
-
-## Recommended Starting Sequence
-
-1. UNHCR Opportunities Portal
-2. DAAD
-3. Windle Trust International
-4. Türkiye Burslari
-5. Stipendium Hungaricum
-6. ScholarshipTab
-7. Scholar Africa
-8. Scholars4Dev
-9. Opportunity Desk
-10. Mastersportal
+- [ReliefWeb](https://reliefweb.int/) — Humanitarian updates and emergency education opportunities. 🇸🇩 📄
