@@ -36,13 +36,13 @@
 
 *Platforms that explicitly include Sudan in eligibility filters or target audiences.*
 
-| Resource | One-line value | Tags |
-|----------|----------------|------|
-| [ScholarshipTab](https://scholarshiptab.com/) | One of the few scholarship databases with a dedicated Sudan filter | 🎓 💰 🇸🇩 |
-| [ScholarshipSet](https://scholarshipset.com/) | Tracks scholarships for African and developing-country students | 🎓 💰 🇸🇩 |
-| [Funds for Individuals](https://fundsforindividuals.fundsforngos.org/) | Grants, fellowships, and scholarships for vulnerable populations and developing countries | 🎓 💰 🇸🇩 |
-| [Eduhub21](https://eduhub21.com/) | Highlights opportunities for scholars from Sudan, Palestine, Syria, Yemen, and similar contexts | 🎓 🇸🇩 |
-| [Scholar Africa](https://scholar.africa/) | Dedicated scholarship listings and matching for African students, including Sudanese applicants | 🎓 💰 🇸🇩 |
+| Resource                                                               | One-line value                                                                                  | Tags       |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------- |
+| [ScholarshipTab](https://scholarshiptab.com/)                          | One of the few scholarship databases with a dedicated Sudan filter                              | 🎓 💰 🇸🇩 |
+| [ScholarshipSet](https://scholarshipset.com/)                          | Tracks scholarships for African and developing-country students                                 | 🎓 💰 🇸🇩 |
+| [Funds for Individuals](https://fundsforindividuals.fundsforngos.org/) | Grants, fellowships, and scholarships for vulnerable populations and developing countries       | 🎓 💰 🇸🇩 |
+| [Eduhub21](https://eduhub21.com/)                                      | Highlights opportunities for scholars from Sudan, Palestine, Syria, Yemen, and similar contexts | 🎓 🇸🇩    |
+| [Scholar Africa](https://scholar.africa/)                              | Dedicated scholarship listings and matching for African students, including Sudanese applicants | 🎓 💰 🇸🇩 |
 
 ---
 
