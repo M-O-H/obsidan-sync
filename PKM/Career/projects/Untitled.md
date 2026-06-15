@@ -36,17 +36,17 @@
 
 *Platforms that explicitly include Sudan in eligibility filters or target audiences.*
 
-| Resource                                                               | One-line value                                                                                  | Tags       |
-| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------- |
-| [ScholarshipTab](https://scholarshiptab.com/)                          | One of the few scholarship databases with a dedicated Sudan filter                              | 🎓 💰 🇸🇩 |
-| [ScholarshipSet](https://scholarshipset.com/)                          | Tracks scholarships for African and developing-country students                                 | 🎓 💰 🇸🇩 |
-| [Funds for Individuals](https://fundsforindividuals.fundsforngos.org/) | Grants, fellowships, and scholarships for vulnerable populations and developing countries       | 🎓 💰 🇸🇩 |
-| [Eduhub21](https://eduhub21.com/)                                      | Highlights opportunities for scholars from Sudan, Palestine, Syria, Yemen, and similar contexts | 🎓 🇸🇩    |
-| [Scholar Africa](https://scholar.africa/)                              | Dedicated scholarship listings and matching for African students, including Sudanese applicants | 🎓 💰 🇸🇩 |
+| Resource | One-line value | Tags |
+|----------|----------------|------|
+| [ScholarshipTab](https://scholarshiptab.com/) | One of the few scholarship databases with a dedicated Sudan filter | 🎓 💰 🇸🇩 |
+| [ScholarshipSet](https://scholarshipset.com/) | Tracks scholarships for African and developing-country students | 🎓 💰 🇸🇩 |
+| [Funds for Individuals](https://fundsforindividuals.fundsforngos.org/) | Grants, fellowships, and scholarships for vulnerable populations and developing countries | 🎓 💰 🇸🇩 |
+| [Eduhub21](https://eduhub21.com/) | Highlights opportunities for scholars from Sudan, Palestine, Syria, Yemen, and similar contexts | 🎓 🇸🇩 |
+| [Scholar Africa](https://scholar.africa/) | Dedicated scholarship listings and matching for African students, including Sudanese applicants | 🎓 💰 🇸🇩 |
 
 ---
 
-## 🟡 TIER 4 — African & Developing Country Aggregators
+## 🟡 TIER 3 — African & Developing Country Aggregators
 
 *Excellent for finding fully funded Master's scholarships available to Sudanese students.*
 
@@ -65,13 +65,13 @@
 
 *Large databases with strong filters but limited conflict-specific support.*
 
-| Resource                                                                    | One-line value                                                                     | Tags     |
-| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------- |
-| [Mastersportal Scholarships](https://www.mastersportal.com/scholarships/)   | Largest global Master's scholarship database with country filters                  | 🎓 💰 📧 |
-| [WeMakeScholars](https://www.wemakescholars.com/)                           | Scholarship database with nationality and destination-country filters              | 🎓 💰 📧 |
-| [InternationalScholarships.com](https://www.internationalscholarships.com/) | International scholarship search engine for universities and private organizations | 🎓       |
-| [ScholyHub](https://www.scholyhub.com/)                                     | Scholarship discovery platform with filters and alerts                             | 🎓 💰 📧 |
-| [Scholarship Positions](https://www.scholarshippositions.com/)              | Large scholarship database with deadline notifications                             | 🎓 💰 📧 |
+| Resource | One-line value | Tags |
+|----------|----------------|------|
+| [Mastersportal Scholarships](https://www.mastersportal.com/scholarships/) | Largest global Master's scholarship database with country filters | 🎓 💰 📧 |
+| [WeMakeScholars](https://www.wemakescholars.com/) | Scholarship database with nationality and destination-country filters | 🎓 💰 📧 |
+| [InternationalScholarships.com](https://www.internationalscholarships.com/) | International scholarship search engine for universities and private organizations | 🎓 |
+| [ScholyHub](https://www.scholyhub.com/) | Scholarship discovery platform with filters and alerts | 🎓 💰 📧 |
+| [Scholarship Positions](https://www.scholarshippositions.com/) | Large scholarship database with deadline notifications | 🎓 💰 📧 |
 
 ---
 
@@ -79,17 +79,17 @@
 
 *Fully funded Master's scholarships offered by governments.*
 
-| Priority | Country | Scholarship | Link | Sudan-Specific Notes |
-|----------|---------|-------------|------|----------------------|
-| ⭐⭐⭐ | Germany | DAAD | https://www.daad.de/ | Includes programs supporting refugees and displaced students |
-| ⭐⭐⭐ | Türkiye | Türkiye Burslari | https://www.turkiyeburslari.gov.tr/ | Popular among Sudanese applicants |
-| ⭐⭐⭐ | Hungary | Stipendium Hungaricum | https://stipendiumhungaricum.hu/ | Sudan is a participating country |
-| ⭐⭐ | United Kingdom | Chevening | https://www.chevening.org/ | Fully funded leadership scholarship |
-| ⭐⭐ | United Kingdom | Commonwealth Scholarship | https://www.commonwealthscholarships.org/ | Fully funded Master's and PhD programs |
-| ⭐⭐ | Japan | MEXT | https://www.studyinjapan.go.jp/ | Fully funded graduate studies |
-| ⭐⭐ | Australia | Australia Awards | https://www.australiaawards.gov.au/ | Supports students from developing countries |
-| ⭐ | Netherlands | Holland Scholarship | https://www.studyinnl.org/ | Partial funding only |
-| ⭐ | European Union | EURAXESS | https://euraxess.ec.europa.eu/ | Better suited to researchers and PhD applicants |
+| Priority | Country        | Scholarship              | Link                                      | Sudan-Specific Notes                                         |
+| -------- | -------------- | ------------------------ | ----------------------------------------- | ------------------------------------------------------------ |
+| ⭐⭐⭐      | Germany        | DAAD                     | https://www.daad.de/                      | Includes programs supporting refugees and displaced students |
+| ⭐⭐⭐      | Türkiye        | Türkiye Burslari         | https://www.turkiyeburslari.gov.tr/       | Popular among Sudanese applicants                            |
+| ⭐⭐⭐      | Hungary        | Stipendium Hungaricum    | https://stipendiumhungaricum.hu/          | Sudan is a participating country                             |
+| ⭐⭐       | United Kingdom | Chevening                | https://www.chevening.org/                | Fully funded leadership scholarship                          |
+| ⭐⭐       | United Kingdom | Commonwealth Scholarship | https://www.commonwealthscholarships.org/ | Fully funded Master's and PhD programs                       |
+| ⭐⭐       | Japan          | MEXT                     | https://www.studyinjapan.go.jp/           | Fully funded graduate studies                                |
+| ⭐⭐       | Australia      | Australia kAwards        | https://www.australiaawards.gov.au/       | Supports students from developing countries                  |
+| ⭐        | Netherlands    | Holland Scholarship      | https://www.studyinnl.org/                | Partial funding only                                         |
+| ⭐        | European Union | EURAXESS                 | https://euraxess.ec.europa.eu/            | Better suited to researchers and PhD applicants              |
 
 ---
 
