@@ -35,7 +35,7 @@ Understanding → Applying → Retaining → Second Nature
 
 ### Learning Methods
 - [[Deliberate practice]]
-- [[Active recall]] 
+- [[Active recall]]
 - [[Feynmqn technique]]
 - [[Spaced repetition]] 
 
