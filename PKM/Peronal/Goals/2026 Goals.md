@@ -14,6 +14,6 @@ List of goals I want to achieve in this new year
 - IELTS
 
 ## Focus 
-- Build production-ready solutions that have value.
+- Build production-ready solutions that have value (most of the time).
 - Study for IELTS (h2)
 - Certificates in the AI/ML field (1hr)
