@@ -7,4 +7,6 @@
 - IELTS (optional but good to have) / MOI *
 - CV *
 -  pro photo *
-- ligial record
+- legal record
+- refugee status 
+
