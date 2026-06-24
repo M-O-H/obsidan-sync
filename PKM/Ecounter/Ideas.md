@@ -34,7 +34,7 @@ Blogger platform
 - OOB (Object origited)
 
 **Sample resume**
-[[Resume samples]]
+[[Resume]]
 
 ---
 **Tools & Resources**
