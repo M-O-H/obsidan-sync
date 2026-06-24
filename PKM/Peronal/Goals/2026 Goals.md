@@ -11,4 +11,5 @@ list of goals i want to achieve in this new year
 - Portfolio showcase projects, ideas, articles
 - certification for certain high value skills in SWE.
 - networking with people for referral.
-- 
+- IELTS
+
