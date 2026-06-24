@@ -1,4 +1,4 @@
-list of goals i want to achieve in this new year
+List of goals I want to achieve in this new year
 
 ### 5 Month lock-in
 - Land a SWE job internship
@@ -13,3 +13,7 @@ list of goals i want to achieve in this new year
 - networking with people for referral.
 - IELTS
 
+## Focus 
+- Build production ready that have value.
+- Study for IELETS
+- Certificates in AI/ML field
