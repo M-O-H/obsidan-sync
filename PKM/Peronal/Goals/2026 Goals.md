@@ -6,14 +6,14 @@ List of goals I want to achieve in this new year
 
 
 ##  My plan
-- Build production ready that have value.
-- Gain work experience or made one :)
+- Build production-ready solutions that have value.
+- Gain work experience or make one :)
 - Portfolio showcase projects, ideas, articles
-- certification for certain high value skills in SWE.
+- certification for certain high-value skills in SWE.
 - networking with people for referral.
 - IELTS
 
 ## Focus 
-- Build production ready that have value.
-- Study for IELETS
-- Certificates in AI/ML field
+- Build production-ready solutions that have value.
+- Study for IELTS (h2)
+- Certificates in the AI/ML field (1hr)
