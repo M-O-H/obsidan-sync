@@ -99,7 +99,7 @@ The MEXT Brainstorming Master Prompt
 
         Methodology: (How the data will be collected and processed)
 
-        The "Why Japan" & Home Country Impact Equation: (Why this requires Japanese labs and how it directly benefits Sudan)
+        The "Why Japan" & Home Country Impact Equation: (Why this requires Japanese labs and how it directly benefitsm Sudan)
 ```
 
 ## Topics
