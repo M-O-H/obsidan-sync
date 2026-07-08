@@ -5,7 +5,7 @@ List of tasks I should complete
 - Career: implement CI/CD, web-admin Dashboard
 - Plan to balance my dopamine levels
 - Plan [[Habits]], [[study]], [[Self-Care]], [[Exercise]], [[islamic MOC]]
-- intro introduce daily notes
+
 
 0118585484
 ### To-Do List
