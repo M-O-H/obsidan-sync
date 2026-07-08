@@ -2,9 +2,8 @@ List of tasks I should complete
 
 
 ## Daily Tasks
-- [ ] Org
+- [ ] Organize closest, clothes and person stuff.
 - [ ] Plan [[Habits]], [[study]], [[Self-Care]], [[Exercise]], [[islamic MOC]]
-
 
 0118585484
 ### To-Do List
