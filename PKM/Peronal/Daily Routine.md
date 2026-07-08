@@ -1,6 +1,7 @@
 ## IMPORTANT NOTES
 
 > [!note]
+>  **Be Better than Yesterday**
 > - **Pray**: pray all sala in time.
 > - **Consistence:** show up everyday no matter the situation, doing a little better than doing nothing.
 > - **Second nature:**  Do it everyday so it becomes second nature (good habit).
