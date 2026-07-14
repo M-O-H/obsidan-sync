@@ -7,8 +7,8 @@ tags:
 ## Japan scholarship 
 ### Requirements 
 - Passport 
-- university wishlist
-- research paper 
+- university wishlistl
+- research paper ~~
 - Recommendation letters
 - submit form on official 
 
