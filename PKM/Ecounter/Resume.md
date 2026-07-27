@@ -39,4 +39,7 @@ Project Name – Tools Used
 `
 
 ### tailor cv to job description
+- impact 
+- list the skills and go learn it
+- use job description language
 - 
