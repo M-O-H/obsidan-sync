@@ -3,5 +3,5 @@
 
 ## Roadmap 
 ### To learn
-- python
+- lang: python
 - 
