@@ -42,4 +42,6 @@ Project Name – Tools Used
 - impact do quick back of napkin calculation 
 - list the skills and go learn it
 - use job description language
-- adjust the job title tioe
+- adjust the job title to actually what I did
+
+That's not lying and packaging and refusing to undersell yourself.
