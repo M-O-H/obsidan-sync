@@ -39,7 +39,7 @@ Project Name – Tools Used
 `
 
 ### tailor cv to job description
-- impact 
+- impact do quick back of napkin calculation 
 - list the skills and go learn it
 - use job description language
-- 
+- adjust the job title tioe
