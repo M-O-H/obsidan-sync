@@ -37,3 +37,6 @@ Project Name – Tools Used
 
 ```
 `
+
+### tailor cv to job description
+- 
