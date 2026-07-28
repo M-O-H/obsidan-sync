@@ -53,3 +53,6 @@ Keep yourself accountable
 - [[Hobbies]]
 
 ### chaos
+- scholarship apply once per day
+- English proficiency practice 
+- p
