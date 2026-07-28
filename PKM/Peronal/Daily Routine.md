@@ -57,4 +57,4 @@ Keep yourself accountable
 - English proficiency practice 
 - projects, resume, job
 - socialize and networking 
-- 
+- educate yourself 
