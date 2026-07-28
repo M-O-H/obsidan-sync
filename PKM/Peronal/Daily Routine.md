@@ -56,4 +56,5 @@ Keep yourself accountable
 - scholarship apply once per day
 - English proficiency practice 
 - projects, resume, job
+- socialize and networking 
 - 
