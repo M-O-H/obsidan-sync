@@ -58,3 +58,4 @@ Keep yourself accountable
 - projects, resume, job
 - socialize and networking 
 - educate yourself 
+- trading 
