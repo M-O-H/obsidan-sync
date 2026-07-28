@@ -52,7 +52,7 @@ Keep yourself accountable
 - socialize
 - [[Hobbies]]
 
-### chaos
+### chaosa
 - scholarship apply once per day
 - English proficiency practice 
 - projects, resume, job
