@@ -1,1 +1,3 @@
-### G
+### self-care 
+- oily skin products 
+- 
