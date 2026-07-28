@@ -1,2 +1,3 @@
 ## UAE roels
-- mobile developer (React native & flutter)
+- corss mobile developer (React native & flutter)
+- native mobile developer (swift, kotlin)
