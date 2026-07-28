@@ -1,2 +1,2 @@
 ## UAE roels
-- mobile develo
+- mobile developer (React native & flutter)
