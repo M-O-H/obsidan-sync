@@ -12,7 +12,6 @@ Testosterone/cortisol peaks do any problem solving tasks
 #### 5:00 AM
 - [[Exercise]] - [[Stretch]]
 - [[Self-Care]], Sunlight
-- Quran
 #### 6:00 AM
 - [[Career MOC]] - [[2026 Goals]]
 
