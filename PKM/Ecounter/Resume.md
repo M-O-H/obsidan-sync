@@ -44,4 +44,4 @@ Project Name – Tools Used
 - use job description language
 - adjust the job title to actually what I did
 
-That's not lying and packaging and refusing to undersell yourself.
+That's not lying and packaging and refusing to undersell yourself what you actually did
