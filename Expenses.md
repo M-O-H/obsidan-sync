@@ -4,3 +4,4 @@ Elham money
 Somia 
 3000 sudani 
 16000 
+20000
