@@ -3,3 +3,4 @@
 - focus
 - asking the right question
 - where to get your resources from
+- stop compromising ()
