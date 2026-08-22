@@ -9,4 +9,4 @@
 
 ### question for experint engineers 
 - how they use ai
-- what are 
+- skills that required and used daily
