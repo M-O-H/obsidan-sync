@@ -1,2 +1,5 @@
 ## What are my skills
-## What should i
+## What should i prove 
+- focus
+- asking the right question
+- 
