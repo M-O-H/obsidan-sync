@@ -7,6 +7,6 @@
 
 
 
-### question for experint engineers 
+### question for experint engineers            
 - how they use ai
 - skills that required and used daily
