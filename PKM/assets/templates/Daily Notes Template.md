@@ -1,4 +1,4 @@
 ---
 habit:
-"": false
+exercise: false
 ---
