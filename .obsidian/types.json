@@ -5,6 +5,7 @@
     "tags": "tags",
     "habit": "checkbox",
     "reading": "checkbox",
-    "prayer": "checkbox"
+    "prayer": "checkbox",
+    "planning": "checkbox"
   }
 }
