@@ -5,5 +5,6 @@ ds:
 reading: false
 prayer: false
 reflect: false
-teeth brush: false
+night teeth brush: false
+waking early: false
 ---
