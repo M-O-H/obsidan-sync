@@ -32,5 +32,6 @@
   "defaultViewMode": "source",
   "livePreview": true,
   "vimMode": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "settingsPopoutWindow": false
 }
