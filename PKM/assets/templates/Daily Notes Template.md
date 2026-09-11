@@ -1,4 +1,5 @@
 ---
 habit:
 exercise: false
+prayer:
 ---
