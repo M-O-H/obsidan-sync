@@ -4,5 +4,6 @@
   "obsidian-book-search-plugin",
   "pretty-properties",
   "auto-note-mover",
-  "heatmap-tracker"
+  "heatmap-tracker",
+  "dataview"
 ]
