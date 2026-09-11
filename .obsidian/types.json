@@ -3,6 +3,7 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "habit": "checkbox"
+    "habit": "checkbox",
+    "": "checkbox"
   }
 }
