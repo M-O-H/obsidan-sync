@@ -1,5 +1,7 @@
 ---
 habit:
 exercise: false
-prayer:
+ds:
+reading: false
+prayer: false
 ---
