@@ -61,6 +61,7 @@
 			"y":-2840,
 			"width":480,
 			"height":660
-		}
+		},
+		{"id":"0d8edeb7c88d1e7e","x":-405,"y":-3840,"width":250,"height":60,"type":"text","text":""}
 	]
 }
