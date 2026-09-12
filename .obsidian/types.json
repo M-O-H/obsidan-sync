@@ -7,8 +7,8 @@
     "reading": "checkbox",
     "prayer": "checkbox",
     "planning": "checkbox",
-    "teeth brash": "checkbox",
     "waking early": "checkbox",
-    "self care": "checkbox"
+    "self care": "checkbox",
+    "brush": "checkbox"
   }
 }

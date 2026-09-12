@@ -1,10 +1,10 @@
 ---
 habit:
-exercise: true
+exercise: false
 ds:
 prayer: false
 reflect: false
-teeth brush: false
 waking early: false
 self care: false
+brush: false
 ---
