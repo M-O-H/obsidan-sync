@@ -62,6 +62,6 @@
 			"width":480,
 			"height":660
 		},
-		{"id":"0d8edeb7c88d1e7e","type":"text","text":"---\nquote: \"The only way to do great work is to love what you do.\"\nauthor: \"Steve Jobs\"\n---\n```dataviewjs\nconst container = this.container;\n\ncontainer.innerHTML = `\n<div style=\"\n    padding: 30px 25px;\n    border-radius: 18px;\n    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);\n    border: 1px solid #444;\n    text-align: center;\n    box-shadow: 0 8px 25px rgba(0,0,0,0.25);\n\">\n    <div style=\"\n        font-size: 1.8em;\n        font-weight: 600;\n        font-style: italic;\n        letter-spacing: 0.5px;\n        color: #ffffff;\n    \">\n        “Make it second nature.”\n    </div>\n</div>\n`;\n\n```","x":-482,"y":-4620,"width":885,"height":840}
+		{"id":"0d8edeb7c88d1e7e","type":"text","text":"---\nquote: \"The only way to do great work is to love what you do.\"\nauthor: \"Steve Jobs\"\n---\n```dataviewjs\nconst container = this.container;\n\ncontainer.innerHTML = `\n<div style=\"\n    padding: 30px 25px;\n    border-radius: 18px;\n    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);\n    border: 1px solid #444;\n    text-align: center;\n    box-shadow: 0 8px 25px rgba(0,0,0,0.25);\n\">\n    <div style=\"\n        font-size: 1.8em;\n        font-weight: 600;\n        font-style: italic;\n        letter-spacing: 0.5px;\n        color: #ffffff;\n    \">\n        Goal -> “Make it second nature.”\n    </div>\n</div>\n`;\n\n```","x":-482,"y":-3840,"width":885,"height":120}
 	]
 }
