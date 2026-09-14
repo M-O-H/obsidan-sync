@@ -8,7 +8,7 @@
 # eliminate distraction
 here my top of head plan
 ## 1. social media
-### **choosing  sources**:
+#### choosing  sources:
 chose high quality sources that match your interest.
-### **schedule time for it**
+#### schedule time for it
 give yourself a scheduled time window for it, instead of random checking 
