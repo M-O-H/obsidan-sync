@@ -10,4 +10,5 @@ here my top of head plan
 ## 1. social media
 **choosing  sources**:
 chose high quality sources that match your interest.
-**schedule **
+**schedule time for it**
+instead of random checking 
