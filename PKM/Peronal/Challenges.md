@@ -10,4 +10,4 @@ here my top of head plan
 ## 1. social media
 **choosing  sources**:
 chose high quality sources that match your interest.
-**spec**
+**schedule **
