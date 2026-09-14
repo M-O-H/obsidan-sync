@@ -8,4 +8,5 @@
 ## eliminate distraction
 here my top of head plan
 ## 1. social media
-**specify yo**
+**specify  sources**:
+chose sources that match your interest and 
