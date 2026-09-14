@@ -5,4 +5,6 @@
 
 
 
-## 
+## eliminate distraction
+## social media
+here my top of head plan 
