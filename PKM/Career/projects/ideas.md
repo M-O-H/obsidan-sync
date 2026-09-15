@@ -18,3 +18,5 @@ build software that solve your [[Challenges]]
 - eliminate distraction (short form content)
 - intentional usage (relevant content, track time)
 
+ad
+
