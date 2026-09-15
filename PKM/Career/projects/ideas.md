@@ -16,5 +16,5 @@ build software that solve your [[Challenges]]
 ## social media tool
 **project goal**
 - eliminate distraction (short form content)
-- intentional usage ()
+- intentional usage (relevant content, track time)
 
