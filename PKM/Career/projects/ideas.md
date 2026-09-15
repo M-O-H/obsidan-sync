@@ -25,4 +25,5 @@ build software that solve your [[Challenges]]
 - AI features (search, quality etc)
 
 **Challenges**
-- availab
+- API availability and cost.
+- 
