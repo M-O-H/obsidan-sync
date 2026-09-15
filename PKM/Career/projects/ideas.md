@@ -27,4 +27,3 @@ build software that solve your [[Challenges]]
 **Challenges**
 - API availability and cost.
 - The Substitution Test (https://artifact.news/)
-- 
