@@ -25,4 +25,4 @@ build software that solve your [[Challenges]]
 - AI features (search, quality etc)
 
 **Challenges**
-- API ava
+- availab
