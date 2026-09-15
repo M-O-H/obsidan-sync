@@ -15,7 +15,7 @@ build software that solve your [[Challenges]]
 
 ## social media tool
 **project goal**
-- eliminate distraction (short form content)
+- eliminate distraction (short form content, )
 - intentional usage (relevant content, track time)
 - all-in-one app (show result from multiple social media platform for caught up)
 - balance discovery and topic specific search
