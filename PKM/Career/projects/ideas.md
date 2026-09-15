@@ -17,7 +17,7 @@ build software that solve your [[Challenges]]
 **project goal**
 - eliminate distraction (short form content)
 - intentional usage (relevant content, track time)
-- all-in-one app ()
+- all-in-one app (show result from multiple social )
 **additional feature**
 - content quality
 - 
