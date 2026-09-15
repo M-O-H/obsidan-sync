@@ -15,7 +15,7 @@ build software that solve your [[Challenges]]
 
 ## social media tool
 **project goal**
-- eliminate distraction (short form content, )
+- eliminate distraction: dopamine spikes of short-form video, slot-machine mechanics and  , engagement plummets.
 - intentional usage (relevant content, track time)
 - all-in-one app (show result from multiple social media platform for caught up)
 - balance discovery and topic specific search
