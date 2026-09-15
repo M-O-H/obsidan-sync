@@ -10,5 +10,9 @@ My main goal is to build projects that:
 
 
 
-### solve my problem
-build software that solve [[Challenges]] 
+# solve my problem
+build software that solve your [[Challenges]]
+
+## social media tool less discraction
+
+
