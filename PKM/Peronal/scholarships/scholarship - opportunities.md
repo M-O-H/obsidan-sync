@@ -4,3 +4,5 @@
 - AIMS (African Institute for Mathematical Sciences) 
 - https://mastercardfdn.org/en/what-we-do/our-programs/mastercard-foundation-scholars-program/where-to-apply/
 - Canadian immigration
+
+## pupoliar 
