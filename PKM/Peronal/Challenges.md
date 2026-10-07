@@ -21,7 +21,7 @@ give yourself a scheduled time window for it, instead of random checking
 - "compete with ppl know better than me"/
 - "always want to be right"
 - "i should had know that , even if its new to me"
-- "jealousy"
+- "jealousy" hate ppl mistakes
 - "set unrealistic goals" when someone make mistake
-- "lack of empathy"
-- act tought 
+- lack of empathy
+- act tough 
