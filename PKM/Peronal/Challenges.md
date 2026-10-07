@@ -19,3 +19,4 @@ give yourself a scheduled time window for it, instead of random checking
 # Ego problem
 - "I don't need anyone"
 - "compete with ppl know better than me"
+- "i should had know "
