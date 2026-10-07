@@ -33,4 +33,5 @@ its all about self interest and desire
 - cant take criticism or arugment
 **negative effects of Ego**
 - people avoid for been difficult to discuss/talk with
-- slow growth 
+- slow growth because you don't accept people opinion/ideas.
+- ego
