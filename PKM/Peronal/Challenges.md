@@ -18,5 +18,6 @@ give yourself a scheduled time window for it, instead of random checking
 
 # Ego problem
 - "I don't need anyone"
-- "compete with ppl know better than me"/'always want to be right'
+- "compete with ppl know better than me"/
+- 'always want to be right'"
 - "i should had know that if its new to me"
