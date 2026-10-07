@@ -24,3 +24,4 @@ give yourself a scheduled time window for it, instead of random checking
 - "jealousy"
 - "set unrealistic goals" when someone make mistake
 - "lack of empathy"
+- act tought 
