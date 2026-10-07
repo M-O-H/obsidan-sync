@@ -12,3 +12,8 @@ here my top of head plan
 chose high quality sources that match your interest.
 #### schedule time for it
 give yourself a scheduled time window for it, instead of random checking 
+
+
+
+
+# Ego problem
