@@ -22,3 +22,4 @@ give yourself a scheduled time window for it, instead of random checking
 - "always want to be right"
 - "i should had know that , even if its new to me"
 - "jelousy"
+- "set unrealistic goals"
