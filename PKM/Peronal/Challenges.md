@@ -18,9 +18,9 @@ give yourself a scheduled time window for it, instead of random checking
 
 # Ego problem
 identity that mind create about yourself
+- "always has to be right"
 - "I don't need anyone"
 - "compete with ppl know better than me"/
-- "always want to be right"
 - "i should had know that , even if its new to me"
 - "jealousy" hate ppl mistakes
 - "set unrealistic goals" when someone make mistake
