@@ -31,3 +31,4 @@ its all about self interest and desire
 - lack of empathy
 - act tough 
 - cant take criticism or arugment
+**Neg**
