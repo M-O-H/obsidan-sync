@@ -17,6 +17,7 @@ give yourself a scheduled time window for it, instead of random checking
 
 
 # Ego problem
+identity that mind create about yourself
 - "I don't need anyone"
 - "compete with ppl know better than me"/
 - "always want to be right"
