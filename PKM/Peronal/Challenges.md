@@ -34,4 +34,4 @@ its all about self interest and desire
 **negative effects of Ego**
 - people avoid for been difficult to discuss/talk with
 - slow growth because you don't accept people opinion/ideas.
-- ego
+- narcissist don't understand other people emotion/
