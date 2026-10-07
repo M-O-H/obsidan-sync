@@ -25,3 +25,4 @@ give yourself a scheduled time window for it, instead of random checking
 - "set unrealistic goals" when someone make mistake
 - lack of empathy
 - act tough 
+- cant take critisim
