@@ -16,22 +16,3 @@ give yourself a scheduled time window for it, instead of random checking
 
 
 
-# Ego problem
-identity that mind create about yourself
-its all about self interest and desire 
-- always as to be right. and get enraged when ppl contradicts them even if they are right. - ppl will find it difficult to maintain relationship with you.
-- "always wanting more will control your life"
-- "only focus on myself"
-- "hate ppl success because you feel you deserve more than them"
-- "I don't need anyone"
-- "compete with ppl know better than me"/
-- "i should had know that , even if its new to me"
-- "jealousy" hate ppl mistakes
-- "set unrealistic goals to show you are superior to them" - cause pride and high expectation
-- lack of empathy
-- act tough 
-- cant take criticism or arugment
-**negative effects of Ego**
-- people avoid for been difficult to discuss/talk with
-- slow growth because you don't accept people opinion/ideas.
-- lack empathy because narcissist don't understand other people emotion
