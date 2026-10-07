@@ -27,7 +27,7 @@ its all about self interest and desire
 - "compete with ppl know better than me"/
 - "i should had know that , even if its new to me"
 - "jealousy" hate ppl mistakes
-- "set unrealistic goals" when someone make mistake
+- "set unrealistic goals to show you are superior to them"
 - lack of empathy
 - act tough 
 - cant take criticism or arugment
