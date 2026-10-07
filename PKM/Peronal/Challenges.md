@@ -17,3 +17,4 @@ give yourself a scheduled time window for it, instead of random checking
 
 
 # Ego problem
+- don't want help from anyone 
