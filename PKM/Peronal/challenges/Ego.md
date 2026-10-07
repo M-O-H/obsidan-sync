@@ -56,3 +56,6 @@ its all about self interest and desire
 - people avoid for been difficult to discuss/talk with
 - slow growth because you don't accept people opinion/ideas.
 - lack empathy because narcissist don't understand other people emotion
+
+### To do
+- flash card that guide you when you
