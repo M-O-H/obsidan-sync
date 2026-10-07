@@ -32,4 +32,5 @@ its all about self interest and desire
 - act tough 
 - cant take criticism or arugment
 **negative effects of Ego**
-- people avoid yo
+- people avoid for been difficult to discuss/talk with
+- slow growth 
