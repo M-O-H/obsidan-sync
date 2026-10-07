@@ -18,7 +18,8 @@ give yourself a scheduled time window for it, instead of random checking
 
 # Ego problem
 identity that mind create about yourself
-- "always has to be right"
+its all about self interest and desire 
+- always as to be righat
 - "I don't need anyone"
 - "compete with ppl know better than me"/
 - "i should had know that , even if its new to me"
