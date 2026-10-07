@@ -22,6 +22,7 @@ its all about self interest and desire
 - always as to be right. and get enraged when ppl says otherwise even if they are right - ppl will find it difficult to maintain relationship with you.
 - "always wanting more will control your life"
 - "only focus on myself"
+- "hate ppl success"
 - "I don't need anyone"
 - "compete with ppl know better than me"/
 - "i should had know that , even if its new to me"
