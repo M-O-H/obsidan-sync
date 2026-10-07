@@ -58,4 +58,4 @@ its all about self interest and desire
 - lack empathy because narcissist don't understand other people emotion
 
 ### To do
-- flash card that guide you when you
+- flash card that guide you when you ego control your emotion etc
