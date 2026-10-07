@@ -19,7 +19,7 @@ give yourself a scheduled time window for it, instead of random checking
 # Ego problem
 identity that mind create about yourself
 its all about self interest and desire 
-- always as to be right. and get enraged when ppl says otherwise even if they are right - ppl will find it difficult to maintain relationship with you.
+- always as to be right. and get enraged when ppl contradicts them even if they are right - ppl will find it difficult to maintain relationship with you.
 - "always wanting more will control your life"
 - "only focus on myself"
 - "hate ppl success because you feel you deserve more than them"
