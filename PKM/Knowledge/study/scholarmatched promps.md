@@ -1,0 +1,2 @@
+- full or partial funded scholarship for matser's degree in computer science that open at this day, also curated ones that for specific country like sudan in my casse  
+- 
