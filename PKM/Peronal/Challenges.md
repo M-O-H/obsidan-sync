@@ -15,4 +15,6 @@ give yourself a scheduled time window for it, instead of random checking
 
 
 
+## Choosing Resources
+**High-quality**
 
