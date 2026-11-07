@@ -31,6 +31,6 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 > Be **diligent** when looking for news, compare resources based on the original one and fact checks.
 ### SIFT Method
 **STOP**: Read the source and carefully and notice emotional response.
-**Investigate**: the source the publish the 
+**Investigate**: the place that publish the information, who put it out there and why?.
 
 **Lateral Reading**: check other sources to make sure the original source is reliable.
