@@ -28,3 +28,5 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 ## Be Aware
 **Misinformation**: information that is wrong or misleading.
 **Disinformation**: information intentionally misleading or false.
+
+**Lateral Reading**: 
