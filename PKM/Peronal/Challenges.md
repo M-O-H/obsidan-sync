@@ -32,5 +32,7 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 ### SIFT Method
 **STOP**: Read the source and carefully and notice emotional response.
 **Investigate**: the place that publish the information, who put it out there and why?.
+Tools for investigate:
+- 
 
 **Lateral Reading**: check other sources to make sure the original source is reliable.
