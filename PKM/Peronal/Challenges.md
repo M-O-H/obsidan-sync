@@ -16,8 +16,6 @@ give yourself a scheduled time window for it, instead of random checking
 
 
 ## Choosing Resources
-> Be **diligent** when looking for news, compare resources based on the original one and fact checks.
-> apply SNIF (stop, investigate, )
 #### **High-quality & Reliable**:
 Primary Resource the original owner of the published news
 
@@ -30,4 +28,8 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 **Disinformation**: information intentionally misleading or false.
 
 ## action
+> apply SNIF (stop, investigate, )
+### SNIF (stop, investigate)
+Be **diligent** when looking for news, compare resources based on the original one and fact checks.
+
 **Lateral Reading**: check other sources to make sure the original source is reliable.
