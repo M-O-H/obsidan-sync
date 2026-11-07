@@ -16,7 +16,7 @@ give yourself a scheduled time window for it, instead of random checking
 
 
 ## Choosing Resources
-> Be **diligent** when 
+> Be **diligent** when looking for news, compare resources based on the original one and fact checks.
 #### **High-quality & Reliable**:
 Primary Resource the original owner of the published news
 
