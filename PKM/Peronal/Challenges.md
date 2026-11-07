@@ -17,6 +17,8 @@ give yourself a scheduled time window for it, instead of random checking
 
 ## Choosing Resources
 #### **High-quality & Reliable**:
-Primary Resource the original 
+Primary Resource the original owner of the published news
 
 
+#### **Facts checking**:
+most of the news reporters/pages 
