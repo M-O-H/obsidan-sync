@@ -29,7 +29,7 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 
 ## action
 > Be **Diligent** and take the effort to validate the source
-### SNIF (stop, investigate)
+### SIFT Method
 **STOP**: Read the source and carefully and emotion feeling. 
 
 Be **diligent** when looking for news, compare resources based on the original one and fact checks.
