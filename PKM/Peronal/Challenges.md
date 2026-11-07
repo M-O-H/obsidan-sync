@@ -30,7 +30,7 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 ## action
 > apply SNIF (stop, investigate, )
 ### SNIF (stop, investigate)
-**STOP**: when 
+**STOP**: Read the source and carefully and how 
 Be **diligent** when looking for news, compare resources based on the original one and fact checks.
 
 **Lateral Reading**: check other sources to make sure the original source is reliable.
