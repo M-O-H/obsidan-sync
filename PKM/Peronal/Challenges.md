@@ -27,11 +27,9 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 **Misinformation**: information that is wrong or misleading.
 **Disinformation**: information intentionally misleading or false.
 
-## action
-> Be **Diligent** and take the effort to validate the source
+## Action
+> Be **diligent** when looking for news, compare resources based on the original one and fact checks.
 ### SIFT Method
-**STOP**: Read the source and carefully and emotion feeling. 
-
-Be **diligent** when looking for news, compare resources based on the original one and fact checks.
+**STOP**: Read the source and 
 
 **Lateral Reading**: check other sources to make sure the original source is reliable.
