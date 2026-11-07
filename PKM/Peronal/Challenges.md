@@ -28,9 +28,10 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 **Disinformation**: information intentionally misleading or false.
 
 ## action
-> apply SNIF (stop, investigate, )
+> Be **Diligent** 
 ### SNIF (stop, investigate)
-**STOP**: Read the source and carefully and how 
+**STOP**: Read the source and carefully and emotion feeling. 
+
 Be **diligent** when looking for news, compare resources based on the original one and fact checks.
 
 **Lateral Reading**: check other sources to make sure the original source is reliable.
