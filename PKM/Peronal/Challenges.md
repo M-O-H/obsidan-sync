@@ -21,4 +21,4 @@ Primary Resource the original owner of the published news
 
 
 #### **Facts checking**:
-most of the news reporters/pages Tertiary resource they simplify or even strips 
+most of the news reporters/pages Tertiary resource they simplify or even strips content from official source.
