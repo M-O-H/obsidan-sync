@@ -29,4 +29,5 @@ most of the news reporters/pages Tertiary resource they simplify or even strips 
 **Misinformation**: information that is wrong or misleading.
 **Disinformation**: information intentionally misleading or false.
 
-**Lateral Reading**: 
+## action
+**Lateral Reading**: check other sources to make sure the original source is reliable.
