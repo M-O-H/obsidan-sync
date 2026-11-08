@@ -12,4 +12,5 @@ MARAWI
 Articles/news
 
 roll my R
-problem with the i sound like a z
+problem with the i sound like a Th
+
