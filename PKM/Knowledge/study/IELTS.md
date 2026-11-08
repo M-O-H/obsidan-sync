@@ -28,3 +28,8 @@ kjkjkjk
  Timed tests: make sure the platform uses _real test timing_ for each section (Listening 30 min, Reading 60 min, etc.).  
  Writing & Speaking: these sections are hardest to score automatically — platforms with _human-review or expert feedback_ are better if you need accurate assessment.
 
+## Feedbacks
+
+Articles/news
+roll my R
+problem with the i sound like a Th
