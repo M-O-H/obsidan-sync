@@ -32,4 +32,4 @@ kjkjkjk
 
 Articles/news
 roll my R
-problem with the i sound like a The
+problem with the i sound like a Thoe
